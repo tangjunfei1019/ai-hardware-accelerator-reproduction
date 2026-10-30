@@ -23,6 +23,16 @@
 | 8 | [ISAAC：基于交叉阵列原位模拟运算的卷积神经网络加速器](papers/08-isaac/README.md) | Ali Shafiee、Anirban Nag、Naveen Muralimanohar 等，2016 | 仿真工具（无官方 ISAAC 代码） |
 | 9 | [Cambricon：面向神经网络的指令集架构](papers/09-cambricon/README.md) | Shaoli Liu、Zidong Du、Jinhua Tao 等，2016 | 仅骨架（未找到官方开源代码） |
 | 10 | [SCNN：面向压缩稀疏卷积神经网络的加速器](papers/10-scnn/README.md) | Angshuman Parashar、Minsoo Rhu、Anurag Mukkara 等，2017 | 仿真工具（原仿真器未发布） |
+| 11 | [EVA：基于高效向量量化架构的大模型解码加速](papers/11-eva/README.md) | Bowen Duan、Cong Guo、Chiyue Wei 等，ISCA 2026 | 官方代码（是否含可综合 RTL 未核实） |
+| 12 | [Focus：面向高效视觉语言模型的流式集中架构](papers/12-focus/README.md) | Chiyue Wei、Cong Guo 等，HPCA 2026（最佳论文提名） | 官方实现（非 RTL 声明） |
+| 13 | [BitDecoding：用张量核心解锁长上下文大模型的低比特 KV 缓存解码](papers/13-bitdecoding/README.md) | Dayou Du、Shijie Cao 等，HPCA 2026 | 官方 GPU 系统代码（非 RTL） |
+| 14 | [P3-LLM：基于混合数值格式的 NPU-PIM 融合边缘大模型推理加速器](papers/14-p3-llm/README.md) | Yuzong Chen、Chao Fang 等，ISCA 2026 | 官方量化代码；PIM 硬件 RTL 不开源 |
+| 15 | [MTIA 300：Meta 首款内置网卡与集合通信卸载引擎的训练芯片](papers/15-mtia300/README.md) | MTIA Team（Meta），ISCA 2026 | 未找到官方开源代码；工业专有，RTL 不开源 |
+| 16 | [Raptor 早期硅片：首款面向生成式推理的 3D-DRAM 加速器](papers/16-raptor/README.md) | d-Matrix 与英属哥伦比亚大学，ISCA 2026 | 未找到官方开源代码；工业专有，RTL 不开源 |
+| 17 | [OSCAR：开源灵活分层 AI 加速器生成器与精确功耗模型](papers/17-oscar/README.md) | Jay Zhe-An Mok、Qijun Zhang 等，TODAES 2026 | 官方开源生成器，含 Chisel 与可综合 RTL |
+| 18 | [FSGen：面向大模型应用的敏捷融合稀疏加速器生成器与精确功耗模型](papers/18-fsgen/README.md) | Jay Zhe-An Mok、Qijun Zhang、Zhiyao Xie，DAC 2026 | 官方开源生成器，含 Chisel RTL |
+| 19 | [LoCaLUT：利用容量-计算权衡实现基于查表的 DRAM 存内推理](papers/19-localut/README.md) | AISys Lab 等，HPCA 2026（最佳论文提名） | 官方 PIM 实现（UPMEM，非商用 DRAM RTL） |
+| 20 | [对抗存储墙：长上下文智能体大模型推理的优化路径（PLENA）](papers/20-memory-walls/README.md) | Haoran Wu 等，ISCA 2026 | 未找到官方开源代码；论文称将开源，链接尚未核实 |
 
 ## 目录结构
 
@@ -38,6 +48,7 @@ papers/
   08-isaac/README.md
   09-cambricon/README.md
   10-scnn/README.md
+  11-eva/README.md … 20-memory-walls/README.md   # 2026 年补充：ISCA / HPCA / DAC / TODAES 2026
   <每篇>/code/CODE.md              # 代码来源、性质、运行步骤
   <每篇>/code/reproduce.py         # 原创复现骨架（标准库可运行）
 ```
