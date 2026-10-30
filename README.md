@@ -33,6 +33,16 @@
 | 18 | [FSGen：面向大模型应用的敏捷融合稀疏加速器生成器与精确功耗模型](papers/18-fsgen/README.md) | Jay Zhe-An Mok、Qijun Zhang、Zhiyao Xie，DAC 2026 | 官方开源生成器，含 Chisel RTL |
 | 19 | [LoCaLUT：利用容量-计算权衡实现基于查表的 DRAM 存内推理](papers/19-localut/README.md) | AISys Lab 等，HPCA 2026（最佳论文提名） | 官方 PIM 实现（UPMEM，非商用 DRAM RTL） |
 | 20 | [对抗存储墙：长上下文智能体大模型推理的优化路径（PLENA）](papers/20-memory-walls/README.md) | Haoran Wu 等，ISCA 2026 | 未找到官方开源代码；论文称将开源，链接尚未核实 |
+| 21 | [DCC：面向存内处理架构的数据中心机器学习内核编译器](papers/21-dcc/README.md) | Peiming Yang 等，ISCA 2026 | 可复现 B：官方开源，完整数字需 PIM 后端仿真器 |
+| 22 | [XBTorch：面向交叉阵列深度学习加速器的统一建模与协同设计框架](papers/22-xbtorch/README.md) | Osama Yousuf 等，APL Machine Learning 2026 | 可复现 A：官方开源，标准 CPU + PyTorch |
+| 23 | [CIM-Tuner：通过硬件-映射协同探索平衡 SRAM-CIM 计算与存储容量](papers/23-cim-tuner/README.md) | Jinwu Chen 等，arXiv 2026 | 可复现 A：官方开源，标准 CPU + Python |
+| 24 | [gem5-CIMD：面向 DRAM 存内计算的全应用 gem5 仿真框架](papers/24-gem5-cimd/README.md) | Alexander Kusnezoff 等，arXiv 2026 | 可复现 A：官方开源，标准 Linux + gem5 构建环境 |
+| 25 | [OpenACM：开源 SRAM 近似数字存内计算编译器](papers/25-openacm/README.md) | Yiqi Zhou 等，DATE 2026 | 可复现 B：官方开源，完整物理流程需 OpenROAD + FreePDK45 |
+| 26 | [TetrisG-SDK：面向快速存内计算的自适应窗口与分组卷积映射框架](papers/26-tetrisg-sdk/README.md) | Ke Dong 等，IEEE JETCAS 2026 | 可复现 A：官方开源，标准 CPU + Python |
+| 27 | [NeuroSim V1.5：面向存内计算加速器的改进软件基准框架](papers/27-neurosim-v15/README.md) | James Read 等，IEEE TCAD 2026 | 可复现 A：官方开源，标准 CPU + C++（非商业许可） |
+| 28 | [DRAMatic：面向同态加密运算的 UPMEM 存内处理加速](papers/28-dramatic/README.md) | Niklas Klinger 等，arXiv 2026 | 可复现 B：官方开源，完整速度复现需 UPMEM 硬件 + SDK |
+| 29 | [AHASD：面向移动端自适应草稿推测解码的异步异构 NPU-PIM 架构](papers/29-ahasd/README.md) | Ma Zirui 等，arXiv 2026 | 可复现 A：官方开源，标准机器 + PIM 仿真器工具链 |
+| 30 | [PIMeval-PIMbench 2026 扩展：面向数字 DRAM PIM 的建模与基准扩展](papers/30-pimeval-2026/README.md) | 以原文作者表为准，ACM TACO 2026 | 可复现 A：官方开源，标准 Linux + C++，不需 UPMEM 硬件 |
 
 ## 目录结构
 
@@ -49,6 +59,7 @@ papers/
   09-cambricon/README.md
   10-scnn/README.md
   11-eva/README.md … 20-memory-walls/README.md   # 2026 年补充：ISCA / HPCA / DAC / TODAES 2026
+  21-dcc/README.md … 30-pimeval-2026/README.md   # 2026 年 CIM 补充：可复现筛选，A 为标准机器可跑，B 需特殊硬件/工具链
   <每篇>/code/CODE.md              # 代码来源、性质、运行步骤
   <每篇>/code/reproduce.py         # 原创复现骨架（标准库可运行）
 ```
