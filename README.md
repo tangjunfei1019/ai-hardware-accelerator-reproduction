@@ -43,6 +43,11 @@
 | 28 | [DRAMatic：面向同态加密运算的 UPMEM 存内处理加速](papers/28-dramatic/README.md) | Niklas Klinger 等，arXiv 2026 | 可复现 B：官方开源，完整速度复现需 UPMEM 硬件 + SDK |
 | 29 | [AHASD：面向移动端自适应草稿推测解码的异步异构 NPU-PIM 架构](papers/29-ahasd/README.md) | Ma Zirui 等，arXiv 2026 | 可复现 A：官方开源，标准机器 + PIM 仿真器工具链 |
 | 30 | [PIMeval-PIMbench 2026 扩展：面向数字 DRAM PIM 的建模与基准扩展](papers/30-pimeval-2026/README.md) | 以原文作者表为准，ACM TACO 2026 | 可复现 A：官方开源，标准 Linux + C++，不需 UPMEM 硬件 |
+| 31 | [AIHWKit：面向模拟交叉阵列的灵活快速 PyTorch 工具包](papers/31-aihwkit/README.md) | Malte J. Rasch 等（IBM Research），AICAS 2021 | 完整开源：MIT，30 个示例，标准 CPU，GPU 可选 |
+| 32 | [Gemmini：敏捷脉动阵列生成器](papers/32-gemmini/README.md) | UC Berkeley，DAC 2021 | 完整开源：Chisel RTL，Linux + Chipyard/Verilator，FPGA 可选 |
+| 33 | [NVDLA：NVIDIA 深度学习加速器（开放架构）](papers/33-nvdla/README.md) | NVIDIA，开源发布 2017–2018（非传统会议论文，已标注） | 完整开源：406 个 Verilog 文件，Linux + Verilog 工具链 |
+| 34 | [PrIM：面向真实存内处理系统的首个基准测试集](papers/34-prim/README.md) | Juan Gómez-Luna 等，IEEE Access 2022 | 完整开源：MIT，16 个基准；CPU 基线仅需 GCC，完整 DPU 结果需 UPMEM 硬件 + SDK |
+| 35 | [ColumnQuant / RUnQuant：面向存内计算加速器的列粒度量化](papers/35-columnquant/README.md) | DATE 2025 / Journal of Systems Architecture 2026 | 完整框架代码；标准 CPU + PyTorch，根目录未找到许可证与 requirements 文件 |
 
 ## 目录结构
 
@@ -60,6 +65,7 @@ papers/
   10-scnn/README.md
   11-eva/README.md … 20-memory-walls/README.md   # 2026 年补充：ISCA / HPCA / DAC / TODAES 2026
   21-dcc/README.md … 30-pimeval-2026/README.md   # 2026 年 CIM 补充：可复现筛选，A 为标准机器可跑，B 需特殊硬件/工具链
+  31-aihwkit/README.md … 35-columnquant/README.md   # 影响力 CIM 补充：完整开源代码，骨架不是上游代码，复现以上游步骤为准
   <每篇>/code/CODE.md              # 代码来源、性质、运行步骤
   <每篇>/code/reproduce.py         # 原创复现骨架（标准库可运行）
 ```
