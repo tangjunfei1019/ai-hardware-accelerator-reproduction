@@ -1,9 +1,9 @@
-## 代码来源
+## Code sources
 
-- 状态：**未找到官方开源代码**。ShiDianNao 原始 RTL 在本次核查中没有确认的公开仓库。
-- 最接近的建模路线：用本目录骨架对比两种数据通路的访存记账；如需硬件级建模，可参考 DianNao/DaDianNao 的建模思路。
-- 本目录只有原创复现骨架，不含任何上游代码拷贝。
+- Status: **No official open-source code found**. No confirmed public repository for the original ShiDianNao RTL was found in this check.
+- Closest modeling route: use this directory's skeleton to compare memory-access accounting under the two data paths; for hardware-level modeling, refer to the DianNao/DaDianNao modeling ideas.
+- This directory contains only an original reproduction skeleton, and no copy of any upstream code.
 
-## 本目录骨架
+## Skeleton in this directory
 
-- `reproduce.py`：原创复现骨架，仅用 Python 标准库，演示传感器直连与经 DRAM 两种通路的访存对比，不是原文代码。
+- `reproduce.py`: original reproduction skeleton, using only the Python standard library, demonstrating the memory-access comparison between a sensor-direct path and a via-DRAM path. It is not the original paper code.

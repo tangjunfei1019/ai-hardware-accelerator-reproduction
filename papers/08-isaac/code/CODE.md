@@ -1,12 +1,12 @@
-## 代码来源
+## Code sources
 
-- 状态：**仿真工具，无官方 ISAAC 代码**。ISAAC 原始实现在本次核查中没有确认的公开仓库。
-- 已核实存在的建模工具：
-  - DNN NeuroSim V1.4（推理侧）：https://github.com/neurosim/DNN_NeuroSim_V1.4
-  - DNN NeuroSim V2.1（片上训练侧）：https://github.com/neurosim/DNN_NeuroSim_V2.1
-- 性质：学术界广泛使用的存算一体基准框架，不是 ISAAC 作者发布的原始代码；使用前请阅读各仓库自带的许可证，并注意版本（V1.x 与 V2.x 的侧重点不同）。
-- 本目录只有原创复现骨架，不含任何上游代码拷贝。
+- Status: **Simulation tools, no official ISAAC code**. No confirmed public repository for the original ISAAC implementation was found in this check.
+- Verified modeling tools:
+  - DNN NeuroSim V1.4 (inference side): https://github.com/neurosim/DNN_NeuroSim_V1.4
+  - DNN NeuroSim V2.1 (on-chip training side): https://github.com/neurosim/DNN_NeuroSim_V2.1
+- Nature: a widely used academic compute-in-memory benchmark framework, not original code released by the ISAAC authors; read each repository's own license before use, and note the version differences (V1.x and V2.x have different focuses).
+- This directory contains only an original reproduction skeleton, and no copy of any upstream code.
 
-## 本目录骨架
+## Skeleton in this directory
 
-- `reproduce.py`：原创复现骨架，仅用 Python 标准库，演示交叉阵列 MVM 与位切片，不是原文代码。
+- `reproduce.py`: original reproduction skeleton, using only the Python standard library, demonstrating crossbar MVM and bit-slicing. It is not the original paper code.

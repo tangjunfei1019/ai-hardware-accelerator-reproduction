@@ -1,9 +1,9 @@
-## 代码来源
+## Code sources
 
-- 状态：**官方开源量化代码，但 PIM 硬件 RTL 不开源**。不要把量化代码仓库标注为 PIM RTL。
-- 论文给出的量化代码链接：https://github.com/yc2367/P3-LLM
-- 使用前请阅读仓库自带的许可证与 README；本目录不拷贝该仓库的任何代码。
+- Status: **Official open-source quantization code, but the PIM hardware RTL is not open source**. Do not label the quantization code repository as PIM RTL.
+- Quantization code link given in the paper: https://github.com/yc2367/P3-LLM
+- Read the license and README shipped with the repository before use; this directory does not copy any code from that repository.
 
-## 本目录骨架
+## Skeleton in this directory
 
-- `reproduce.py`：原创复现骨架，仅用 Python 标准库，演示按操作数分配位宽的混合精度量化与 prefill / 解码分工的访存量估算。
+- `reproduce.py`: original reproduction skeleton, Python standard library only, demonstrating per-operand bit-width allocation for hybrid-precision quantization and memory-traffic estimation for the prefill / decoding division of labor.

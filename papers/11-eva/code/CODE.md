@@ -1,9 +1,9 @@
-## 代码来源
+## Code sources
 
-- 状态：**官方开源代码（论文给出链接），但其中是否包含可综合 RTL，本次核查未逐项确认，请以仓库内容为准，不要默认它就是 RTL**。
-- 论文给出的链接：https://github.com/dbw6/Eva.git
-- 使用前请阅读仓库自带的许可证与 README；本目录不拷贝该仓库的任何代码。
+- Status: **Official open-source code (link given in the paper), but whether it contains synthesizable RTL was not verified item by item in this check — judge by the repository contents, and do not assume it is RTL**.
+- Link given in the paper: https://github.com/dbw6/Eva.git
+- Read the license and README shipped with the repository before use; this directory does not copy any code from that repository.
 
-## 本目录骨架
+## Skeleton in this directory
 
-- `reproduce.py`：原创复现骨架，仅用 Python 标准库，演示输入×码本点积再按索引求和，与先反量化再乘加的结果等价。
+- `reproduce.py`: original reproduction skeleton, Python standard library only, demonstrating input x codebook dot products followed by index-based summation, equivalent to dequantize-then-multiply-accumulate.

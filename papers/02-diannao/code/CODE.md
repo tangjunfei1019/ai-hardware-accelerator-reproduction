@@ -1,10 +1,10 @@
-## 代码来源
+## Code sources
 
-- 状态：**未找到官方开源代码**。DianNao 原始 RTL 在本次核查中没有确认的公开仓库。
-- 不要把网上同名第三方实现直接当作原作者代码；如需参考第三方实现，请在引用时注明作者与许可证，并先通读其 README。
-- 最接近的建模路线：用 Timeloop/Accelergy 定义类似的空间架构与映射，或用 SCALE-Sim 类脉动/分块模型做一级估算（见 TPU 一节的链接）。
-- 本目录只有原创复现骨架，不含任何上游代码拷贝。
+- Status: **No official open-source code found**. No confirmed public repository for the original DianNao RTL was found in this check.
+- Do not treat same-named third-party implementations found online as the original authors' code; if you refer to a third-party implementation, cite its authors and license, and read its README first.
+- Closest modeling route: define a similar spatial architecture and mapping with Timeloop/Accelergy, or use a SCALE-Sim-style systolic/tiling model for a first-order estimate (see the links in the TPU section).
+- This directory contains only an original reproduction skeleton, and no copy of any upstream code.
 
-## 本目录骨架
+## Skeleton in this directory
 
-- `reproduce.py`：原创复现骨架，仅用 Python 标准库，演示分块 + 定点 NFU 式计算，不是原文代码。
+- `reproduce.py`: original reproduction skeleton, using only the Python standard library, demonstrating tiled + fixed-point NFU-style computation. It is not the original paper code.

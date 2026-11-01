@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""原创复现骨架（仅 Python 标准库），不是上游 NasZip 代码。
+"""Original reproduction skeleton (Python standard library only), not upstream NasZip code.
 
-演示近似最近邻搜索中的特征级提前退出思想：先用部分维度
-估计全维距离，若估计已足够大则提前剪枝，避免算满全部维度。
+Demonstrates feature-level early exiting in approximate nearest-neighbor
+search: estimate the full-dimensional distance from a prefix of dimensions,
+and prune early when the estimate is already large enough.
 """
 import math, random
 
@@ -15,9 +15,9 @@ def full_distance(a, b):
 
 
 def early_exit_distance(a, b, prefix_dims, threshold):
-    """用前 prefix_dims 维估计全维距离；估计值超过阈值则提前退出。"""
+    """Estimate the full distance from the first prefix_dims dimensions; exit early if it exceeds the threshold."""
     partial = sum((x - y) ** 2 for x, y in zip(a[:prefix_dims], b[:prefix_dims]))
-    # 按维度比例放大估计（示意模型，非原文 PCA 估计）
+    # Scale the estimate by the dimension ratio (illustrative model, not the paper's PCA estimate)
     estimate = math.sqrt(partial * len(a) / prefix_dims)
     exited = estimate > threshold
     return estimate, exited
@@ -27,7 +27,7 @@ def main():
     dim = 16
     query = [random.gauss(0, 1) for _ in range(dim)]
     candidates = [[random.gauss(0, 1) for _ in range(dim)] for _ in range(20)]
-    # 远候选：人为拉远，使其可被提前剪枝
+    # Far candidate: shifted away so it can be pruned early
     far = [x + 3.0 for x in query]
     candidates.append(far)
     threshold = 3.0
@@ -36,10 +36,10 @@ def main():
         est, exited = early_exit_distance(query, cand, prefix_dims=4, threshold=threshold)
         if exited:
             saved += dim - 4
-    print(f"候选数 = {len(candidates)}，提前退出节省的维度计算 = {saved}")
-    print(f"远候选全维距离 = {full_distance(query, far):.2f}，4 维估计 = {early_exit_distance(query, far, 4, threshold)[0]:.2f}，应被剪枝")
+    print(f"Candidates = {len(candidates)}, dimension computations saved by early exit = {saved}")
+    print(f"Far candidate full distance = {full_distance(query, far):.2f}, 4-dim estimate = {early_exit_distance(query, far, 4, threshold)[0]:.2f}, should be pruned")
     assert early_exit_distance(query, far, 4, threshold)[1]
-    print("自检通过：提前退出可在不算满维度的情况下剪掉远候选")
+    print("Self-check passed: early exit can prune a far candidate without computing all dimensions")
 
 
 if __name__ == "__main__":

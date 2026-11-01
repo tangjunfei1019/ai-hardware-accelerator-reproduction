@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""原创复现骨架（仅 Python 标准库），不是上游 Ramulator 代码。
+"""Original reproduction skeleton (Python standard library only), not upstream Ramulator code.
 
-演示 DRAM 控制器统计思想：按踪迹地址逐条访问，统计行命中/
-行缺失/行冲突，并估计平均读延迟。行地址用地址高位示意。
+Demonstrates DRAM controller statistics: walk an address trace, count
+row hits / row misses / row conflicts, and estimate average read latency.
+Row address is illustrated with the high bits of the address.
 """
-# 踪迹：(地址, 是否读)；同一行连续访问为命中，换行同 bank 为冲突
+# Trace: (address, is_read); consecutive accesses to the same row are hits, a row change in the same bank is a conflict
 TRACE = [
     (0x1000, True), (0x1040, True), (0x1080, True),
     (0x2000, True), (0x2040, True),
@@ -35,11 +35,11 @@ def simulate(trace):
 
 def main():
     stats = simulate(TRACE)
-    print("DRAM 控制器骨架统计：")
-    print(f"  访问数 = {stats['cycles']}，行命中 = {stats['hits']}，行缺失 = {stats['misses']}，行冲突 = {stats['conflicts']}")
-    print(f"  平均读延迟 = {stats['avg_latency']:.1f} 周期（示意模型，非 Ramulator 输出）")
+    print("DRAM controller skeleton statistics:")
+    print(f"  Accesses = {stats['cycles']}, row hits = {stats['hits']}, row misses = {stats['misses']}, row conflicts = {stats['conflicts']}")
+    print(f"  Average read latency = {stats['avg_latency']:.1f} cycles (illustrative model, not a Ramulator output)")
     assert stats["hits"] + stats["misses"] + stats["conflicts"] == stats["cycles"]
-    print("自检通过：命中+缺失+冲突 = 总访问数")
+    print("Self-check passed: hits + misses + conflicts = total accesses")
 
 
 if __name__ == "__main__":

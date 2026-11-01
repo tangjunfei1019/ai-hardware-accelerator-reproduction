@@ -1,8 +1,8 @@
-"""复现骨架（原创，非原文代码）：Focus 式三级流式 token 集中。
+"""Reproduction skeleton (original, not the original authors' code): Focus-style three-stage streaming token concentration.
 
-只用 Python 标准库。演示：语义剪枝 -> 块级集中 -> 向量去重，
-统计每一级剩下的 token 数。
-运行：python3 reproduce.py
+Python standard library only. Demonstrates: semantic pruning -> block-level concentration -> vector deduplication,
+counting how many tokens remain after each stage.
+Run: python3 reproduce.py
 """
 
 
@@ -11,7 +11,7 @@ def semantic_prune(tokens, scores, threshold):
 
 
 def block_concentrate(tokens, block_size=2):
-    # 块级集中示意：每块取均值向量作为代表
+    # Block-level concentration sketch: take the mean vector of each block as its representative
     out = []
     for i in range(0, len(tokens), block_size):
         block = tokens[i:i + block_size]
@@ -31,15 +31,15 @@ def dedup(tokens, tol=1e-9):
 def main():
     tokens = [[1.0, 0.0], [1.0, 0.0], [0.0, 1.0], [0.2, 0.8], [0.0, 1.0], [0.9, 0.1]]
     scores = [0.9, 0.8, 0.3, 0.7, 0.85, 0.6]
-    print("原始 token 数:", len(tokens))
+    print("Original token count:", len(tokens))
     s1 = semantic_prune(tokens, scores, 0.5)
-    print("语义剪枝后:", len(s1), s1)
+    print("After semantic pruning:", len(s1), s1)
     s2 = block_concentrate(s1)
-    print("块级集中后:", len(s2), s2)
+    print("After block-level concentration:", len(s2), s2)
     s3 = dedup(s2)
-    print("向量去重后:", len(s3), s3)
+    print("After vector deduplication:", len(s3), s3)
     assert len(s3) <= len(s2) <= len(s1) <= len(tokens)
-    print("要点：三级削减是乘法效应——每一级都在上一级的基础上再压缩，token 越少，后续注意力与 GEMM 的计算量下降越明显。")
+    print("Point: the three-stage reduction is multiplicative — each stage compresses further on top of the previous one, and fewer tokens means a larger drop in subsequent attention and GEMM compute.")
 
 
 if __name__ == "__main__":

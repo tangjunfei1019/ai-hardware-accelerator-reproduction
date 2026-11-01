@@ -1,15 +1,16 @@
-"""复现骨架（原创，非原文代码）：DRAM 子阵列内批量位运算的思想。
-只用 Python 标准库。演示：两个位向量在同一子阵列内做 AND/OR，不经过 CPU-ALU 搬运的抽象模型。
-运行：python3 reproduce.py
+"""Reproduction skeleton (original, not the original authors' code): the idea of bulk bit operations inside a DRAM subarray.
+Python standard library only. Demonstrates: two bit vectors AND/OR inside the same subarray, in an
+abstract model without moving data through a CPU ALU.
+Run: python3 reproduce.py
 """
 def main():
     a = 0b11010110
     b = 0b10101100
     print('A      :', format(a, '08b'))
     print('B      :', format(b, '08b'))
-    print('子阵列 AND:', format(a & b, '08b'))
-    print('子阵列 OR :', format(a | b, '08b'))
-    print('要点：gem5-CIMD 的关键不是这两个位运算本身，而是操作数共址、指令集与内存管理栈的完整仿真。')
+    print('In-subarray AND:', format(a & b, '08b'))
+    print('In-subarray OR :', format(a | b, '08b'))
+    print('Point: gem5-CIMD\'s key contribution is not these two bit operations themselves, but the complete simulation of operand co-location, the instruction set, and the memory-management stack.')
 
 if __name__ == '__main__':
     main()

@@ -1,8 +1,10 @@
-"""复现骨架（原创，非原文代码）：NVDLA 式推理流水线。
+"""Reproduction skeleton (original, not the paper's code): NVDLA-style
+inference pipeline.
 
-只用 Python 标准库。演示：卷积（CMAC/CACC 思想）-> ReLU 激活（SDP 思想）
--> 最大池化（PDP 思想），每阶段打印输出尺寸。
-运行：python3 reproduce.py
+Standard library only. Demonstrates: convolution (CMAC/CACC idea) ->
+ReLU activation (SDP idea) -> max pooling (PDP idea), printing the output
+size at each stage.
+Run: python3 reproduce.py
 """
 
 
@@ -35,12 +37,13 @@ def main():
     c = conv2d(x, k)
     a = relu(c)
     p = maxpool2x2(a)
-    print("输入尺寸:", len(x), "x", len(x[0]))
-    print("卷积后:", c, "尺寸:", len(c), "x", len(c[0]))
-    print("激活后:", a)
-    print("池化后:", p, "尺寸:", len(p), "x", len(p[0]))
-    print("要点：NVDLA 的模块化流水线就是把这些阶段串联起来，"
-          "融合模式下中间结果不必往返访存。")
+    print("Input size:", len(x), "x", len(x[0]))
+    print("After convolution:", c, "size:", len(c), "x", len(c[0]))
+    print("After activation:", a)
+    print("After pooling:", p, "size:", len(p), "x", len(p[0]))
+    print("Key point: NVDLA's modular pipeline is exactly chaining these "
+          "stages together, and in fused mode intermediate results do not "
+          "need to round-trip through memory.")
 
 
 if __name__ == "__main__":

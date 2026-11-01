@@ -1,9 +1,11 @@
-"""复现骨架（原创，非原文代码）：PIM 式分区向量加法。
+"""Reproduction skeleton (original, not the paper's code): PIM-style
+partitioned vector addition.
 
-只用 Python 标准库。演示：把向量按 DPU 数量切分，
-每核算一段，最后汇总，与直接相加结果一致，
-并打印分区数与耗时（骨架耗时，非原文 DPU 核时间）。
-运行：python3 reproduce.py
+Standard library only. Demonstrates: splitting a vector by the number of
+DPUs, computing one slice per DPU, and merging at the end, matching direct
+addition, and printing the DPU count and time (skeleton time, not the
+paper's DPU kernel time).
+Run: python3 reproduce.py
 """
 
 import time
@@ -21,10 +23,12 @@ def main():
             lo, hi = d * chunk, (d + 1) * chunk if d < nr_dpus - 1 else n
             parts.extend(a[i] + b[i] for i in range(lo, hi))
         elapsed = time.perf_counter() - start
-        print(f"DPU 数: {nr_dpus}，结果正确: {parts == [2 * i for i in range(n)]}，"
-              f"耗时（秒）: {elapsed:.4f}")
-    print("要点：PrIM 的核心思想是把数据留在 bank 旁的 DPU 上算，"
-          "而不是把数据搬回主机；分区方式直接决定扩展性。")
+        print(f"DPU count: {nr_dpus}, result correct: "
+              f"{parts == [2 * i for i in range(n)]}, "
+              f"time (s): {elapsed:.4f}")
+    print("Key point: PrIM's core idea is to compute on the DPU beside the "
+          "bank, keeping data there, instead of moving data back to the "
+          "host; how you partition directly decides scalability.")
 
 
 if __name__ == "__main__":

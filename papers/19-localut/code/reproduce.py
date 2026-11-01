@@ -1,13 +1,14 @@
-"""复现骨架（原创，非原文代码）：LoCaLUT 式查表打包与去重。
+"""Reproduction skeleton (original, not the original authors' code): LoCaLUT-style lookup packing and deduplication.
 
-只用 Python 标准库。演示：把权重向量与输入的点积预先算成查表，
-多个乘加一次查表完成；再对重复表项做规范化去重。
-运行：python3 reproduce.py
+Python standard library only. Demonstrates: precomputing the dot product of a weight vector with inputs
+as a lookup table, so multiple multiply-accumulates are completed with one lookup;
+then canonicalization deduplication of repeated entries.
+Run: python3 reproduce.py
 """
 
 
 def build_lut(weight_vec, input_values):
-    # 输入取值为小集合时，点积结果可预先制表
+    # When inputs take a small set of values, dot-product results can be pre-tabulated
     table = {}
     for v in input_values:
         table[v] = sum(w * v for w in weight_vec)
@@ -15,7 +16,7 @@ def build_lut(weight_vec, input_values):
 
 
 def canonicalize(table):
-    # 规范化示意：同一结果只保留一个表项（去重）
+    # Canonicalization sketch: keep only one entry per distinct result (deduplication)
     seen, out = set(), {}
     for k, v in table.items():
         if v not in seen:
@@ -26,15 +27,15 @@ def canonicalize(table):
 
 def main():
     w = [2, 3]
-    # 两个输入标量分别查表再相加，等价于一次打包点积的示意
+    # Two input scalars looked up separately and then added, as a sketch of one packed dot product
     lut = build_lut(w, [0, 1, 2])
-    print("查表（输入值 -> w·输入和）:", lut)
+    print("Lookup table (input value -> w dot input sum):", lut)
     assert lut[2] == 2 * (2 + 3)
     dup_table = {0: 0, 1: 5, 2: 10, 3: 5}
     dedup = canonicalize(dup_table)
-    print("去重前表项:", len(dup_table), "去重后:", len(dedup), dedup)
+    print("Entries before deduplication:", len(dup_table), "after:", len(dedup), dedup)
     assert len(dedup) < len(dup_table)
-    print("要点：查表把乘法换成容量；容量一贵，规范化去重就成了必需品——这就是 LoCaLUT 标题里容量-计算权衡的含义。")
+    print("Point: lookup trades multiplication for capacity; once capacity gets expensive, canonicalization deduplication becomes essential — that is the capacity-computation trade-off in LoCaLUT's title.")
 
 
 if __name__ == "__main__":

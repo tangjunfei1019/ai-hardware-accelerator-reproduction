@@ -1,9 +1,9 @@
-## 代码来源
+## Code sources
 
-- 状态：**官方开源 PIM 实现（基于 UPMEM 的真实系统实现），不是商用 DRAM 的 RTL**。不要把它标注为 DRAM RTL 开源。
-- 论文给出的链接：https://github.com/AIS-SNU/LoCaLUT
-- 使用前请阅读仓库自带的许可证与 README；本目录不拷贝该仓库的任何代码。
+- Status: **Official open-source PIM implementation (real-system implementation based on UPMEM), not commercial DRAM RTL**. Do not label it as DRAM RTL open source.
+- Link given in the paper: https://github.com/AIS-SNU/LoCaLUT
+- Read the license and README shipped with the repository before use; this directory does not copy any code from that repository.
 
-## 本目录骨架
+## Skeleton in this directory
 
-- `reproduce.py`：原创复现骨架，仅用 Python 标准库，演示多乘加打包查表与 LUT 规范化去重。
+- `reproduce.py`: original reproduction skeleton, Python standard library only, demonstrating packed multiply-accumulate lookup and LUT canonicalization deduplication.

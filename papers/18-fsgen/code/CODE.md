@@ -1,9 +1,9 @@
-## 代码来源
+## Code sources
 
-- 状态：**官方开源生成器，含 Chisel RTL 生成（类别 a）**。论文明确给出仓库链接。
-- 论文给出的链接：https://github.com/hkust-zhiyao/FSGen
-- 使用前请阅读仓库自带的许可证与 README；本目录不拷贝该仓库的任何代码。
+- Status: **Official open-source generator, including Chisel RTL generation (category a)**. The paper explicitly gives the repository link.
+- Link given in the paper: https://github.com/hkust-zhiyao/FSGen
+- Read the license and README shipped with the repository before use; this directory does not copy any code from that repository.
 
-## 本目录骨架
+## Skeleton in this directory
 
-- `reproduce.py`：原创复现骨架，仅用 Python 标准库，演示融合与稀疏对访存量与有效计算量的联合削减。
+- `reproduce.py`: original reproduction skeleton, Python standard library only, demonstrating the joint reduction in memory traffic and effective compute from fusion and sparsity.

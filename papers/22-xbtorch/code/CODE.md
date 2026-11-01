@@ -1,31 +1,31 @@
-# 代码来源与复现说明：XBTorch：面向交叉阵列深度学习加速器的统一建模与协同设计框架
+# Code sources and reproduction notes: XBTorch: A Unified Framework for Modeling and Co-Design of Crossbar-Based Deep Learning Accelerators
 
-## 可复现等级：A
+## Reproducibility grade: A
 
-- A = 上游代码可在标准机器 / 仿真器上运行。
-- B = 上游代码可运行，但需要特殊硬件或特定工具链。
-- 本篇等级：**A**。
+- A = upstream code runs on a standard machine / simulator.
+- B = upstream code runs, but needs special hardware or a specific toolchain.
+- This paper's grade: **A**.
 
-## 上游仓库（已核实存在）
+## Upstream repository (verified to exist)
 
-- 链接：https://github.com/ADAM-Lab-GW/xbtorch
-- 仓库内容：PyTorch 原生交叉阵列建模库、器件模型（FeFET/ReRAM/PCM/MTJ）、硬件感知训练与推理示例、文档
-- 硬件 / 软件要求：标准 CPU 可跑小例子；大规模模型建议 GPU。Python 3.10+ 与 PyTorch，见上游 README
-- 许可证：以该仓库自带许可证文件为准；使用前请先阅读。
+- Link: https://github.com/ADAM-Lab-GW/xbtorch
+- Repository contents: PyTorch-native crossbar modeling library, device models (FeFET / ReRAM / PCM / MTJ), hardware-aware training and inference examples, documentation
+- Hardware / software requirements: a standard CPU can run small examples; large models are best run on a GPU. Python 3.10+ and PyTorch, see the upstream README
+- License: follow the license file shipped with the repository; read it before use.
 
-## 复现步骤
+## Reproduction steps
 
 1) git clone https://github.com/ADAM-Lab-GW/xbtorch
-2) pip install torch（按上游 requirements / 文档版本）
-3) 按上游文档跑最小示例：定义器件模型、把线性层映射为交叉阵列、做一次带噪声推理
-4) 再跑硬件感知训练示例，对照无噪声基线
-预期检查：无噪声时接近理想精度；注入器件噪声后精度下降，硬件感知训练可部分恢复。
+2) pip install torch (matching the upstream requirements / documentation versions)
+3) Follow the upstream documentation for a minimal example: define a device model, map a linear layer to a crossbar, and run one noisy inference
+4) Then run a hardware-aware training example and compare against the no-noise baseline
+Expected check: without noise, results should be close to ideal accuracy; after injecting device noise, accuracy should drop, and hardware-aware training should partially recover it.
 
-## 不能仅凭论文复现的部分
+## What cannot be reproduced from the paper alone
 
-- 不能用本目录的 Python 标准库骨架复现 FeFET 实测器件参数；不能把仿真精度直接等同于芯片实测精度；器件参数需以原文与上游示例为准。
+- FeFET measured device parameters cannot be reproduced with this directory's Python standard-library skeleton; simulation accuracy must not be equated directly with chip-measured accuracy; device parameters follow the paper and upstream examples.
 
-## 本目录骨架说明
+## Skeleton in this directory
 
-- `reproduce.py` 是原创 Python 标准库骨架，演示核心思想，不是上游代码，也不是 RTL/芯片实测。
-- 骨架本身不满足本篇的可复现要求；可复现性由上面上游仓库的步骤保证。
+- `reproduce.py` is an original Python standard-library skeleton demonstrating the core idea, not upstream code, and not RTL / chip measurements.
+- The skeleton alone does not satisfy this paper's reproducibility requirement; reproducibility is provided by the upstream steps above.

@@ -1,12 +1,12 @@
-## 代码来源
+## Code sources
 
-- 状态：**仿真工具，谷歌 TPU 硬件本身不开源**。不要把任何第三方 TPU 复刻标注为谷歌官方代码。
-- 已核实存在的建模工具：
-  - SCALE-Sim：https://github.com/scalesim-project/SCALE-Sim （脉动阵列加速器仿真器，Python）
-  - Timeloop/Accelergy：https://github.com/Accelergy-Project/accelergy-timeloop-infrastructure
-- 使用前请阅读各仓库自带的许可证；SCALE-Sim 的新旧版本（ARM-software 版已归档，scalesim-project 版在维护）请以仓库 README 为准。
-- 本目录只有原创复现骨架，不含任何上游代码拷贝。
+- Status: **Simulation tools; Google TPU hardware itself is not open source**. Do not label any third-party TPU replica as Google official code.
+- Verified modeling tools:
+  - SCALE-Sim: https://github.com/scalesim-project/SCALE-Sim (systolic-array accelerator simulator, Python)
+  - Timeloop/Accelergy: https://github.com/Accelergy-Project/accelergy-timeloop-infrastructure
+- Before use, read each repository's own license; for SCALE-Sim's old and new versions (the ARM-software version is archived, the scalesim-project version is maintained), follow the repository README.
+- This directory contains only an original reproduction skeleton, and no copy of any upstream code.
 
-## 本目录骨架
+## Skeleton in this directory
 
-- `reproduce.py`：原创复现骨架，仅用 Python 标准库，演示小型脉动阵列式矩阵乘法，不是原文代码。
+- `reproduce.py`: original reproduction skeleton, using only the Python standard library, demonstrating small systolic-array-style matrix multiplication. It is not the original paper code.

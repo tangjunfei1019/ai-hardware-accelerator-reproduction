@@ -1,9 +1,11 @@
-"""复现骨架（原创，非原文代码）：脉动阵列式分块矩阵乘。
+"""Reproduction skeleton (original, not the paper's code): systolic-array-style
+tiled matrix multiplication.
 
-只用 Python 标准库。演示：把矩阵乘法按 2x2 分块切分，
-每块先算局部乘积再累加，得到与直接矩阵乘相同的结果，
-同时统计有效乘法次数。
-运行：python3 reproduce.py
+Standard library only. Demonstrates: splitting matrix multiplication into
+2x2 tiles, computing local products per tile and accumulating them, giving
+the same result as direct matrix multiplication, while counting effective
+multiplications.
+Run: python3 reproduce.py
 """
 
 import random
@@ -36,10 +38,12 @@ def main():
     b = [[random.randint(0, 3) for _ in range(4)] for _ in range(4)]
     ref = matmul(a, b)
     out, macs = tiled_matmul(a, b, tile=2)
-    print("分块结果与直接矩阵乘一致:", out == ref)
-    print("有效 MAC 数:", macs)
-    print("要点：分块让权重与输入在阵列内复用，是脉动阵列"
-          "降低访存的关键；Gemmini 的配置就是在改这类分块与数据流。")
+    print("Tiled result matches direct matrix multiplication:", out == ref)
+    print("Effective MAC count:", macs)
+    print("Key point: tiling lets weights and inputs be reused inside the "
+          "array, which is how a systolic array cuts memory traffic; "
+          "Gemmini's configuration is about changing this kind of tiling "
+          "and dataflow.")
 
 
 if __name__ == "__main__":

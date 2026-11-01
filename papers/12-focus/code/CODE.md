@@ -1,9 +1,9 @@
-## 代码来源
+## Code sources
 
-- 状态：**官方开源实现（算法/全栈实现，非 RTL 声明）**。不要把它标注为官方 RTL，除非仓库内容本身证明含 RTL。
-- 论文相关仓库：https://github.com/dubcyfor3/Focus
-- 使用前请阅读仓库自带的许可证与 README；本目录不拷贝该仓库的任何代码。
+- Status: **Official open-source implementation (algorithm / full-stack implementation, not an RTL claim)**. Do not label it as official RTL unless the repository contents themselves prove it contains RTL.
+- Repository related to the paper: https://github.com/dubcyfor3/Focus
+- Read the license and README shipped with the repository before use; this directory does not copy any code from that repository.
 
-## 本目录骨架
+## Skeleton in this directory
 
-- `reproduce.py`：原创复现骨架，仅用 Python 标准库，演示语义剪枝、块级集中、向量去重的三级 token 削减。
+- `reproduce.py`: original reproduction skeleton, Python standard library only, demonstrating the three-stage token reduction: semantic pruning, block-level concentration, and vector deduplication.

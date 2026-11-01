@@ -1,18 +1,18 @@
-# 代码来源与复现说明：Gemmini
+# Code sources and reproduction notes: Gemmini
 
-- 链接：https://github.com/ucb-bar/gemmini
-- 性质：官方开源生成器，Chisel RTL。
-- 许可证：UC Regents 许可证（`LICENSE`，再分发有条件，使用前请先读该文件）。
+- Link: https://github.com/ucb-bar/gemmini
+- Nature: official open-source generator, Chisel RTL.
+- Licence: UC Regents licence (`LICENSE`, redistribution is conditional — read that file before redistributing).
 
-## 完整性清单
+## Completeness checklist
 
-- [x] 真实代码，不只是 PDF：Chisel RTL 生成器（`src/`，61 个 Scala 文件）、软件栈（`software/libgemmini`、`software/gemmini-rocc-tests`）、建模（`modeling/`）
-- [x] 安装/运行说明：README“Quick Start”（Chipyard + Spike 配置、软件构建、Verilator 模拟器构建）
-- [x] 示例：`software/gemmini-rocc-tests`（从矩阵乘法测试到 ResNet-50 级程序）、JSON 测试配置（`gemmini-tests.json`、`gemmini-smoke.json`）
-- [x] 测试：`src/test/` Scala 测试
-- [x] 硬件需求：标准 Linux 机器即可做生成器与 Spike/Verilator 仿真；FPGA（FireSim）可选，用于快速周期精确仿真；不需要定制硅片即可运行生成器
+- [x] Real code, not just a PDF: Chisel RTL generator (`src/`, 61 Scala files), software stack (`software/libgemmini`, `software/gemmini-rocc-tests`), modelling (`modeling/`)
+- [x] Installation/run instructions: README "Quick Start" (Chipyard + Spike configuration, software build, Verilator simulator build)
+- [x] Examples: `software/gemmini-rocc-tests` (from matrix-multiplication tests to ResNet-50-level programs), JSON test configurations (`gemmini-tests.json`, `gemmini-smoke.json`)
+- [x] Tests: `src/test/` Scala tests
+- [x] Hardware requirements: a standard Linux machine suffices for the generator and Spike/Verilator simulation; FPGA (FireSim) is optional, for fast cycle-accurate simulation; no custom silicon is needed to run the generator
 
-## 最小复现步骤（上游，文档路径）
+## Minimal upstream reproduction steps (documented path)
 
 ```bash
 git clone https://github.com/ucb-bar/chipyard.git
@@ -23,17 +23,17 @@ cd generators/gemmini
 make -C software/libgemmini install
 cd chipyard/generators/gemmini/software/gemmini-rocc-tests
 ./build.sh
-# 在 chipyard/sims/verilator 下构建周期精确模拟器：
+# Build the cycle-accurate simulator under chipyard/sims/verilator:
 make CONFIG=GemminiRocketConfig
 ```
 
-预期检查：`build/` 下出现 RISC-V 二进制（裸机、Linux 与代理内核版本），且 `GemminiRocketConfig` 的 Verilator 模拟器构建成功。这是重型构建（Chipyard + RISC-V 工具链 + Verilator），首次运行请按小时计，不是按分钟计。
+Expected check: RISC-V binaries (bare-metal, Linux and proxy-kernel versions) appear under `build/`, and the `GemminiRocketConfig` Verilator simulator builds successfully. This is a heavy build (Chipyard + RISC-V toolchain + Verilator); budget hours, not minutes, for a first run.
 
-## 不能仅凭本文复现的部分
+## Parts that cannot be reproduced from this entry alone
 
-- 真实 RTL 综合面积、功耗、时钟频率与 FireSim 周期精确性能，需要完整工具链与所选配置；骨架只演示分块矩阵乘。
-- 本次未端到端构建上游，原因是多小时工具链构建未尝试。
+- Real RTL synthesis area, power, clock frequency and FireSim cycle-accurate performance require the full toolchain and the chosen configuration; the skeleton only demonstrates tiled matrix multiplication.
+- The reason the upstream build was not attempted end-to-end here: the multi-hour toolchain build was not attempted.
 
-## 本目录骨架
+## Skeleton in this directory
 
-`reproduce.py` 为原创标准库骨架，演示分块矩阵乘与输出平稳的思想，与上游代码无关。
+`reproduce.py` is an original standard-library skeleton demonstrating tiled matrix multiplication and the output-stationary idea, unrelated to the upstream code.

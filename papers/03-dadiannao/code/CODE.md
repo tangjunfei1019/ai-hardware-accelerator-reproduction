@@ -1,9 +1,9 @@
-## 代码来源
+## Code sources
 
-- 状态：**未找到官方开源代码**。DaDianNao 原始 RTL 在本次核查中没有确认的公开仓库。
-- 最接近的建模路线：多 tile 分区与片上存储建模可用 Timeloop/Accelergy 的层次化架构描述，或用本目录骨架先验证分区与广播记账。
-- 本目录只有原创复现骨架，不含任何上游代码拷贝。
+- Status: **No official open-source code found**. No confirmed public repository for the original DaDianNao RTL was found in this check.
+- Closest modeling route: multi-tile partitioning and on-chip storage modeling can be described with Timeloop/Accelergy's hierarchical architecture description, or first verified with this directory's skeleton for partitioning and broadcast accounting.
+- This directory contains only an original reproduction skeleton, and no copy of any upstream code.
 
-## 本目录骨架
+## Skeleton in this directory
 
-- `reproduce.py`：原创复现骨架，仅用 Python 标准库，演示多 tile 输出通道分区与激活广播记账，不是原文代码。
+- `reproduce.py`: original reproduction skeleton, using only the Python standard library, demonstrating multi-tile output-channel partitioning and activation broadcast accounting. It is not the original paper code.

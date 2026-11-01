@@ -1,8 +1,8 @@
-## 代码来源
+## Code sources
 
-- 状态：**未找到官方开源代码**。论文称 PLENA 全系统（含模拟器、编译器、ISA 与 RTL 实现）将开源，但本次核查未提取到可验证的仓库链接；在链接出现前，不要标注为已开源。
-- 本目录只有原创复现骨架，不含任何上游代码拷贝。
+- Status: **No official open-source code found**. The paper says the full PLENA system (including simulator, compiler, ISA, and RTL implementation) will be open sourced, but no verifiable repository link was extracted in this check; do not label it as open sourced until a link appears.
+- This directory contains only the original reproduction skeleton, with no upstream code copied in.
 
-## 本目录骨架
+## Skeleton in this directory
 
-- `reproduce.py`：原创复现骨架，仅用 Python 标准库，演示扁平脉动阵列在胖 GEMM 下的利用率优势。
+- `reproduce.py`: original reproduction skeleton, Python standard library only, demonstrating the flat systolic array's utilization advantage on fat GEMMs.

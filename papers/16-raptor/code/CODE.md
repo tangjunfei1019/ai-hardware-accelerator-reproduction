@@ -1,8 +1,8 @@
-## 代码来源
+## Code sources
 
-- 状态：**未找到官方开源代码；工业专有芯片，RTL 不开源**。不要把任何第三方 Raptor 复刻标注为 d-Matrix 官方代码。
-- 本目录只有原创复现骨架，不含任何上游代码拷贝。
+- Status: **No official open-source code found; proprietary industry chip, RTL not open source**. Do not label any third-party Raptor replica as d-Matrix official code.
+- This directory contains only the original reproduction skeleton, with no upstream code copied in.
 
-## 本目录骨架
+## Skeleton in this directory
 
-- `reproduce.py`：原创复现骨架，仅用 Python 标准库，演示 3D-DRAM 带宽与 I/O 能效对解码时间与能耗的影响。
+- `reproduce.py`: original reproduction skeleton, Python standard library only, demonstrating how 3D-DRAM bandwidth and I/O energy efficiency affect decoding time and energy.

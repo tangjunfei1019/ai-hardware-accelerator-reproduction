@@ -1,12 +1,14 @@
-"""复现骨架（原创，非原文代码）：微型领域专用指令解释器。
+"""Reproduction skeleton (original, not the paper's code): tiny domain-specific
+instruction interpreter.
 
-只用 Python 标准库。指令集示意：LOAD、MATMUL、RELU、POOL，演示同一套原语表达不同算子。
-运行：python3 reproduce.py
+Uses only the Python standard library. Instruction set illustration: LOAD, MATMUL,
+RELU, POOL, demonstrating that the same primitives express different operators.
+Run: python3 reproduce.py
 """
 
 
 def run(program, mem):
-    """program: 指令列表；mem: 寄存器/存储字典。返回 mem。"""
+    """program: list of instructions; mem: register/storage dictionary. Returns mem."""
     for ins in program:
         op = ins[0]
         if op == "LOAD":
@@ -26,7 +28,7 @@ def run(program, mem):
             mem[dst] = [[max(srcm[i][j], srcm[i][j + 1], srcm[i + 1][j], srcm[i + 1][j + 1])
                          for j in range(0, len(srcm[0]), 2)] for i in range(0, len(srcm), 2)]
         else:
-            raise ValueError(f"未知指令 {op}")
+            raise ValueError(f"Unknown instruction {op}")
     return mem
 
 
@@ -40,10 +42,10 @@ def main():
         ("POOL", "E", "D"),
     ]
     out = run(prog, mem)
-    print("MATMUL 结果 C =", out["C"])
-    print("RELU 结果 D =", out["D"])
-    print("POOL 结果 E =", out["E"], "（2x2 池化为 1x1）")
-    print("要点：同一套向量/矩阵原语可以组合表达全连接、激活、池化等不同算子，这就是领域专用 ISA 的价值。")
+    print("MATMUL result C =", out["C"])
+    print("RELU result D =", out["D"])
+    print("POOL result E =", out["E"], "(2x2 pooling to 1x1)")
+    print("Point: the same set of vector/matrix primitives can be combined to express fully-connected, activation, pooling, and other operators — that is the value of a domain-specific ISA.")
 
 
 if __name__ == "__main__":

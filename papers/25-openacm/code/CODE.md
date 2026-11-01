@@ -1,31 +1,31 @@
-# 代码来源与复现说明：OpenACM：开源 SRAM 近似数字存内计算编译器
+# Code sources and reproduction notes: OpenACM: An Open-Source SRAM-Based Approximate CiM Compiler
 
-## 可复现等级：B
+## Reproducibility grade: B
 
-- A = 上游代码可在标准机器 / 仿真器上运行。
-- B = 上游代码可运行，但需要特殊硬件或特定工具链。
-- 本篇等级：**B**。
+- A = upstream code runs on a standard machine / simulator.
+- B = upstream code runs, but needs special hardware or a specific toolchain.
+- This paper's grade: **B**.
 
-## 上游仓库（已核实存在）
+## Upstream repository (verified to exist)
 
-- 链接：https://github.com/ShenShan123/OpenACM
-- 仓库内容：Python 编译器前端、乘法器/SRAM/PE 生成器、RTL 模板、OpenROAD 流程脚本、docs/、examples/（注意：仓库现已演进为 OpenACMv2，复现 v1 时需核对仓库历史与文档）
-- 硬件 / 软件要求：标准 CPU 可跑前端；完整物理设计流程需要 OpenROAD 与 FreePDK45，见上游文档
-- 许可证：以该仓库自带许可证文件为准；使用前请先阅读。
+- Link: https://github.com/ShenShan123/OpenACM
+- Repository contents: Python compiler front end, multiplier / SRAM / PE generators, RTL templates, OpenROAD flow scripts, docs/, examples/ (note: the repository has since evolved into OpenACMv2 — for reproducing v1, check the repository history and documentation)
+- Hardware / software requirements: a standard CPU can run the front end; the full physical design flow needs OpenROAD and FreePDK45, see the upstream documentation
+- License: follow the license file shipped with the repository; read it before use.
 
-## 复现步骤
+## Reproduction steps
 
 1) git clone https://github.com/ShenShan123/OpenACM
-2) 按仓库文档安装 Python 依赖，先跑前端示例，确认能生成架构与乘法器配置
-3) 再按文档跑 OpenROAD + FreePDK45 流程（需先装好该工具链）
-4) 对照原文：在同一精度约束下比较精确与近似配置的能量
-预期检查：前端示例应输出配置与估计；完整流程应输出布局后面积/功耗估计。
+2) Install Python dependencies per the repository documentation, then run a front-end example first to confirm it generates architectures and multiplier configurations
+3) Then run the OpenROAD + FreePDK45 flow per the documentation (install that toolchain first)
+4) Compare against the paper: exact versus approximate configurations under the same accuracy constraint, in terms of energy
+Expected check: front-end examples should output configurations and estimates; the full flow should output post-layout area / power estimates.
 
-## 不能仅凭论文复现的部分
+## What cannot be reproduced from the paper alone
 
-- 不能仅用前端输出复现布局后功耗；不能把 v2 仓库现状直接等同于 v1 论文的全部实验；工艺库与 OpenROAD 版本差异会影响结果。
+- Post-layout power cannot be reproduced from front-end output alone; the current v2 repository state must not be equated directly with all of the v1 paper's experiments; process libraries and OpenROAD versions affect results.
 
-## 本目录骨架说明
+## Skeleton in this directory
 
-- `reproduce.py` 是原创 Python 标准库骨架，演示核心思想，不是上游代码，也不是 RTL/芯片实测。
-- 骨架本身不满足本篇的可复现要求；可复现性由上面上游仓库的步骤保证。
+- `reproduce.py` is an original Python standard-library skeleton demonstrating the core idea, not upstream code, and not RTL / chip measurements.
+- The skeleton alone does not satisfy this paper's reproducibility requirement; reproducibility is provided by the upstream steps above.

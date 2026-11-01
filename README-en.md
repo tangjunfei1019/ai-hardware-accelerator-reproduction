@@ -1,6 +1,6 @@
 # AI Hardware Accelerator Paper Reproduction
 
-> This is the English index of a bilingual repository: Chinese and English analysis sit side by side in the same paper folder: Chinese as `README.md` / `code/CODE.md` / `code/reproduce.py`, English as `README-en.md` / `code/CODE-en.md` / `code/reproduce-en.py`. The Chinese index is in [README.md](README.md). Every new paper must be added in both languages, in the same folder.
+> This is the English index of a bilingual repository: Chinese and English analysis sit side by side in the same paper folder: Chinese as `README.md` / `code/CODE.md` / `code/reproduce.py`, English analysis as `README-en.md`; code and reproduction are English-only: `code/CODE.md` / `code/reproduce.py`. The Chinese index is in [README.md](README.md). Every new paper must be added in both languages, in the same folder.
 >
 > How to use: read the English summary in each paper folder alongside the code sources and reproduction skeleton in that folder's `code/` directory.
 

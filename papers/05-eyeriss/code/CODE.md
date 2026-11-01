@@ -1,12 +1,12 @@
-## 代码来源
+## Code sources
 
-- 状态：**第三方 RTL，已核实存在，但不是 MIT 官方发布**。请勿将其标注为原作者官方代码。
-- 已核实存在的第三方仓库（通过 GitHub 内容读取核实）：
-  - https://github.com/abdelrahmanmedhatt/Eyeriss （含 GLB/HMNOC/PE 的 Verilog 文件）
-  - https://github.com/arasi15/CNN-Accelerator-Implementation-based-on-Eyerissv2 （含 RTL 目录与 README）
-- 使用前请阅读各仓库自带的许可证与 README；第三方实现与原文芯片在功能、时序与精度上可能有差异，复现结论要以你自己的测试为准。
-- 建模路线补充：Timeloop/Accelergy（见 Sze 一节链接）可用于数据流层面的建模与比较。
+- Status: **Third-party RTL, verified to exist, but not an MIT official release**. Do not label it as the original authors' official code.
+- Third-party repositories verified to exist (verified by reading GitHub content):
+  - https://github.com/abdelrahmanmedhatt/Eyeriss (contains GLB/HMNOC/PE Verilog files)
+  - https://github.com/arasi15/CNN-Accelerator-Implementation-based-on-Eyerissv2 (contains an RTL directory and README)
+- Before use, read each repository's own license and README; third-party implementations may differ from the original chip in functionality, timing, and precision, so reproduction conclusions should be based on your own tests.
+- Additional modeling route: Timeloop/Accelergy (see the links in the Sze section) can be used for dataflow-level modeling and comparison.
 
-## 本目录骨架
+## Skeleton in this directory
 
-- `reproduce.py`：原创复现骨架，仅用 Python 标准库，演示行固定数据流的行级复用记账，不是原文代码，也不是上述第三方代码的拷贝。
+- `reproduce.py`: original reproduction skeleton, using only the Python standard library, demonstrating row-stationary dataflow's row-level reuse accounting. It is not the original paper code, and not a copy of the third-party code above.

@@ -1,9 +1,9 @@
-## 代码来源
+## Code sources
 
-- 状态：**未找到官方开源代码**。Cambricon ISA 的原始实现与仿真器在本次核查中没有确认的公开仓库；商业 Cambricon 产品代码与学术 ISA 原型是两回事，不要混淆。
-- 最接近的建模路线：用本目录的微型解释器理解领域专用指令的表达方式；如需完整仿真，需自行实现指令编码与流水线模型。
-- 本目录只有原创复现骨架，不含任何上游代码拷贝。
+- Status: **No official open-source code found**. No confirmed public repository for the original Cambricon ISA implementation and simulator was found in this check; commercial Cambricon product code and the academic ISA prototype are two different things — do not confuse them.
+- Closest modeling route: use this directory's tiny interpreter to understand how domain-specific instructions express operators; for a full simulation, instruction encodings and a pipeline model would need to be implemented separately.
+- This directory contains only an original reproduction skeleton, and no copy of any upstream code.
 
-## 本目录骨架
+## Skeleton in this directory
 
-- `reproduce.py`：原创复现骨架，仅用 Python 标准库，演示一个微型领域专用指令解释器，不是原文代码。
+- `reproduce.py`: original reproduction skeleton, using only the Python standard library, demonstrating a tiny domain-specific instruction interpreter. It is not the original paper code.

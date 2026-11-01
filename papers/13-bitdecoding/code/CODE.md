@@ -1,9 +1,9 @@
-## 代码来源
+## Code sources
 
-- 状态：**官方开源 GPU 系统代码（CUDA / 张量核心实现），不是加速器 RTL**。不要把它标注为 RTL。
-- 论文 v3 给出的链接：https://github.com/OpenBitSys/BitDecoding
-- 说明：论文早期版本曾给出另一作者个人仓库链接；以最新 v3 的链接为准，使用前请以仓库 README 为准，并阅读其许可证。本目录不拷贝该仓库的任何代码。
+- Status: **Official open-source GPU system code (CUDA / tensor-core implementation), not accelerator RTL**. Do not label it as RTL.
+- Link given in paper v3: https://github.com/OpenBitSys/BitDecoding
+- Note: an earlier version of the paper gave a different personal repository link from one of the authors; the latest v3 link above is authoritative — follow the repository README, and read its license. This directory does not copy any code from that repository.
 
-## 本目录骨架
+## Skeleton in this directory
 
-- `reproduce.py`：原创复现骨架，仅用 Python 标准库，演示 4 比特 KV 量化/反量化与注意力分数计算，以及位宽对缓存字节数的影响。
+- `reproduce.py`: original reproduction skeleton, Python standard library only, demonstrating 4-bit KV quantization/dequantization and attention-score computation, and the effect of bit-width on cache byte counts.

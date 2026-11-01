@@ -1,31 +1,31 @@
-# 代码来源与复现说明：NeuroSim V1.5：面向存内计算加速器的改进软件基准框架
+# Code sources and reproduction notes: NeuroSim V1.5: Improved Software Backbone for Benchmarking Compute-in-Memory Accelerators with Device and Circuit-level Non-idealities
 
-## 可复现等级：A
+## Reproducibility grade: A
 
-- A = 上游代码可在标准机器 / 仿真器上运行。
-- B = 上游代码可运行，但需要特殊硬件或特定工具链。
-- 本篇等级：**A**。
+- A = upstream code runs on a standard machine / simulator.
+- B = upstream code runs, but needs special hardware or a specific toolchain.
+- This paper's grade: **A**.
 
-## 上游仓库（已核实存在）
+## Upstream repository (verified to exist)
 
-- 链接：https://github.com/neurosim/NeuroSim
-- 仓库内容：各版本分支（2D 推理/训练、3D 推理、MLP 推理）、TensorRT 量化接口、噪声注入模型、器件与电路 PPA 估计
-- 硬件 / 软件要求：标准 CPU 可跑；GPU 仅用于加速仿真，非必需。C++ 工具链，分支选择见上游 README；注意非商业许可（CC BY-NC 4.0）
-- 许可证：以该仓库自带许可证文件为准；使用前请先阅读。
+- Link: https://github.com/neurosim/NeuroSim
+- Repository contents: branches for each version (2D inference / training, 3D inference, MLP inference), TensorRT quantization interface, noise-injection models, device and circuit PPA estimation
+- Hardware / software requirements: a standard CPU can run it; a GPU only accelerates simulation and is not required. C++ toolchain; branch selection follows the upstream README; note the non-commercial license (CC BY-NC 4.0)
+- License: follow the license file shipped with the repository; read it before use.
 
-## 复现步骤
+## Reproduction steps
 
 1) git clone https://github.com/neurosim/NeuroSim
-2) 按上游 README 选择对应版本分支并阅读该分支的用户手册
-3) 先跑分支自带小例子，确认量化与噪声注入流程
-4) 再跑 ViT/CNN 对比配置，对照原文方法
-预期检查：小例子应输出精度与 PPA 估计；关闭噪声时应接近理想精度。
+2) Follow the upstream README to select the corresponding version branch and read that branch's user manual
+3) First run the branch's built-in small example to confirm the quantization and noise-injection flow
+4) Then run ViT / CNN comparison configurations and compare against the paper's method
+Expected check: small examples should output accuracy and PPA estimates; with noise off, results should be close to ideal accuracy.
 
-## 不能仅凭论文复现的部分
+## What cannot be reproduced from the paper alone
 
-- 不能把本骨架的噪声结果当作 NeuroSim 仿真结果；不能商用该框架（非商业许可）；器件参数需以原文与分支文档为准。
+- Skeleton noise results must not be treated as NeuroSim simulation results; the framework must not be used commercially (non-commercial license); device parameters follow the paper and branch documentation.
 
-## 本目录骨架说明
+## Skeleton in this directory
 
-- `reproduce.py` 是原创 Python 标准库骨架，演示核心思想，不是上游代码，也不是 RTL/芯片实测。
-- 骨架本身不满足本篇的可复现要求；可复现性由上面上游仓库的步骤保证。
+- `reproduce.py` is an original Python standard-library skeleton demonstrating the core idea, not upstream code, and not RTL / chip measurements.
+- The skeleton alone does not satisfy this paper's reproducibility requirement; reproducibility is provided by the upstream steps above.

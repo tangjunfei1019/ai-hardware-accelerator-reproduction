@@ -1,13 +1,15 @@
-"""复现骨架（原创，非原文代码）：DianNao 式分块 + 定点 NFU 计算。
+"""Reproduction skeleton (original, not the paper's code): DianNao-style tiled
++ fixed-point NFU computation.
 
-只用 Python 标准库。演示：分块复用如何减少权重重复读取，以及 16 位定点量化的误差。
-运行：python3 reproduce.py
+Uses only the Python standard library. Demonstrates: how tiled reuse reduces
+repeated weight reads, and the error from 16-bit fixed-point quantization.
+Run: python3 reproduce.py
 """
 import random
 
 
 def quantize(x, bits=16):
-    """简单对称定点量化示意（非原文精确格式）。"""
+    """Simple symmetric fixed-point quantization illustration (not the paper's exact format)."""
     scale = 127.0
     q = int(round(x * scale))
     q = max(-scale, min(scale, q))
@@ -15,13 +17,13 @@ def quantize(x, bits=16):
 
 
 def tiled_matmul(a, b, tile=4):
-    """分块矩阵乘法，返回结果与权重读取次数（简化记账）。"""
+    """Tiled matrix multiplication; returns the result and a weight-read count (simplified accounting)."""
     n, k, m = len(a), len(a[0]), len(b[0])
     out = [[0.0] * m for _ in range(n)]
     reads = 0
     for i0 in range(0, n, tile):
         for j0 in range(0, m, tile):
-            # 每个分块只读一次权重块（复用思想的简化版）
+            # Each tile reads its weight tile once (simplified version of the reuse idea)
             reads += tile * tile
             for i in range(i0, min(i0 + tile, n)):
                 for j in range(j0, min(j0 + tile, m)):
@@ -37,9 +39,9 @@ def main():
     a = [[random.uniform(-1, 1) for _ in range(8)] for _ in range(8)]
     b = [[random.uniform(-1, 1) for _ in range(8)] for _ in range(8)]
     out, reads = tiled_matmul(a, b, tile=4)
-    print("分块结果[0][0] =", round(out[0][0], 4))
-    print("分块权重块读取记账 =", reads, "（不分块逐元素读取为 8*8*8 = 512 次权重访问量级）")
-    print("结论：分块让同一权重块在块内被多次复用，而不是每次 MAC 都重新取数。")
+    print("Tiled result[0][0] =", round(out[0][0], 4))
+    print("Tiled weight-tile read accounting =", reads, "(untiled element-wise reads are on the order of 8*8*8 = 512 weight accesses)")
+    print("Conclusion: tiling lets the same weight tile be reused many times within a tile, instead of fetching it again for every MAC.")
 
 
 if __name__ == "__main__":

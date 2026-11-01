@@ -1,9 +1,9 @@
-## 代码来源
+## Code sources
 
-- 状态：**硬件 RTL 未找到官方开源代码**。EIE 的芯片实现在本次核查中没有确认的公开仓库。
-- 算法侧可参考：Deep Compression 的公开介绍与相关压缩模型实现（使用时请核对原作者与许可证，不要把算法演示代码当作 EIE 芯片代码）。
-- 本目录只有原创复现骨架，不含任何上游代码拷贝。
+- Status: **No official open-source code found for the hardware RTL**. No confirmed public repository for the EIE chip implementation was found in this check.
+- Algorithm-side references: public introductions to Deep Compression and related compressed-model implementations (check the original authors and license when using them; do not treat algorithm demo code as EIE chip code).
+- This directory contains only an original reproduction skeleton, and no copy of any upstream code.
 
-## 本目录骨架
+## Skeleton in this directory
 
-- `reproduce.py`：原创复现骨架，仅用 Python 标准库，演示 CSC 稀疏矩阵-向量乘法与权重共享，不是原文代码。
+- `reproduce.py`: original reproduction skeleton, using only the Python standard library, demonstrating CSC sparse matrix-vector multiplication and weight sharing. It is not the original paper code.

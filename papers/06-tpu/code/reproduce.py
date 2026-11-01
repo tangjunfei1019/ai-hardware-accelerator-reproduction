@@ -1,16 +1,18 @@
-"""复现骨架（原创，非原文代码）：小型脉动阵列式矩阵乘法。
+"""Reproduction skeleton (original, not the paper's code): small systolic-array-style
+matrix multiplication.
 
-只用 Python 标准库。演示：权重逐列流动、激活逐行流动时，部分和如何在阵列中累积。
-运行：python3 reproduce.py
+Uses only the Python standard library. Demonstrates: weights flowing in column
+by column and activations row by row, and how partial sums accumulate in the array.
+Run: python3 reproduce.py
 """
 
 
 def systolic_gemm(a, b):
-    """朴素脉动示意：按行列分块计算，返回结果与 MAC 数。实际脉动时序用 cycle 记账近似。"""
+    """Naive systolic illustration: blocked computation by rows and columns; returns the result, MAC count, and cycles. Real systolic timing is approximated by cycle accounting."""
     n, k, m = len(a), len(a[0]), len(b[0])
     out = [[0] * m for _ in range(n)]
     macs = 0
-    cycles = n + m + k  # 填充 + 计算 + 排空的量级估计，不是真实时序
+    cycles = n + m + k  # Fill + compute + drain order-of-magnitude estimate, not real timing
     for i in range(n):
         for j in range(m):
             s = 0
@@ -27,8 +29,8 @@ def main():
     out, macs, cycles = systolic_gemm(a, b)
     print("A =", a)
     print("B =", b)
-    print("A x B =", out, "MAC 数:", macs, "周期量级估计:", cycles)
-    print("脉动要点：数据在阵列内流动复用，而不是每个 PE 都从内存重复取数；矩阵越方、越大，利用率越接近峰值。")
+    print("A x B =", out, "MAC count:", macs, "cycle order-of-magnitude estimate:", cycles)
+    print("Systolic point: data flows and is reused inside the array, instead of every PE repeatedly fetching from memory; the squarer and larger the matrix, the closer utilization gets to peak.")
 
 
 if __name__ == "__main__":

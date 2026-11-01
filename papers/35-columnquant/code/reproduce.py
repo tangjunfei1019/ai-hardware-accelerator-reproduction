@@ -1,9 +1,11 @@
-"""复现骨架（原创，非原文代码）：列粒度量化。
+"""Reproduction skeleton (original, not the paper's code): column-granularity
+quantization.
 
-只用 Python 标准库。演示：对权重矩阵的每一列单独算缩放因子，
-做 3-bit 量化再反量化，并与整层共用一个缩放因子的
-层粒度量化比较误差。
-运行：python3 reproduce.py
+Standard library only. Demonstrates: computing a separate scaling factor
+for each column of a weight matrix, doing 3-bit quantization and
+dequantization, and comparing the error with layer-granularity quantization
+that shares one scaling factor for the whole layer.
+Run: python3 reproduce.py
 """
 
 import random
@@ -29,17 +31,21 @@ def mean_abs_error(a, b):
 
 def main():
     random.seed(0)
-    # 两列量级明显不同：列粒度应比层粒度更准确。
+    # Two columns at very different scales: column granularity should be
+    # more accurate than layer granularity.
     weights = [[0.1 * random.random(), 10.0 * random.random()] for _ in range(8)]
     col_q = column_quantize(weights, bits=3)
     flat = [v for row in weights for v in row]
     layer_q_flat = quantize(flat, bits=3)
     layer_q = [layer_q_flat[i * 2:(i + 1) * 2] for i in range(8)]
-    print("列粒度平均绝对误差:", round(mean_abs_error(weights, col_q), 4))
-    print("层粒度平均绝对误差:", round(mean_abs_error(weights, layer_q), 4))
-    print("要点：当各列量级差异大时，列粒度量化能给小量级列"
-          "保留更多有效等级，这正是 ColumnQuant 针对 ADC 与"
-          "单元精度成本的核心思想。")
+    print("Column-granularity mean absolute error:",
+          round(mean_abs_error(weights, col_q), 4))
+    print("Layer-granularity mean absolute error:",
+          round(mean_abs_error(weights, layer_q), 4))
+    print("Key point: when columns differ greatly in scale, column-granularity "
+          "quantization preserves more effective levels for small-scale "
+          "columns — exactly ColumnQuant's core idea for ADC and cell-"
+          "precision costs.")
 
 
 if __name__ == "__main__":

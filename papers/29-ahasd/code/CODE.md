@@ -1,31 +1,31 @@
-# 代码来源与复现说明：AHASD：面向移动端自适应草稿推测解码的异步异构 NPU-PIM 架构
+# Code sources and reproduction notes: AHASD: Asynchronous Heterogeneous Architecture for LLM Adaptive Drafting Speculative Decoding on Mobile Devices
 
-## 可复现等级：A
+## Reproducibility grade: A
 
-- A = 上游代码可在标准机器 / 仿真器上运行。
-- B = 上游代码可运行，但需要特殊硬件或特定工具链。
-- 本篇等级：**A**。
+- A = upstream code runs on a standard machine / simulator.
+- B = upstream code runs, but needs special hardware or a specific toolchain.
+- This paper's grade: **A**.
 
-## 上游仓库（已核实存在）
+## Upstream repository (verified to exist)
 
-- 链接：https://github.com/MAdrid1011/AHASD
-- 仓库内容：C++ 仿真器、自适应草稿推测解码算法、NPU-PIM 异步调度实现
-- 硬件 / 软件要求：标准机器 + 仿真器工具链（ONNXim 与 SAIT PIM 仿真器，见论文与上游文档）；不需要真实手机 PIM 芯片即可跑仿真，但不能等同于手机实测
-- 许可证：以该仓库自带许可证文件为准；使用前请先阅读。
+- Link: https://github.com/MAdrid1011/AHASD
+- Repository contents: C++ simulator, adaptive drafting speculative decoding algorithm, NPU-PIM asynchronous scheduling implementation
+- Hardware / software requirements: standard machine + simulator toolchain (ONNXim and SAIT PIM simulator, see the paper and upstream documentation); no real mobile PIM chip is needed to run the simulation, but simulation must not be equated with mobile measurements
+- License: follow the license file shipped with the repository; read it before use.
 
-## 复现步骤
+## Reproduction steps
 
 1) git clone https://github.com/MAdrid1011/AHASD
-2) 按上游文档安装仿真器依赖（ONNXim / SAIT PIM 仿真器相关配置）
-3) 先跑仓库自带小例子，确认草稿-验证异步流水
-4) 再跑论文中的 LLM 与自适应草稿算法配置，对照原文基线
-预期检查：小例子应输出接受率与吞吐趋势；异步模式应相对同步模式减少空闲。
+2) Install simulator dependencies per the upstream documentation (ONNXim / SAIT PIM simulator configuration)
+3) First run the repository's built-in small example to confirm the draft-verify asynchronous pipeline
+4) Then run the paper's LLM and adaptive drafting algorithm configurations and compare against the paper's baselines
+Expected check: small examples should output acceptance rates and throughput trends; the asynchronous mode should reduce idle time versus the synchronous mode.
 
-## 不能仅凭论文复现的部分
+## What cannot be reproduced from the paper alone
 
-- 不能把仿真器吞吐直接当作手机实测吞吐；不能忽略基线 GPU 型号与仿真器配置差异；真实 LPDDR5-PIM 硬件结果以原文为准。
+- Simulator throughput must not be treated as mobile measured throughput; baseline GPU models and simulator configuration differences must not be ignored; real LPDDR5-PIM hardware results follow the original.
 
-## 本目录骨架说明
+## Skeleton in this directory
 
-- `reproduce.py` 是原创 Python 标准库骨架，演示核心思想，不是上游代码，也不是 RTL/芯片实测。
-- 骨架本身不满足本篇的可复现要求；可复现性由上面上游仓库的步骤保证。
+- `reproduce.py` is an original Python standard-library skeleton demonstrating the core idea, not upstream code, and not RTL / chip measurements.
+- The skeleton alone does not satisfy this paper's reproducibility requirement; reproducibility is provided by the upstream steps above.

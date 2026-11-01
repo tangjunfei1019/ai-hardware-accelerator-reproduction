@@ -1,31 +1,31 @@
-# 代码来源与复现说明：gem5-CIMD：面向 DRAM 存内计算的全应用 gem5 仿真框架
+# Code sources and reproduction notes: A gem5-based Simulation Framework for Computing-in-DRAM (gem5-CIMD)
 
-## 可复现等级：A
+## Reproducibility grade: A
 
-- A = 上游代码可在标准机器 / 仿真器上运行。
-- B = 上游代码可运行，但需要特殊硬件或特定工具链。
-- 本篇等级：**A**。
+- A = upstream code runs on a standard machine / simulator.
+- B = upstream code runs, but needs special hardware or a specific toolchain.
+- This paper's grade: **A**.
 
-## 上游仓库（已核实存在）
+## Upstream repository (verified to exist)
 
-- 链接：https://github.com/tud-ccc/gem5-CIMD
-- 仓库内容：基于新版 gem5 的 CIMD 仿真器、16 条 CIM 指令、CIM 标准库、自定义 CIM 内存分配器、KNN 等评测负载
-- 硬件 / 软件要求：标准 Linux 机器，C++ 工具链与 gem5 构建环境（SCons 等，见上游文档）；构建时间较长，属仿真器而非真实 DRAM 硬件
-- 许可证：以该仓库自带许可证文件为准；使用前请先阅读。
+- Link: https://github.com/tud-ccc/gem5-CIMD
+- Repository contents: CIMD simulator based on a recent gem5, 16 CIM instructions, a CIM standard library, a custom CIM memory allocator, KNN and other evaluation workloads
+- Hardware / software requirements: standard Linux machine, C++ toolchain and gem5 build environment (SCons and others, see upstream documentation); build time is long — this is a simulator, not real DRAM hardware
+- License: follow the license file shipped with the repository; read it before use.
 
-## 复现步骤
+## Reproduction steps
 
 1) git clone https://github.com/tud-ccc/gem5-CIMD
-2) 按上游文档安装 gem5 构建依赖并编译（预留较长构建时间）
-3) 先跑仓库自带最小 CIMD 示例，确认指令与分配器工作
-4) 再跑 KNN 端到端案例，对照原文方法描述
-预期检查：最小示例应正确完成子阵列内位运算；KNN 应输出分类结果与仿真统计。
+2) Install gem5 build dependencies per the upstream documentation and build (allow a long build time)
+3) First run the repository's built-in minimal CIMD example to confirm the instructions and allocator work
+4) Then run the end-to-end KNN case and compare against the paper's method description
+Expected check: the minimal example should correctly complete in-subarray bit operations; KNN should output classification results and simulation statistics.
 
-## 不能仅凭论文复现的部分
+## What cannot be reproduced from the paper alone
 
-- 不能用本骨架复现 gem5 的周期精确统计；不能把仿真器结果直接等同于商用 DRAM 芯片实测；真实 DRAM 器件行为以原文与 MIMDRAM/SIMDRAM 文献为准。
+- Cycle-accurate gem5 statistics cannot be reproduced with this skeleton; simulator results must not be equated directly with commercial DRAM chip measurements; real DRAM device behavior follows the paper and the MIMDRAM / SIMDRAM literature.
 
-## 本目录骨架说明
+## Skeleton in this directory
 
-- `reproduce.py` 是原创 Python 标准库骨架，演示核心思想，不是上游代码，也不是 RTL/芯片实测。
-- 骨架本身不满足本篇的可复现要求；可复现性由上面上游仓库的步骤保证。
+- `reproduce.py` is an original Python standard-library skeleton demonstrating the core idea, not upstream code, and not RTL / chip measurements.
+- The skeleton alone does not satisfy this paper's reproducibility requirement; reproducibility is provided by the upstream steps above.

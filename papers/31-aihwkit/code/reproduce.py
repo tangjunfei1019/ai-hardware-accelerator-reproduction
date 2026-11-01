@@ -1,8 +1,10 @@
-"""复现骨架（原创，非原文代码）：模拟交叉阵列上的矩阵向量乘。
+"""Reproduction skeleton (original, not the paper's code): matrix-vector
+multiplication on an analog crossbar array.
 
-只用 Python 标准库。演示：理想输出、加入高斯噪声后的输出、
-以及 ADC 量化（4 bit）后的输出三者之差。
-运行：python3 reproduce.py
+Standard library only. Demonstrates the difference between the ideal output,
+the output after adding Gaussian noise, and the output after ADC
+quantization (4 bit).
+Run: python3 reproduce.py
 """
 
 import random
@@ -13,7 +15,7 @@ def matvec(weights, x):
 
 
 def adc_quantize(values, bits=4):
-    """把连续输出量化到 2**bits 个等级（以最大绝对值为满量程）。"""
+    """Quantize continuous outputs to 2**bits levels (full scale = max abs value)."""
     levels = 2 ** bits - 1
     scale = max(abs(v) for v in values) or 1.0
     return [round(v / scale * levels) / levels * scale for v in values]
@@ -26,11 +28,12 @@ def main():
     ideal = matvec(weights, x)
     noisy = [v + random.gauss(0, 0.05) for v in ideal]
     quantized = adc_quantize(noisy, bits=4)
-    print("理想输出:", [round(v, 4) for v in ideal])
-    print("加噪声后:", [round(v, 4) for v in noisy])
-    print("ADC 量化后:", [round(v, 4) for v in quantized])
-    print("要点：噪声与量化是模拟存内计算精度损失的主要来源，"
-          "硬件感知训练就是要在训练时把它们建模进去。")
+    print("Ideal output:", [round(v, 4) for v in ideal])
+    print("After noise:", [round(v, 4) for v in noisy])
+    print("After ADC quantization:", [round(v, 4) for v in quantized])
+    print("Key point: noise and quantization are the main sources of accuracy "
+          "loss in analog compute-in-memory, and hardware-aware training "
+          "means modelling them during training.")
 
 
 if __name__ == "__main__":

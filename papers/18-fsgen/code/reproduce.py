@@ -1,15 +1,15 @@
-"""复现骨架（原创，非原文代码）：FSGen 式融合 + 稀疏收益模型。
+"""Reproduction skeleton (original, not the original authors' code): FSGen-style fusion + sparsity gain model.
 
-只用 Python 标准库。演示：稀疏跳过零值 MAC，融合跳过中间结果的
-片外写回与重读，两者叠加后的访存与计算削减。
-运行：python3 reproduce.py
+Python standard library only. Demonstrates: sparsity skips zero-valued MACs, fusion skips the
+off-chip write-back and re-read of intermediate results, and the two together cut traffic and compute.
+Run: python3 reproduce.py
 """
 
 
 def fused_sparse_stats(matrix, fused=True):
     total = sum(len(row) for row in matrix)
     nonzero = sum(1 for row in matrix for v in row if v != 0)
-    # 未融合：每个算子都要把中间结果写回片外再读回，流量按 2 倍计；融合后只计 1 倍
+    # Unfused: each operator writes intermediates off-chip and reads them back, so traffic counts 2x; fused counts 1x
     traffic = nonzero * (1 if fused else 2)
     return {"total": total, "nonzero_macs": nonzero, "traffic_units": traffic}
 
@@ -19,12 +19,12 @@ def main():
     dense = fused_sparse_stats([[1] * 4 for _ in range(4)], fused=False)
     sparse_fused = fused_sparse_stats(mat, fused=True)
     sparse_only = fused_sparse_stats(mat, fused=False)
-    print("稠密未融合:", dense)
-    print("稀疏未融合:", sparse_only)
-    print("稀疏 + 融合:", sparse_fused)
+    print("Dense, unfused:", dense)
+    print("Sparse, unfused:", sparse_only)
+    print("Sparse + fused:", sparse_fused)
     assert sparse_fused["nonzero_macs"] < dense["total"]
     assert sparse_fused["traffic_units"] < sparse_only["traffic_units"]
-    print("要点：稀疏省的是计算量，融合省的是访存量；FSGen 的生成器就是让这两种数据流可以按配置组合生成，而不是每次手写。")
+    print("Point: sparsity saves compute, fusion saves memory traffic; FSGen's generator lets these two dataflows be combined by configuration instead of hand-writing them each time.")
 
 
 if __name__ == "__main__":

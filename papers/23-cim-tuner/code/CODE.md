@@ -1,31 +1,31 @@
-# 代码来源与复现说明：CIM-Tuner：通过硬件-映射协同探索平衡 SRAM-CIM 计算与存储容量
+# Code sources and reproduction notes: CIM-Tuner: Balancing the Compute and Storage Capacity of SRAM-CIM Accelerator via Hardware-mapping Co-exploration
 
-## 可复现等级：A
+## Reproducibility grade: A
 
-- A = 上游代码可在标准机器 / 仿真器上运行。
-- B = 上游代码可运行，但需要特殊硬件或特定工具链。
-- 本篇等级：**A**。
+- A = upstream code runs on a standard machine / simulator.
+- B = upstream code runs, but needs special hardware or a specific toolchain.
+- This paper's grade: **A**.
 
-## 上游仓库（已核实存在）
+## Upstream repository (verified to exist)
 
-- 链接：https://github.com/champloo2878/CIM-Tuner
-- 仓库内容：Python 工具、cim_config/、nn_config/、experiments/、evacim/、Result/、requirements.txt（注意仓库根文件名为 Readme.md）
-- 硬件 / 软件要求：标准 CPU，Python，见上游 requirements.txt
-- 许可证：以该仓库自带许可证文件为准；使用前请先阅读。
+- Link: https://github.com/champloo2878/CIM-Tuner
+- Repository contents: Python tools, cim_config/, nn_config/, experiments/, evacim/, Result/, requirements.txt (note the repository root file is named Readme.md)
+- Hardware / software requirements: standard CPU, Python, see the upstream requirements.txt
+- License: follow the license file shipped with the repository; read it before use.
 
-## 复现步骤
+## Reproduction steps
 
 1) git clone https://github.com/champloo2878/CIM-Tuner
 2) pip install -r requirements.txt
-3) 按仓库 Readme.md 跑 experiments/ 下的示例配置
-4) 改面积预算或宏配置，观察能效/吞吐 Pareto 变化
-预期检查：示例应输出配置与能效/吞吐估计；面积约束收紧时，可行配置集应缩小。
+3) Follow the repository Readme.md to run the example configurations under experiments/
+4) Change the area budget or macro configuration and observe the energy-efficiency / throughput Pareto change
+Expected check: examples should output configurations and energy-efficiency / throughput estimates; as the area constraint tightens, the feasible configuration set should shrink.
 
-## 不能仅凭论文复现的部分
+## What cannot be reproduced from the paper alone
 
-- 不能直接复现原文的硅验证精度；不能把工具的估计值当作流片实测值；面积与工艺假设以原文与仓库配置为准。
+- The paper's silicon-validated accuracy cannot be directly reproduced; tool estimates must not be treated as tape-out measurements; area and process assumptions follow the paper and repository configurations.
 
-## 本目录骨架说明
+## Skeleton in this directory
 
-- `reproduce.py` 是原创 Python 标准库骨架，演示核心思想，不是上游代码，也不是 RTL/芯片实测。
-- 骨架本身不满足本篇的可复现要求；可复现性由上面上游仓库的步骤保证。
+- `reproduce.py` is an original Python standard-library skeleton demonstrating the core idea, not upstream code, and not RTL / chip measurements.
+- The skeleton alone does not satisfy this paper's reproducibility requirement; reproducibility is provided by the upstream steps above.
