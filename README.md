@@ -1,5 +1,9 @@
 # AI 硬件加速器论文复现
 
+> 本仓库为双语仓库：中文分析在 `papers/`，英文分析在 `papers-en/`，每篇论文均有中英文总结、代码来源与复现骨架。英文总索引见 [README-en.md](README-en.md)。新增论文时，中文与英文须同步加入。
+>
+> This is a bilingual repository: Chinese analysis in `papers/`, English analysis in `papers-en/`, with a Chinese and English summary, code notes, and reproduction skeleton for every paper. See the English index in [README-en.md](README-en.md). Every new paper must be added in both languages.
+>
 > 使用方法：一边看每篇论文文件夹里的中文总结，一边看同文件夹 `code/` 里的代码来源与复现骨架。
 
 ## 重要说明：代码从哪里来
