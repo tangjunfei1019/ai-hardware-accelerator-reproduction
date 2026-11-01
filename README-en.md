@@ -50,6 +50,10 @@
 | 33 | [NVDLA: NVIDIA Deep Learning Accelerator (Open Architecture)](papers-en/33-nvdla/README.md) | NVIDIA, open-source release 2017–2018 (not a conventional conference paper, labelled as such) | Fully open source: 406 Verilog files, Linux + Verilog toolchain |
 | 34 | [PrIM: The First Benchmark Suite for a Real Processing-in-Memory System](papers-en/34-prim/README.md) | Juan Gómez-Luna et al., IEEE Access 2022 | Fully open source: MIT, 16 benchmarks; CPU baseline needs only GCC, full DPU results need UPMEM hardware + SDK |
 | 35 | [ColumnQuant / RUnQuant: Column-Granularity Quantization for Compute-in-Memory Accelerators](papers-en/35-columnquant/README.md) | DATE 2025 / Journal of Systems Architecture 2026 | Full framework code; standard CPU + PyTorch, no licence or requirements file found in the repository root |
+| 36 | [UniNDP: A Unified Compilation and Simulation Tool for Near DRAM Processing Architectures](papers-en/36-unindp/README.md) | HPCA 2025 (Best Paper Honorable Mention) | Fully open source: MIT, standard Linux CPU + Python |
+| 37 | [NasZip: Software and Hardware Co-Design to Accelerate Approximate Nearest Neighbor Search with DIMM-Based Near-Data Processing](papers-en/37-naszip/README.md) | ISCA 2026 | Fully open source: MuLan PSL 2.0; pre-built-index route needs a 16+ core, 256+ GB DRAM server |
+| 38 | [CIM-Explorer (CIM-E): Optimizing Binary and Ternary Neural Network Inference on RRAM Crossbars](papers-en/38-cim-explorer/README.md) | SAMOS 2025 | Fully open source: Apache, standard Linux CPU + Docker |
+| 39 | [Ramulator 2.1: A Composable Memory System Simulator for Modern DRAM Systems (evaluation infrastructure, not a CIM design)](papers-en/39-ramulator21/README.md) | 2026 | Fully open source: MIT, standard Linux CPU + cmake/GCC + Python 3.10+ |
 
 ## Directory structure
 

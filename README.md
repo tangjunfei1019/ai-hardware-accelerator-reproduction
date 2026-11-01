@@ -52,6 +52,10 @@
 | 33 | [NVDLA：NVIDIA 深度学习加速器（开放架构）](papers/33-nvdla/README.md) | NVIDIA，开源发布 2017–2018（非传统会议论文，已标注） | 完整开源：406 个 Verilog 文件，Linux + Verilog 工具链 |
 | 34 | [PrIM：面向真实存内处理系统的首个基准测试集](papers/34-prim/README.md) | Juan Gómez-Luna 等，IEEE Access 2022 | 完整开源：MIT，16 个基准；CPU 基线仅需 GCC，完整 DPU 结果需 UPMEM 硬件 + SDK |
 | 35 | [ColumnQuant / RUnQuant：面向存内计算加速器的列粒度量化](papers/35-columnquant/README.md) | DATE 2025 / Journal of Systems Architecture 2026 | 完整框架代码；标准 CPU + PyTorch，根目录未找到许可证与 requirements 文件 |
+| 36 | [UniNDP：面向近 DRAM 处理架构的统一编译与仿真工具](papers/36-unindp/README.md) | HPCA 2025（最佳论文荣誉提名） | 完整开源：MIT，标准 Linux CPU + Python |
+| 37 | [NasZip：面向 DIMM 近数据处理的近似最近邻搜索软硬件协同设计](papers/37-naszip/README.md) | ISCA 2026 | 完整开源：MuLan PSL 2.0；预建索引路线需 16 核以上、256 GB 以上 DRAM 服务器 |
+| 38 | [CIM-Explorer（CIM-E）：面向 RRAM 交叉阵列的二值/三值神经网络推理优化](papers/38-cim-explorer/README.md) | SAMOS 2025 | 完整开源：Apache，标准 Linux CPU + Docker |
+| 39 | [Ramulator 2.1：面向现代 DRAM 系统的可组合存储系统仿真器（评估基础设施，非 CIM 设计）](papers/39-ramulator21/README.md) | 2026 | 完整开源：MIT，标准 Linux CPU + cmake/GCC + Python 3.10+ |
 
 ## 目录结构
 
