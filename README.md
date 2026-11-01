@@ -17,45 +17,45 @@
 
 | 序号 | 论文（中文标题） | 作者与年份 | 代码状态 |
 |---|---|---|---|
-| 1 | [深度神经网络的高效处理：教程与综述](papers/01-sze-survey/README.md) · [EN](papers/01-sze-survey/README-en.md) | Vivienne Sze、Yu-Hsin Chen、Tien-Ju Yang、Joel Emer，2017 | 仿真工具 |
-| 2 | [DianNao：面向普适机器学习的小面积高吞吐加速器](papers/02-diannao/README.md) · [EN](papers/02-diannao/README-en.md) | Tianshi Chen、Zidong Du、Ninghui Sun 等，2014 | 仅骨架（未找到官方开源代码） |
-| 3 | [DaDianNao：机器学习超级计算机](papers/03-dadiannao/README.md) · [EN](papers/03-dadiannao/README-en.md) | Yunji Chen、Tao Luo、Shaoli Liu 等，2014 | 仅骨架（未找到官方开源代码） |
-| 4 | [ShiDianNao：将视觉处理移近传感器](papers/04-shidiannao/README.md) · [EN](papers/04-shidiannao/README-en.md) | Zidong Du、Robert Fasthuber、Tianshi Chen 等，2015 | 仅骨架（未找到官方开源代码） |
-| 5 | [Eyeriss：面向深度卷积神经网络的节能可重构加速器](papers/05-eyeriss/README.md) · [EN](papers/05-eyeriss/README-en.md) | Yu-Hsin Chen、Tushar Krishna、Joel Emer、Vivienne Sze，2017 | 第三方 RTL（已核实存在，非官方） |
-| 6 | [数据中心张量处理单元的性能分析](papers/06-tpu/README.md) · [EN](papers/06-tpu/README-en.md) | Norman P. Jouppi、Cliff Young、Nishant Patil、David Patterson 等，2017 | 仿真工具（谷歌硬件不开源） |
-| 7 | [EIE：面向压缩深度神经网络的高效推理引擎](papers/07-eie/README.md) · [EN](papers/07-eie/README-en.md) | Song Han、Xingyu Liu、Huizi Mao 等，2016 | 仅骨架（硬件 RTL 未找到官方开源代码） |
-| 8 | [ISAAC：基于交叉阵列原位模拟运算的卷积神经网络加速器](papers/08-isaac/README.md) · [EN](papers/08-isaac/README-en.md) | Ali Shafiee、Anirban Nag、Naveen Muralimanohar 等，2016 | 仿真工具（无官方 ISAAC 代码） |
-| 9 | [Cambricon：面向神经网络的指令集架构](papers/09-cambricon/README.md) · [EN](papers/09-cambricon/README-en.md) | Shaoli Liu、Zidong Du、Jinhua Tao 等，2016 | 仅骨架（未找到官方开源代码） |
-| 10 | [SCNN：面向压缩稀疏卷积神经网络的加速器](papers/10-scnn/README.md) · [EN](papers/10-scnn/README-en.md) | Angshuman Parashar、Minsoo Rhu、Anurag Mukkara 等，2017 | 仿真工具（原仿真器未发布） |
-| 11 | [EVA：基于高效向量量化架构的大模型解码加速](papers/11-eva/README.md) · [EN](papers/11-eva/README-en.md) | Bowen Duan、Cong Guo、Chiyue Wei 等，ISCA 2026 | 官方代码（是否含可综合 RTL 未核实） |
-| 12 | [Focus：面向高效视觉语言模型的流式集中架构](papers/12-focus/README.md) · [EN](papers/12-focus/README-en.md) | Chiyue Wei、Cong Guo 等，HPCA 2026（最佳论文提名） | 官方实现（非 RTL 声明） |
-| 13 | [BitDecoding：用张量核心解锁长上下文大模型的低比特 KV 缓存解码](papers/13-bitdecoding/README.md) · [EN](papers/13-bitdecoding/README-en.md) | Dayou Du、Shijie Cao 等，HPCA 2026 | 官方 GPU 系统代码（非 RTL） |
-| 14 | [P3-LLM：基于混合数值格式的 NPU-PIM 融合边缘大模型推理加速器](papers/14-p3-llm/README.md) · [EN](papers/14-p3-llm/README-en.md) | Yuzong Chen、Chao Fang 等，ISCA 2026 | 官方量化代码；PIM 硬件 RTL 不开源 |
-| 15 | [MTIA 300：Meta 首款内置网卡与集合通信卸载引擎的训练芯片](papers/15-mtia300/README.md) · [EN](papers/15-mtia300/README-en.md) | MTIA Team（Meta），ISCA 2026 | 未找到官方开源代码；工业专有，RTL 不开源 |
-| 16 | [Raptor 早期硅片：首款面向生成式推理的 3D-DRAM 加速器](papers/16-raptor/README.md) · [EN](papers/16-raptor/README-en.md) | d-Matrix 与英属哥伦比亚大学，ISCA 2026 | 未找到官方开源代码；工业专有，RTL 不开源 |
-| 17 | [OSCAR：开源灵活分层 AI 加速器生成器与精确功耗模型](papers/17-oscar/README.md) · [EN](papers/17-oscar/README-en.md) | Jay Zhe-An Mok、Qijun Zhang 等，TODAES 2026 | 官方开源生成器，含 Chisel 与可综合 RTL |
-| 18 | [FSGen：面向大模型应用的敏捷融合稀疏加速器生成器与精确功耗模型](papers/18-fsgen/README.md) · [EN](papers/18-fsgen/README-en.md) | Jay Zhe-An Mok、Qijun Zhang、Zhiyao Xie，DAC 2026 | 官方开源生成器，含 Chisel RTL |
-| 19 | [LoCaLUT：利用容量-计算权衡实现基于查表的 DRAM 存内推理](papers/19-localut/README.md) · [EN](papers/19-localut/README-en.md) | AISys Lab 等，HPCA 2026（最佳论文提名） | 官方 PIM 实现（UPMEM，非商用 DRAM RTL） |
-| 20 | [对抗存储墙：长上下文智能体大模型推理的优化路径（PLENA）](papers/20-memory-walls/README.md) · [EN](papers/20-memory-walls/README-en.md) | Haoran Wu 等，ISCA 2026 | 未找到官方开源代码；论文称将开源，链接尚未核实 |
-| 21 | [DCC：面向存内处理架构的数据中心机器学习内核编译器](papers/21-dcc/README.md) · [EN](papers/21-dcc/README-en.md) | Peiming Yang 等，ISCA 2026 | 可复现 B：官方开源，完整数字需 PIM 后端仿真器 |
-| 22 | [XBTorch：面向交叉阵列深度学习加速器的统一建模与协同设计框架](papers/22-xbtorch/README.md) · [EN](papers/22-xbtorch/README-en.md) | Osama Yousuf 等，APL Machine Learning 2026 | 可复现 A：官方开源，标准 CPU + PyTorch |
-| 23 | [CIM-Tuner：通过硬件-映射协同探索平衡 SRAM-CIM 计算与存储容量](papers/23-cim-tuner/README.md) · [EN](papers/23-cim-tuner/README-en.md) | Jinwu Chen 等，arXiv 2026 | 可复现 A：官方开源，标准 CPU + Python |
-| 24 | [gem5-CIMD：面向 DRAM 存内计算的全应用 gem5 仿真框架](papers/24-gem5-cimd/README.md) · [EN](papers/24-gem5-cimd/README-en.md) | Alexander Kusnezoff 等，arXiv 2026 | 可复现 A：官方开源，标准 Linux + gem5 构建环境 |
-| 25 | [OpenACM：开源 SRAM 近似数字存内计算编译器](papers/25-openacm/README.md) · [EN](papers/25-openacm/README-en.md) | Yiqi Zhou 等，DATE 2026 | 可复现 B：官方开源，完整物理流程需 OpenROAD + FreePDK45 |
-| 26 | [TetrisG-SDK：面向快速存内计算的自适应窗口与分组卷积映射框架](papers/26-tetrisg-sdk/README.md) · [EN](papers/26-tetrisg-sdk/README-en.md) | Ke Dong 等，IEEE JETCAS 2026 | 可复现 A：官方开源，标准 CPU + Python |
-| 27 | [NeuroSim V1.5：面向存内计算加速器的改进软件基准框架](papers/27-neurosim-v15/README.md) · [EN](papers/27-neurosim-v15/README-en.md) | James Read 等，IEEE TCAD 2026 | 可复现 A：官方开源，标准 CPU + C++（非商业许可） |
-| 28 | [DRAMatic：面向同态加密运算的 UPMEM 存内处理加速](papers/28-dramatic/README.md) · [EN](papers/28-dramatic/README-en.md) | Niklas Klinger 等，arXiv 2026 | 可复现 B：官方开源，完整速度复现需 UPMEM 硬件 + SDK |
-| 29 | [AHASD：面向移动端自适应草稿推测解码的异步异构 NPU-PIM 架构](papers/29-ahasd/README.md) · [EN](papers/29-ahasd/README-en.md) | Ma Zirui 等，arXiv 2026 | 可复现 A：官方开源，标准机器 + PIM 仿真器工具链 |
-| 30 | [PIMeval-PIMbench 2026 扩展：面向数字 DRAM PIM 的建模与基准扩展](papers/30-pimeval-2026/README.md) · [EN](papers/30-pimeval-2026/README-en.md) | 以原文作者表为准，ACM TACO 2026 | 可复现 A：官方开源，标准 Linux + C++，不需 UPMEM 硬件 |
-| 31 | [AIHWKit：面向模拟交叉阵列的灵活快速 PyTorch 工具包](papers/31-aihwkit/README.md) · [EN](papers/31-aihwkit/README-en.md) | Malte J. Rasch 等（IBM Research），AICAS 2021 | 完整开源：MIT，30 个示例，标准 CPU，GPU 可选 |
-| 32 | [Gemmini：敏捷脉动阵列生成器](papers/32-gemmini/README.md) · [EN](papers/32-gemmini/README-en.md) | UC Berkeley，DAC 2021 | 完整开源：Chisel RTL，Linux + Chipyard/Verilator，FPGA 可选 |
-| 33 | [NVDLA：NVIDIA 深度学习加速器（开放架构）](papers/33-nvdla/README.md) · [EN](papers/33-nvdla/README-en.md) | NVIDIA，开源发布 2017–2018（非传统会议论文，已标注） | 完整开源：406 个 Verilog 文件，Linux + Verilog 工具链 |
-| 34 | [PrIM：面向真实存内处理系统的首个基准测试集](papers/34-prim/README.md) · [EN](papers/34-prim/README-en.md) | Juan Gómez-Luna 等，IEEE Access 2022 | 完整开源：MIT，16 个基准；CPU 基线仅需 GCC，完整 DPU 结果需 UPMEM 硬件 + SDK |
-| 35 | [ColumnQuant / RUnQuant：面向存内计算加速器的列粒度量化](papers/35-columnquant/README.md) · [EN](papers/35-columnquant/README-en.md) | DATE 2025 / Journal of Systems Architecture 2026 | 完整框架代码；标准 CPU + PyTorch，根目录未找到许可证与 requirements 文件 |
-| 36 | [UniNDP：面向近 DRAM 处理架构的统一编译与仿真工具](papers/36-unindp/README.md) · [EN](papers/36-unindp/README-en.md) | HPCA 2025（最佳论文荣誉提名） | 完整开源：MIT，标准 Linux CPU + Python |
-| 37 | [NasZip：面向 DIMM 近数据处理的近似最近邻搜索软硬件协同设计](papers/37-naszip/README.md) · [EN](papers/37-naszip/README-en.md) | ISCA 2026 | 完整开源：MuLan PSL 2.0；预建索引路线需 16 核以上、256 GB 以上 DRAM 服务器 |
-| 38 | [CIM-Explorer（CIM-E）：面向 RRAM 交叉阵列的二值/三值神经网络推理优化](papers/38-cim-explorer/README.md) · [EN](papers/38-cim-explorer/README-en.md) | SAMOS 2025 | 完整开源：Apache，标准 Linux CPU + Docker |
-| 39 | [Ramulator 2.1：面向现代 DRAM 系统的可组合存储系统仿真器（评估基础设施，非 CIM 设计）](papers/39-ramulator21/README.md) · [EN](papers/39-ramulator21/README-en.md) | 2026 | 完整开源：MIT，标准 Linux CPU + cmake/GCC + Python 3.10+ |
+| 1 | [深度神经网络的高效处理：教程与综述](papers/01-201712-sze-survey/README.md) · [EN](papers/01-201712-sze-survey/README-en.md) | Vivienne Sze、Yu-Hsin Chen、Tien-Ju Yang、Joel Emer，2017 | 仿真工具 |
+| 2 | [DianNao：面向普适机器学习的小面积高吞吐加速器](papers/02-201403-diannao/README.md) · [EN](papers/02-201403-diannao/README-en.md) | Tianshi Chen、Zidong Du、Ninghui Sun 等，2014 | 仅骨架（未找到官方开源代码） |
+| 3 | [DaDianNao：机器学习超级计算机](papers/03-201412-dadiannao/README.md) · [EN](papers/03-201412-dadiannao/README-en.md) | Yunji Chen、Tao Luo、Shaoli Liu 等，2014 | 仅骨架（未找到官方开源代码） |
+| 4 | [ShiDianNao：将视觉处理移近传感器](papers/04-201506-shidiannao/README.md) · [EN](papers/04-201506-shidiannao/README-en.md) | Zidong Du、Robert Fasthuber、Tianshi Chen 等，2015 | 仅骨架（未找到官方开源代码） |
+| 5 | [Eyeriss：面向深度卷积神经网络的节能可重构加速器](papers/05-201701-eyeriss/README.md) · [EN](papers/05-201701-eyeriss/README-en.md) | Yu-Hsin Chen、Tushar Krishna、Joel Emer、Vivienne Sze，2017 | 第三方 RTL（已核实存在，非官方） |
+| 6 | [数据中心张量处理单元的性能分析](papers/06-201706-tpu/README.md) · [EN](papers/06-201706-tpu/README-en.md) | Norman P. Jouppi、Cliff Young、Nishant Patil、David Patterson 等，2017 | 仿真工具（谷歌硬件不开源） |
+| 7 | [EIE：面向压缩深度神经网络的高效推理引擎](papers/07-201606-eie/README.md) · [EN](papers/07-201606-eie/README-en.md) | Song Han、Xingyu Liu、Huizi Mao 等，2016 | 仅骨架（硬件 RTL 未找到官方开源代码） |
+| 8 | [ISAAC：基于交叉阵列原位模拟运算的卷积神经网络加速器](papers/08-201606-isaac/README.md) · [EN](papers/08-201606-isaac/README-en.md) | Ali Shafiee、Anirban Nag、Naveen Muralimanohar 等，2016 | 仿真工具（无官方 ISAAC 代码） |
+| 9 | [Cambricon：面向神经网络的指令集架构](papers/09-201606-cambricon/README.md) · [EN](papers/09-201606-cambricon/README-en.md) | Shaoli Liu、Zidong Du、Jinhua Tao 等，2016 | 仅骨架（未找到官方开源代码） |
+| 10 | [SCNN：面向压缩稀疏卷积神经网络的加速器](papers/10-201706-scnn/README.md) · [EN](papers/10-201706-scnn/README-en.md) | Angshuman Parashar、Minsoo Rhu、Anurag Mukkara 等，2017 | 仿真工具（原仿真器未发布） |
+| 11 | [EVA：基于高效向量量化架构的大模型解码加速](papers/11-202606-eva/README.md) · [EN](papers/11-202606-eva/README-en.md) | Bowen Duan、Cong Guo、Chiyue Wei 等，ISCA 2026 | 官方代码（是否含可综合 RTL 未核实） |
+| 12 | [Focus：面向高效视觉语言模型的流式集中架构](papers/12-202602-focus/README.md) · [EN](papers/12-202602-focus/README-en.md) | Chiyue Wei、Cong Guo 等，HPCA 2026（最佳论文提名） | 官方实现（非 RTL 声明） |
+| 13 | [BitDecoding：用张量核心解锁长上下文大模型的低比特 KV 缓存解码](papers/13-202602-bitdecoding/README.md) · [EN](papers/13-202602-bitdecoding/README-en.md) | Dayou Du、Shijie Cao 等，HPCA 2026 | 官方 GPU 系统代码（非 RTL） |
+| 14 | [P3-LLM：基于混合数值格式的 NPU-PIM 融合边缘大模型推理加速器](papers/14-202606-p3-llm/README.md) · [EN](papers/14-202606-p3-llm/README-en.md) | Yuzong Chen、Chao Fang 等，ISCA 2026 | 官方量化代码；PIM 硬件 RTL 不开源 |
+| 15 | [MTIA 300：Meta 首款内置网卡与集合通信卸载引擎的训练芯片](papers/15-202606-mtia300/README.md) · [EN](papers/15-202606-mtia300/README-en.md) | MTIA Team（Meta），ISCA 2026 | 未找到官方开源代码；工业专有，RTL 不开源 |
+| 16 | [Raptor 早期硅片：首款面向生成式推理的 3D-DRAM 加速器](papers/16-202606-raptor/README.md) · [EN](papers/16-202606-raptor/README-en.md) | d-Matrix 与英属哥伦比亚大学，ISCA 2026 | 未找到官方开源代码；工业专有，RTL 不开源 |
+| 17 | [OSCAR：开源灵活分层 AI 加速器生成器与精确功耗模型](papers/17-202609-oscar/README.md) · [EN](papers/17-202609-oscar/README-en.md) | Jay Zhe-An Mok、Qijun Zhang 等，TODAES 2026 | 官方开源生成器，含 Chisel 与可综合 RTL |
+| 18 | [FSGen：面向大模型应用的敏捷融合稀疏加速器生成器与精确功耗模型](papers/18-202607-fsgen/README.md) · [EN](papers/18-202607-fsgen/README-en.md) | Jay Zhe-An Mok、Qijun Zhang、Zhiyao Xie，DAC 2026 | 官方开源生成器，含 Chisel RTL |
+| 19 | [LoCaLUT：利用容量-计算权衡实现基于查表的 DRAM 存内推理](papers/19-202602-localut/README.md) · [EN](papers/19-202602-localut/README-en.md) | AISys Lab 等，HPCA 2026（最佳论文提名） | 官方 PIM 实现（UPMEM，非商用 DRAM RTL） |
+| 20 | [对抗存储墙：长上下文智能体大模型推理的优化路径（PLENA）](papers/20-202606-memory-walls/README.md) · [EN](papers/20-202606-memory-walls/README-en.md) | Haoran Wu 等，ISCA 2026 | 未找到官方开源代码；论文称将开源，链接尚未核实 |
+| 21 | [DCC：面向存内处理架构的数据中心机器学习内核编译器](papers/21-202606-dcc/README.md) · [EN](papers/21-202606-dcc/README-en.md) | Peiming Yang 等，ISCA 2026 | 可复现 B：官方开源，完整数字需 PIM 后端仿真器 |
+| 22 | [XBTorch：面向交叉阵列深度学习加速器的统一建模与协同设计框架](papers/22-202610-xbtorch/README.md) · [EN](papers/22-202610-xbtorch/README-en.md) | Osama Yousuf 等，APL Machine Learning 2026 | 可复现 A：官方开源，标准 CPU + PyTorch |
+| 23 | [CIM-Tuner：通过硬件-映射协同探索平衡 SRAM-CIM 计算与存储容量](papers/23-202601-cim-tuner/README.md) · [EN](papers/23-202601-cim-tuner/README-en.md) | Jinwu Chen 等，arXiv 2026 | 可复现 A：官方开源，标准 CPU + Python |
+| 24 | [gem5-CIMD：面向 DRAM 存内计算的全应用 gem5 仿真框架](papers/24-202610-gem5-cimd/README.md) · [EN](papers/24-202610-gem5-cimd/README-en.md) | Alexander Kusnezoff 等，arXiv 2026 | 可复现 A：官方开源，标准 Linux + gem5 构建环境 |
+| 25 | [OpenACM：开源 SRAM 近似数字存内计算编译器](papers/25-202604-openacm/README.md) · [EN](papers/25-202604-openacm/README-en.md) | Yiqi Zhou 等，DATE 2026 | 可复现 B：官方开源，完整物理流程需 OpenROAD + FreePDK45 |
+| 26 | [TetrisG-SDK：面向快速存内计算的自适应窗口与分组卷积映射框架](papers/26-202604-tetrisg-sdk/README.md) · [EN](papers/26-202604-tetrisg-sdk/README-en.md) | Ke Dong 等，IEEE JETCAS 2026 | 可复现 A：官方开源，标准 CPU + Python |
+| 27 | [NeuroSim V1.5：面向存内计算加速器的改进软件基准框架](papers/27-202600-neurosim-v15/README.md) · [EN](papers/27-202600-neurosim-v15/README-en.md) | James Read 等，IEEE TCAD 2026 | 可复现 A：官方开源，标准 CPU + C++（非商业许可） |
+| 28 | [DRAMatic：面向同态加密运算的 UPMEM 存内处理加速](papers/28-202602-dramatic/README.md) · [EN](papers/28-202602-dramatic/README-en.md) | Niklas Klinger 等，arXiv 2026 | 可复现 B：官方开源，完整速度复现需 UPMEM 硬件 + SDK |
+| 29 | [AHASD：面向移动端自适应草稿推测解码的异步异构 NPU-PIM 架构](papers/29-202604-ahasd/README.md) · [EN](papers/29-202604-ahasd/README-en.md) | Ma Zirui 等，arXiv 2026 | 可复现 A：官方开源，标准机器 + PIM 仿真器工具链 |
+| 30 | [PIMeval-PIMbench 2026 扩展：面向数字 DRAM PIM 的建模与基准扩展](papers/30-202600-pimeval-2026/README.md) · [EN](papers/30-202600-pimeval-2026/README-en.md) | 以原文作者表为准，ACM TACO 2026 | 可复现 A：官方开源，标准 Linux + C++，不需 UPMEM 硬件 |
+| 31 | [AIHWKit：面向模拟交叉阵列的灵活快速 PyTorch 工具包](papers/31-202106-aihwkit/README.md) · [EN](papers/31-202106-aihwkit/README-en.md) | Malte J. Rasch 等（IBM Research），AICAS 2021 | 完整开源：MIT，30 个示例，标准 CPU，GPU 可选 |
+| 32 | [Gemmini：敏捷脉动阵列生成器](papers/32-202112-gemmini/README.md) · [EN](papers/32-202112-gemmini/README-en.md) | UC Berkeley，DAC 2021 | 完整开源：Chisel RTL，Linux + Chipyard/Verilator，FPGA 可选 |
+| 33 | [NVDLA：NVIDIA 深度学习加速器（开放架构）](papers/33-201709-nvdla/README.md) · [EN](papers/33-201709-nvdla/README-en.md) | NVIDIA，开源发布 2017–2018（非传统会议论文，已标注） | 完整开源：406 个 Verilog 文件，Linux + Verilog 工具链 |
+| 34 | [PrIM：面向真实存内处理系统的首个基准测试集](papers/34-202205-prim/README.md) · [EN](papers/34-202205-prim/README-en.md) | Juan Gómez-Luna 等，IEEE Access 2022 | 完整开源：MIT，16 个基准；CPU 基线仅需 GCC，完整 DPU 结果需 UPMEM 硬件 + SDK |
+| 35 | [ColumnQuant / RUnQuant：面向存内计算加速器的列粒度量化](papers/35-202503-columnquant/README.md) · [EN](papers/35-202503-columnquant/README-en.md) | DATE 2025 / Journal of Systems Architecture 2026 | 完整框架代码；标准 CPU + PyTorch，根目录未找到许可证与 requirements 文件 |
+| 36 | [UniNDP：面向近 DRAM 处理架构的统一编译与仿真工具](papers/36-202503-unindp/README.md) · [EN](papers/36-202503-unindp/README-en.md) | HPCA 2025（最佳论文荣誉提名） | 完整开源：MIT，标准 Linux CPU + Python |
+| 37 | [NasZip：面向 DIMM 近数据处理的近似最近邻搜索软硬件协同设计](papers/37-202606-naszip/README.md) · [EN](papers/37-202606-naszip/README-en.md) | ISCA 2026 | 完整开源：MuLan PSL 2.0；预建索引路线需 16 核以上、256 GB 以上 DRAM 服务器 |
+| 38 | [CIM-Explorer（CIM-E）：面向 RRAM 交叉阵列的二值/三值神经网络推理优化](papers/38-202506-cim-explorer/README.md) · [EN](papers/38-202506-cim-explorer/README-en.md) | SAMOS 2025 | 完整开源：Apache，标准 Linux CPU + Docker |
+| 39 | [Ramulator 2.1：面向现代 DRAM 系统的可组合存储系统仿真器（评估基础设施，非 CIM 设计）](papers/39-202606-ramulator21/README.md) · [EN](papers/39-202606-ramulator21/README-en.md) | 2026 | 完整开源：MIT，标准 Linux CPU + cmake/GCC + Python 3.10+ |
 
 ## 目录结构
 
@@ -84,9 +84,9 @@ papers/
 
 ```bash
 # 任选一篇，先读总结，再跑骨架
-python3 papers/05-eyeriss/code/reproduce.py
-python3 papers/06-tpu/code/reproduce.py
-python3 papers/07-eie/code/reproduce.py
+python3 papers/05-201701-eyeriss/code/reproduce.py
+python3 papers/06-201706-tpu/code/reproduce.py
+python3 papers/07-201606-eie/code/reproduce.py
 ```
 
 ## 许可证说明
