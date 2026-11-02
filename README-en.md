@@ -11,6 +11,12 @@
 - Each paper's `code/reproduce.py` is an **original reproduction skeleton**, using only the Python standard library, runnable as-is, for understanding the core ideas (tiling, dataflow, sparsity, systolic arrays, compute-in-memory, domain-specific instructions, and so on). It is **not the original paper code, and it is not RTL**, and it cannot directly reproduce the original area, power, or clock numbers.
 - Reproducing the original chip numbers requires the original PDFs, process libraries, synthesis flows, and real simulators; the skeletons in this repository can only verify correctness and relative trends at the algorithm and dataflow level.
 
+## New: comparison matrix, collected projects, and run evidence
+
+- Comparison matrix: [COMPARISON-en.md](COMPARISON-en.md) (39 papers, same columns: workload, dataflow, precision, peak labelled paper claim / model estimate / not given, code type, runnable here).
+- Collected upstream projects: [external/](external/) (11 projects including Timeloop, Accelergy, SCALE-Sim, Gemmini; linked only, not redistributed; run `bash external/sync-external.sh` to pull the latest).
+- Run evidence: [runs/](runs/) (AIHWKit and ColumnQuant commands, logs and results) and [unified/](unified/) (SCALE-Sim unified path: comparable data for papers 05 Eyeriss and 06 TPU, framework estimates only, not paper or silicon numbers).
+
 ## Paper index
 
 | No. | Paper (English title) | Authors and year | Code status |

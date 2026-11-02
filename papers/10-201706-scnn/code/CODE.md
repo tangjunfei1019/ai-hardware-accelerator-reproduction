@@ -9,3 +9,7 @@
 ## Skeleton in this directory
 
 - `reproduce.py`: original reproduction skeleton, using only the Python standard library, demonstrating compressed sparse convolution and scatter accumulation. It is not the original paper code.
+
+## Unified run evidence
+
+- Unified run note: [unified/](../../unified/) — SCALE-Sim v3 Run C proves the sparsity path runs here (total 432 cycles on a tiny 2:4 sparse layer), but it does NOT validate SCNN sparsity gains and is not comparable to Runs A/B.

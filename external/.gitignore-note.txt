@@ -1,0 +1,5 @@
+NOTE — do not commit external-checkouts/ to this repo.
+Add this line to the repo's .gitignore when this staging is pushed:
+  external-checkouts/
+The sync script (external/sync-external.sh) recreates the checkouts locally by
+cloning / pulling upstream, so they do not need to be stored in this repo.

@@ -10,3 +10,7 @@
 ## Skeleton in this directory
 
 - `reproduce.py`: original reproduction skeleton, using only the Python standard library, demonstrating row-stationary dataflow's row-level reuse accounting. It is not the original paper code, and not a copy of the third-party code above.
+
+## Unified run evidence
+
+- Unified run evidence: [unified/](../../unified/) — SCALE-Sim v3 Run B (Eyeriss-like 12x14, weight-stationary): total 249,102 cycles, overall utilisation 40.15%, mapping efficiency 97.96%. Framework estimate only, not the Eyeriss paper result and not silicon measurement.

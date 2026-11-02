@@ -31,3 +31,8 @@ Expected check: the script builds a one-layer analog network (`AnalogLinear(4, 2
 ## Skeleton in this directory
 
 `reproduce.py` is an original standard-library skeleton demonstrating matrix-vector multiplication on an analog tile + noise + ADC quantization, unrelated to the upstream code.
+
+## Run evidence (real upstream run, 2026-11-01)
+
+- Evidence folder: [runs/aihwkit-20261101/](../../runs/aihwkit-20261101/) — command, log and result for `examples/01_simple_layer.py` (loss 0.379 → 0.0093, ~10 s, CPU).
+- Caveat: this proves the toolchain runs; it does not reproduce any AICAS 2021 accuracy table.

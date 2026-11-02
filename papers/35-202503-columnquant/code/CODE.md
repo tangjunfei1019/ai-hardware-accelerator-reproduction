@@ -45,3 +45,8 @@ Expected check: the module builds without error and the forward pass returns the
 ## Skeleton in this directory
 
 `reproduce.py` is an original standard-library skeleton demonstrating column-granularity quantization and dequantization, unrelated to the upstream code.
+
+## Run evidence (real upstream run, 2026-11-02)
+
+- Evidence folder: [runs/columnquant-20261102/](../../runs/columnquant-20261102/) — command, log and result for the `SplitConv4Pim_group` forward pass (input (1, 64, 32, 32) → output (1, 64, 32, 32), ~1.3 s, CPU).
+- Caveat: this proves the module builds and runs; it does not reproduce any DATE 2025 accuracy table. No licence file was found in the upstream repo root.

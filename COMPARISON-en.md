@@ -1,0 +1,69 @@
+# Comparison Matrix
+
+Chinese version: [COMPARISON.md](COMPARISON.md).
+This table is filled from each paper folder's README.md and code/CODE.md only;
+**no new numbers were copied from the web**.
+Peak column labels: **paper claim** = a number reported by the paper;
+**model estimate** = a simulator/tool estimate, not a silicon measurement;
+**not given** = the paper folder gives no comparable peak number (relative speedups,
+bandwidth, or energy figures are not peaks; where quoted, they are context only).
+
+## Uncertainty notes
+
+- Peak performance: only 2 of 39 papers (06 TPU, 07 EIE) give a comparable peak
+  number in their folders; the other 37 are "not given". Do not compare relative
+  speedups as if they were peaks.
+- Precision: not stated in the folders for papers 01, 04, 05, 09, 10, 12, 15, 16, 17,
+  18, 21, 23, 26, 28, 29, 30, 36, and 39 (simulator, N/A); papers 07, 08, 19, 20, 22,
+  25, 27, 31, 32, 34, 37 mention quantization/format without a single fixed width
+  (noted in the table).
+- Workload uncertain: 23 CIM-Tuner (no specific workload stated), 30 PIMeval
+  (broad, no single workload).
+- Run status: papers 31 and 35 are updated to "upstream run" per the latest evidence
+  in `runs/` (which supersedes older "not run" wording inside those folders);
+  paper 23's run is a 2026-10-31 historical record (tool estimates), not in the
+  newly added `runs/` folders.
+
+## Comparison table
+
+| # | Paper | Workload | Dataflow / Architecture | Precision | Peak performance (label: paper claim / model estimate / not given) | Code type | Runnable here |
+|---|---|---|---|---|---|---|---|
+| 1 | [Sze survey](papers/01-201712-sze-survey/README-en.md) | DNN processing (survey, no single workload) | Spatial architecture; weight-/output-/row-stationary dataflows | Not stated | Not given | Simulator + skeleton | Skeleton |
+| 2 | [DianNao](papers/02-201403-diannao/README-en.md) | ML / NN inference | NFU (multiplier/adder trees + activation), tiled buffers | 16-bit fixed-point | Not given | Skeleton only (no official code found) | Skeleton |
+| 3 | [DaDianNao](papers/03-201412-dadiannao/README-en.md) | Large-model ML inference, multi-chip | Multi-tile, eDRAM-centred, local weights, broadcast activations | 16/32-bit fixed-point | Not given | Skeleton only (no official code found) | Skeleton |
+| 4 | [ShiDianNao](papers/04-201506-shidiannao/README-en.md) | Small-model vision / CNN near sensor | Sensor-direct NFU, model in on-chip SRAM, bypassing DRAM | Not stated | Not given | Skeleton only (no official code found) | Skeleton |
+| 5 | [Eyeriss](papers/05-201701-eyeriss/README-en.md) | Deep CNN inference (conv layers) | 168-PE spatial array, row-stationary dataflow, reconfigurable multicast NoC | Not stated | Not given (paper claim: ~35 fps, ~278 mW on AlexNet conv layers) | Third-party RTL + skeleton | Skeleton (third-party RTL not run) |
+| 6 | [TPU](papers/06-201706-tpu/README-en.md) | Datacenter inference: MLP, CNN, LSTM | 256×256 systolic array MMU, ~28 MiB on-chip storage | INT8 inference | Paper claim: peak ~92 TOPS (8-bit) | Simulator + skeleton | Skeleton |
+| 7 | [EIE](papers/07-201606-eie/README-en.md) | Compressed DNN inference (esp. FC layers) | Sparse PE array, CSC format, weight-sharing codebook, zero-skipping | Weight-sharing quantization (width not stated) | Paper claim: ~102 GOPS compressed, ~3 TOPS uncompressed-equivalent | Skeleton only (no official hardware RTL found) | Skeleton |
+| 8 | [ISAAC](papers/08-201606-isaac/README-en.md) | CNN inference | CIM: ReRAM crossbar in-situ analog MVM, tiled hierarchy, bit-slicing | Bit-sliced analog (slice width not stated) | Not given | Simulator + skeleton | Skeleton |
+| 9 | [Cambricon](papers/09-201606-cambricon/README-en.md) | General NN algorithms (10 benchmarks) | Domain-specific load-store ISA, not a fixed-dataflow accelerator | Not stated | Not given | Skeleton only (no official code found) | Skeleton |
+| 10 | [SCNN](papers/10-201706-scnn/README-en.md) | Compressed-sparse CNN inference | Multiplier array + scatter-accumulator, compressed formats | Not stated | Not given (paper claim: ~2.7× perf, ~2.3× energy vs dense) | Simulator + skeleton | Skeleton |
+| 11 | [EVA](papers/11-202606-eva/README-en.md) | LLM decoding (memory-bound small GEMV) | Vector-quantization lookup-table architecture | ~2-bit-level weight compression (codebook indices) | Not given (paper claim: up to ~11.17× speedup, ~7.17× energy efficiency) | Official + skeleton | Skeleton (upstream not run) |
+| 12 | [Focus](papers/12-202602-focus/README-en.md) | Vision-language model inference (visual-token reduction) | Streaming concentration in systolic array: pruning, block concentration, dedup | Not stated | Not given (paper claim: ~2.4× speedup, ~3.3× energy reduction) | Official + skeleton | Skeleton (upstream not run) |
+| 13 | [BitDecoding](papers/13-202602-bitdecoding/README-en.md) | Long-context LLM decoding, low-bit KV cache | GPU CUDA + tensor-core co-execution (not accelerator RTL) | Low-bit KV: NVFP4 / MXFP4 | Not given (paper claim: ~7.5× decoding speedup vs FP16 FlashDecoding-v2) | Official + skeleton | Skeleton (upstream not run) |
+| 14 | [P3-LLM](papers/14-202606-p3-llm/README-en.md) | Edge LLM inference: prefill GEMM + decoding | Integrated NPU-PIM: NPU for prefill, DRAM PIM for decoding | 4-bit weights/KV, 8-bit activations/attention | Not given | Official (partial) + skeleton | Skeleton |
+| 15 | [MTIA 300](papers/15-202606-mtia300/README-en.md) | Recommendation / ranking training (150B-param production model) | In-package networking: 2 network chiplets, 12×800 Gbps RDMA NICs, collective offload | Not stated | Not given (~1.2 TB/s total I/O, paper claim, not a compute peak) | None found + skeleton | Skeleton |
+| 16 | [Raptor](papers/16-202606-raptor/README-en.md) | Generative inference, long-context KV-dominated decoding | 3D-DRAM: logic die face-to-face bonded to custom DRAM die | Not stated | Not given (paper claim: >100 TB/s bandwidth, not a compute peak) | None found + skeleton | Skeleton |
+| 17 | [OSCAR](papers/17-202609-oscar/README-en.md) | Accelerator generation (configurable targets) | Hierarchical generator: auto-generates Chisel RTL + power model | Not stated | Not given (paper claim: power-model error ~3.8%) | Official + skeleton | Skeleton |
+| 18 | [FSGen](papers/18-202607-fsgen/README-en.md) | LLM applications (fused operators, sparse compute) | Unified dataflow + Chisel RTL generator + early PPA estimation | Not stated | Not given (paper claim: ~1.4× power efficiency or ~10× speedup) | Official + skeleton | Skeleton |
+| 19 | [LoCaLUT](papers/19-202602-localut/README-en.md) | DNN inference on DRAM-PIM | LUT-based inference in DRAM-PIM: packed MACs per lookup | Not stated (multi-precision) | Not given (paper claim: geomean speedup ~1.82×) | Official + skeleton | Skeleton |
+| 20 | [Memory Walls / PLENA](papers/20-202606-memory-walls/README-en.md) | Long-context agentic LLM inference | PLENA: flat systolic array + mixed-precision asymmetric quantization + PLENA_ISA | Mixed precision (widths not stated) | Not given (paper claim: up to ~2.23× throughput vs A100) | None found + skeleton | Skeleton |
+| 21 | [DCC](papers/21-202606-dcc/README-en.md) | Datacentre ML kernels, end-to-end LLM on PIM | Multi-layer PIM abstraction, data-sharding to compute-loop mapping | Not stated | Not given (paper claim: up to ~7.68× on HBM-PIM) | Official + skeleton | Skeleton |
+| 22 | [XBTorch](papers/22-202610-xbtorch/README-en.md) | Crossbar-based DL inference and hardware-aware training | PyTorch-native crossbar modelling: weights as conductance, variation/noise injection | Quantization (width not stated) | Not given (numbers in paper tables) | Official + skeleton | Skeleton |
+| 23 | [CIM-Tuner](papers/23-202601-cim-tuner/README-en.md) | SRAM-CIM hardware-mapping co-exploration (workload not stated) | SRAM-CIM macro abstraction + generic template, joint search under area constraint | Not stated | Not given (paper claim: ~1.58× energy, ~2.11× throughput; tool estimates in note) | Official + skeleton | Upstream run on 2026-10-31 (CIMMA compiler + single-op sim, tool estimates, not silicon) |
+| 24 | [gem5-CIMD](papers/24-202610-gem5-cimd/README-en.md) | Full-application computing-in-DRAM (KNN case study) | In-DRAM-subarray computing in gem5: extended ISA, subarray-aware mapping | 4–64 bits (ISA operation width) | Not given | Simulator (official) + skeleton | Skeleton (gem5 build not run) |
+| 25 | [OpenACM](papers/25-202604-openacm/README-en.md) | Representative CNNs on SRAM digital CIM | SRAM digital-CIM compiler: exact / tunable-approximate / logarithmic multipliers | Approximate multipliers (width not stated) | Not given (paper claim: up to ~64% energy saving on representative CNNs) | Official + skeleton | Skeleton |
+| 26 | [TetrisG-SDK](papers/26-202604-tetrisg-sdk/README-en.md) | Conv layers: CNN8, GoogLeNet, DenseNet40 | Shift-copy-kernel mapping + adaptive windows + grouped convolutions | Not stated | Not given (paper claim: ~1.2–1.3× speedup, simulator estimates) | Official + skeleton | Skeleton |
+| 27 | [NeuroSim V1.5](papers/27-202600-neurosim-v15/README-en.md) | CIM benchmark: CNNs and Transformers (ViT case study) | Hybrid ACIM/DCIM benchmark framework, PTQ + statistical noise injection | Quantization (width not stated) | Not given (paper claim: up to ~6.5× runtime speedup vs V1.4) | Simulator (official) + skeleton | Skeleton |
+| 28 | [DRAMatic](papers/28-202602-dramatic/README-en.md) | HE ops on PIM: BGV multiplication, NTT/iNTT | UPMEM general-purpose PIM; RNS + NTT polynomial ops | Not stated | Not given (paper claim: ~334× vs prior UPMEM HE implementation) | Official + skeleton | Not run (needs UPMEM hardware) |
+| 29 | [AHASD](papers/29-202604-ahasd/README-en.md) | LLM adaptive drafting speculative decoding on mobile | Task-level async: draft on PIM, target on single NPU for batched verification | Not stated | Not given (paper claim: up to ~4.2× throughput vs GPU baseline, simulation) | Simulator (official) + skeleton | Skeleton |
+| 30 | [PIMeval-PIMbench](papers/30-202600-pimeval-2026/README-en.md) | Digital DRAM PIM workloads (broad, no single workload) | Three digital PIM classes: subarray bit-serial, bit-parallel, bank-level bit-parallel; roofline analysis | Not stated | Not given (applicability intervals and crossovers, not a single number) | Simulator (official) + skeleton | Skeleton |
+| 31 | [AIHWKit](papers/31-202106-aihwkit/README-en.md) | DNN training/inference on analog crossbars | Weights on resistive crossbar analog tiles; ADC/DAC and noise modelled | ADC/DAC quantization (width not stated) | Not given (toolkit, no single speedup claimed) | Official | Upstream run (see runs/aihwkit-20261101) |
+| 32 | [Gemmini](papers/32-202112-gemmini/README-en.md) | Edge DL inference (incl. ResNet-50-level programs) | Chisel-generated systolic array, output-/weight-stationary, Rocket Chip SoC | Multiple data types (width not stated) | Not given (paper claim: 100–1000× range vs host, config-dependent) | Official | Not built (multi-hour Chipyard build not attempted) |
+| 33 | [NVDLA](papers/33-201709-nvdla/README-en.md) | Deep-learning inference | Modular pipeline: CDMA→CSC→CMAC→CACC→SDP→PDP→CDP | 8-bit (2048 MACs) / 16-bit (1024 MACs), nvdlav1 | Not given (no single speedup; see Primer and perf/ estimates) | Official | Not run (no complete Verilog toolchain) |
+| 34 | [PrIM](papers/34-202205-prim/README-en.md) | 16 benchmarks: linear algebra, database, graph, NN, bioinformatics, image | Real UPMEM system: general-purpose DPU beside each DRAM bank; 640 and 2556 DPU systems | INT32 (VA example command only; no single paper precision) | Not given (per-workload scalability/performance/energy tables) | Official | Upstream partially run (VA CPU baseline 59.957 ms; DPU needs hardware, not run) |
+| 35 | [ColumnQuant / RUnQuant](papers/35-202503-columnquant/README-en.md) | CIM inference convolution; ResNet-20/18 on CIFAR-10/100 and ImageNet | CIM crossbar, column-granularity aligned scaling (weights + partial sums); RUnQuant unanchored decomposition | 3-bit weights and partial sums (w_bit=3, ps_bit=3) | Not given (paper claim: accuracy gain up to 4.05%, not a peak) | Official | Upstream run (see runs/columnquant-20261102) |
+| 36 | [UniNDP](papers/36-202503-unindp/README-en.md) | GEMM, ResNet-18, VGG-11, LLaMA-2 prefill and decode | Unified tree NDP hardware abstraction + unified ISA; cycle-accurate simulator | Not stated | Not given (paper claim: 1.05–3.43× speedup) | Simulator (official) | Upstream run at toy scale (16×16×16 GEMM, best_result 98; tool exited non-zero at end) |
+| 37 | [NasZip](papers/37-202606-naszip/README-en.md) | Approximate nearest-neighbour search (SIFT, GIST, GloVe, Wiki) for retrieval/RAG | DIMM-based NDP: host via memory channels, per-rank near-memory hardware; feature-level early exiting | Dynamic floating-point format (no fixed width) | Not given (paper claim: up to 8.4× vs CPU SCANN) | Official + skeleton | Not run end-to-end (--help only; needs 16+ cores / 256+ GB) |
+| 38 | [CIM-Explorer / CIM-E](papers/38-202506-cim-explorer/README-en.md) | Binary/ternary NN inference on RRAM crossbars | TVM-based compilation + multiple simulator backends + design-space exploration | Binary / ternary (1-bit / ternary weights) | Not given (tool/DSE flow, no single headline number) | Simulator / tool (official) | Not run (missing TVM / Docker) |
+| 39 | [Ramulator 2.1](papers/39-202606-ramulator21/README-en.md) | DRAM trace workloads (not an accelerator; example trace only) | Cycle-level DRAM device + controller models, Python-configurable; DDR/GDDR/LPDDR/HBM | N/A (simulator, no compute precision) | Not given (example-trace stats only: 81302 controller cycles, avg read latency 45.2 cycles, model estimates) | Simulator (official) | Upstream run (example_config.py; full test suite not run) |

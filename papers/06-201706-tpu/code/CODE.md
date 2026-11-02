@@ -10,3 +10,7 @@
 ## Skeleton in this directory
 
 - `reproduce.py`: original reproduction skeleton, using only the Python standard library, demonstrating small systolic-array-style matrix multiplication. It is not the original paper code.
+
+## Unified run evidence
+
+- Unified run evidence: [unified/](../../unified/) — SCALE-Sim v3 Run A (TPU-like 256x256, output-stationary): total 93,908 cycles, overall utilisation 5.66%, mapping efficiency 7.32%. Framework estimate only, not the TPU paper result and not silicon measurement.

@@ -13,6 +13,12 @@
 - 每篇论文的 `code/reproduce.py` 都是**原创复现骨架**，仅用 Python 标准库，可直接运行，用于理解核心思想（分块、数据流、稀疏、脉动阵列、存算一体、领域专用指令等），**不是原文代码，也不是 RTL**，不能直接复现原文的面积、功耗与时钟数字。
 - 复现原文芯片数字需要原文 PDF、工艺库、综合流程与真实仿真器；本仓库的骨架只能验证算法与数据流层面的正确性与相对趋势。
 
+## 新增：对比矩阵、收藏与运行证据
+
+- 对比矩阵：[COMPARISON.md](COMPARISON.md)（39 篇统一列：工作负载、数据流、精度、峰值并标论文声称 / 模型估算 / 未给出、代码类型、本地能否运行）。
+- 上游收藏：[external/](external/)（Timeloop、Accelergy、SCALE-Sim、Gemmini 等 11 个项目，仅链接不分发；运行 `bash external/sync-external.sh` 可拉取最新）。
+- 运行证据：[runs/](runs/)（AIHWKit、ColumnQuant 的命令、日志与结果）与 [unified/](unified/)（SCALE-Sim 统一可运行路径：05 Eyeriss、06 TPU 可比数据，均为框架估算，不是论文或硅片数字）。
+
 ## 论文索引
 
 | 序号 | 论文（中文标题） | 作者与年份 | 代码状态 |
