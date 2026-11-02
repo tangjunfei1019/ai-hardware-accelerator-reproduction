@@ -2,7 +2,7 @@
 
 > 本仓库为双语仓库：中英文分析并排放在同一篇论文文件夹里：中文为 `README.md` / `code/CODE.md` / `code/reproduce.py`，英文分析为 `README-en.md`；代码与复现仅英文：`code/CODE.md` / `code/reproduce.py`，每篇论文均有中英文总结、代码来源与复现骨架。英文总索引见 [README-en.md](README-en.md)。新增论文时，中文与英文须同步加入同一文件夹。
 >
-> This is a bilingual repository: Chinese and English analysis sit side by side in the same paper folder — Chinese as `README.md` / `code/CODE.md` / `code/reproduce.py`, English as `README-en.md` / `code/CODE-en.md` / `code/reproduce-en.py`. See the English index in [README-en.md](README-en.md). Every new paper must be added in both languages, in the same folder.
+> This is a bilingual repository: Chinese and English analysis sit side by side in the same paper folder — Chinese analysis as `README.md`, English analysis as `README-en.md`, and code and reproduction are English-only as `code/CODE.md` / `code/reproduce.py`. See the English index in [README-en.md](README-en.md). Every new paper must be added in both languages, in the same folder.
 >
 > 使用方法：一边看每篇论文文件夹里的中文总结，一边看同文件夹 `code/` 里的代码来源与复现骨架。
 
