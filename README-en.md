@@ -17,6 +17,8 @@
 - Collected upstream projects: [external/](external/) (11 projects including Timeloop, Accelergy, SCALE-Sim, Gemmini; linked only, not redistributed; run `bash external/sync-external.sh` to pull the latest).
 - Run evidence: [runs/](runs/) (AIHWKit and ColumnQuant commands, logs and results) and [unified/](unified/) (SCALE-Sim unified path: comparable data for papers 05 Eyeriss and 06 TPU, framework estimates only, not paper or silicon numbers).
 
+- Contributing guide: [CONTRIBUTING.md](CONTRIBUTING.md) (English version: [CONTRIBUTING-en.md](CONTRIBUTING-en.md)).
+
 ## Paper index
 
 | No. | Paper (English title) | Authors and year | Code status |

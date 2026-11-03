@@ -19,6 +19,8 @@
 - 上游收藏：[external/](external/)（Timeloop、Accelergy、SCALE-Sim、Gemmini 等 11 个项目，仅链接不分发；运行 `bash external/sync-external.sh` 可拉取最新）。
 - 运行证据：[runs/](runs/)（AIHWKit、ColumnQuant 的命令、日志与结果）与 [unified/](unified/)（SCALE-Sim 统一可运行路径：05 Eyeriss、06 TPU 可比数据，均为框架估算，不是论文或硅片数字）。
 
+- 贡献指南：[CONTRIBUTING.md](CONTRIBUTING.md)（中英文版见 [CONTRIBUTING-en.md](CONTRIBUTING-en.md)）。
+
 ## 论文索引
 
 | 序号 | 论文（中文标题） | 作者与年份 | 代码状态 |
