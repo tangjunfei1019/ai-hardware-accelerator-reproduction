@@ -29,3 +29,7 @@ Expected check: without noise, results should be close to ideal accuracy; after 
 
 - `reproduce.py` is an original Python standard-library skeleton demonstrating the core idea, not upstream code, and not RTL / chip measurements.
 - The skeleton alone does not satisfy this paper's reproducibility requirement; reproducibility is provided by the upstream steps above.
+
+## Run evidence
+
+- Evidence folder: [runs/xbtorch-20261104/](../../runs/xbtorch-20261104/) — command, log and result for the README tiny MLP forward pass (input (4, 10) → output (4, 2), ~12 s, CPU).

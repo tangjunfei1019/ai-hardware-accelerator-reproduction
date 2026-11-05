@@ -1,0 +1,11 @@
+torch: 2.15.0+cpu
+xbtorch.initialize() ok
+xbtorch_model patch ok: SimpleMLP
+xbtorch.optim.SGD ok
+input shape: (4, 10)
+output shape: (4, 2)
+output: tensor([[-0.0698, -0.0400],
+        [-0.0275, -0.0158],
+        [-0.1939,  0.1843],
+        [-0.1303,  0.1122]])
+FORWARD_OK
