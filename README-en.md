@@ -1,23 +1,21 @@
 # AI Hardware Accelerator Paper Reproduction
 
-> This is the English index of a bilingual repository: Chinese and English analysis sit side by side in the same paper folder: Chinese as `README.md` / `code/CODE.md` / `code/reproduce.py`, English analysis as `README-en.md`; code and reproduction are English-only: `code/CODE.md` / `code/reproduce.py`. The Chinese index is in [README.md](README.md). Every new paper must be added in both languages, in the same folder.
->
-> How to use: read the English summary in each paper folder alongside the code sources and reproduction skeleton in that folder's `code/` directory.
+This repository covers 39 AI hardware accelerator papers (2014–2026), spanning classic architectures (DianNao, Eyeriss, TPU, EIE, ISAAC, SCNN), 2026 ISCA / HPCA / DAC / TODAES papers, and compute-in-memory (CIM / PIM) work. Each paper comes with an analysis of its core method and key results, verified code provenance, and a runnable reproduction skeleton — so readers can study a paper and run code side by side to understand tiling, dataflow, sparsity, systolic arrays, and compute-in-memory.
 
-## Important note: where the code comes from
+## Contents
+
+- **Papers**: `papers/<number-YYYYMM-slug>/`, each with the original paper's information, core method, key results, and reproduction notes. Analysis is available in Chinese (`README.md`) and English (`README-en.md`); code and reproduction notes are in English (`code/CODE.md`, `code/reproduce.py`). The Chinese index is in [README.md](README.md).
+- **Comparison matrix**: [COMPARISON-en.md](COMPARISON-en.md) (39 papers, same columns: workload, dataflow, precision, peak labelled paper claim / model estimate / not given, code type, runnable here).
+- **Collected upstream projects**: [external/](external/) (11 projects including Timeloop, Accelergy, SCALE-Sim, Gemmini; linked only, not redistributed; run `bash external/sync-external.sh` to pull the latest).
+- **Run evidence**: [runs/](runs/) (AIHWKit, ColumnQuant, XBTorch, and OpenACM commands, logs and results) and [unified/](unified/) (SCALE-Sim unified path: comparable data for papers 05 Eyeriss and 06 TPU, framework estimates only, not paper or silicon numbers).
+- **Contributing guide**: [CONTRIBUTING-en.md](CONTRIBUTING-en.md).
+
+## Code provenance and reproduction scope
 
 - **Most original hardware RTL is not open source.** This repository does not claim to own the original chip code, and it does not label third-party code as the original authors' code.
 - Each paper's `code/CODE.md` states clearly whether the code is: official / third-party / simulation tool / skeleton only / not found, and gives verified links plus a reminder to read the license before use.
 - Each paper's `code/reproduce.py` is an **original reproduction skeleton**, using only the Python standard library, runnable as-is, for understanding the core ideas (tiling, dataflow, sparsity, systolic arrays, compute-in-memory, domain-specific instructions, and so on). It is **not the original paper code, and it is not RTL**, and it cannot directly reproduce the original area, power, or clock numbers.
 - Reproducing the original chip numbers requires the original PDFs, process libraries, synthesis flows, and real simulators; the skeletons in this repository can only verify correctness and relative trends at the algorithm and dataflow level.
-
-## New: comparison matrix, collected projects, and run evidence
-
-- Comparison matrix: [COMPARISON-en.md](COMPARISON-en.md) (39 papers, same columns: workload, dataflow, precision, peak labelled paper claim / model estimate / not given, code type, runnable here).
-- Collected upstream projects: [external/](external/) (11 projects including Timeloop, Accelergy, SCALE-Sim, Gemmini; linked only, not redistributed; run `bash external/sync-external.sh` to pull the latest).
-- Run evidence: [runs/](runs/) (AIHWKit and ColumnQuant commands, logs and results) and [unified/](unified/) (SCALE-Sim unified path: comparable data for papers 05 Eyeriss and 06 TPU, framework estimates only, not paper or silicon numbers).
-
-- Contributing guide: [CONTRIBUTING.md](CONTRIBUTING.md) (English version: [CONTRIBUTING-en.md](CONTRIBUTING-en.md)).
 
 ## Paper index
 
@@ -67,21 +65,24 @@
 
 ```
 papers/
-  01-sze-survey/README.md        # Survey: data movement and the dataflow framework
-  02-diannao/README.md
-  03-dadiannao/README.md
-  04-shidiannao/README.md
-  05-eyeriss/README.md
-  06-tpu/README.md
-  07-eie/README.md
-  08-isaac/README.md
-  09-cambricon/README.md
-  10-scnn/README.md
-  11-eva/README.md … 20-memory-walls/README.md   # 2026 supplement: ISCA / HPCA / DAC / TODAES 2026
-  21-dcc/README.md … 30-pimeval-2026/README.md   # 2026 CIM supplement: reproducibility-screened, A = runnable on a standard machine, B = needs special hardware/toolchain
-  31-aihwkit/README.md … 35-columnquant/README.md   # Influential CIM supplement: fully open-source code; skeletons are not upstream code, upstream steps govern reproduction
-  <each paper>/code/CODE.md        # Code sources, nature, and run steps
-  <each paper>/code/reproduce.py   # Original reproduction skeleton (standard library only)
+  01-201712-sze-survey/          # Survey: data movement and the dataflow framework
+  02-201403-diannao/
+  03-201412-dadiannao/
+  04-201506-shidiannao/
+  05-201701-eyeriss/
+  06-201706-tpu/
+  07-201606-eie/
+  08-201606-isaac/
+  09-201606-cambricon/
+  10-201706-scnn/
+  11-202606-eva/ … 20-202606-memory-walls/   # 2026 supplement: ISCA / HPCA / DAC / TODAES 2026
+  21-202606-dcc/ … 30-202600-pimeval-2026/   # 2026 CIM supplement: reproducibility-screened, A = runnable on a standard machine, B = needs special hardware/toolchain
+  31-202106-aihwkit/ … 35-202503-columnquant/   # Influential CIM supplement: fully open-source code; skeletons are not upstream code, upstream steps govern reproduction
+  36-202503-unindp/ … 39-202606-ramulator21/   # Recent reproducible CIM / NDP work
+  <each paper>/README.md         # Chinese analysis
+  <each paper>/README-en.md      # English analysis
+  <each paper>/code/CODE.md      # Code sources, nature, and run steps
+  <each paper>/code/reproduce.py # Original reproduction skeleton (standard library only)
 ```
 
 Each paper folder contains: original paper information, core method, core results, reproduction points, and code sources.

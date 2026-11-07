@@ -1,25 +1,21 @@
 # AI 硬件加速器论文复现
 
-> 本仓库为双语仓库：中英文分析并排放在同一篇论文文件夹里：中文分析为 `README.md`，英文分析为 `README-en.md`；代码与复现仅英文：`code/CODE.md` / `code/reproduce.py`，每篇论文均有中英文总结、代码来源与复现骨架。英文总索引见 [README-en.md](README-en.md)。新增论文时，中文与英文须同步加入同一文件夹。
->
-> This is a bilingual repository: Chinese and English analysis sit side by side in the same paper folder — Chinese analysis as `README.md`, English analysis as `README-en.md`, and code and reproduction are English-only as `code/CODE.md` / `code/reproduce.py`. See the English index in [README-en.md](README-en.md). Every new paper must be added in both languages, in the same folder.
->
-> 使用方法：一边看每篇论文文件夹里的中文总结，一边看同文件夹 `code/` 里的代码来源与复现骨架。
+本仓库收录 39 篇 AI 硬件加速器论文（2014–2026），覆盖经典架构（DianNao、Eyeriss、TPU、EIE、ISAAC、SCNN 等）、2026 年 ISCA / HPCA / DAC / TODAES 新作，以及存算一体（CIM / PIM）方向。每篇论文提供核心方法与核心效果的分析、已核实的代码来源，以及可直接运行的复现骨架，目标是让读者一边读论文、一边动手跑代码，理解分块、数据流、稀疏、脉动阵列与存算一体的关键思想。
 
-## 重要说明：代码从哪里来
+## 仓库内容
+
+- **论文**：`papers/<编号-年月-简称>/`，每篇包含原文信息、核心方法、核心效果与复现要点；分析同时提供中文（`README.md`）与英文（`README-en.md`）版本，代码与复现说明为英文（`code/CODE.md`、`code/reproduce.py`）。英文总索引见 [README-en.md](README-en.md)。
+- **对比矩阵**：[COMPARISON.md](COMPARISON.md)（39 篇统一列：工作负载、数据流、精度、峰值并标论文声称 / 模型估算 / 未给出、代码类型、本地能否运行）。
+- **上游收藏**：[external/](external/)（Timeloop、Accelergy、SCALE-Sim、Gemmini 等 11 个项目，仅链接不分发；运行 `bash external/sync-external.sh` 可拉取最新）。
+- **运行证据**：[runs/](runs/)（AIHWKit、ColumnQuant、XBTorch、OpenACM 的命令、日志与结果）与 [unified/](unified/)（SCALE-Sim 统一可运行路径：05 Eyeriss、06 TPU 可比数据，均为框架估算，不是论文或硅片数字）。
+- **贡献指南**：[CONTRIBUTING.md](CONTRIBUTING.md)。
+
+## 代码来源与复现范围
 
 - **大多数原始硬件 RTL 并不开源。** 本仓库不声称拥有原文芯片代码，也不把第三方代码标注为原作者代码。
 - 每篇论文的 `code/CODE.md` 会明确标注：官方 / 第三方 / 仿真工具 / 仅骨架 / 未找到，并给出已核实的链接与使用前需阅读许可证的提醒。
 - 每篇论文的 `code/reproduce.py` 都是**原创复现骨架**，仅用 Python 标准库，可直接运行，用于理解核心思想（分块、数据流、稀疏、脉动阵列、存算一体、领域专用指令等），**不是原文代码，也不是 RTL**，不能直接复现原文的面积、功耗与时钟数字。
 - 复现原文芯片数字需要原文 PDF、工艺库、综合流程与真实仿真器；本仓库的骨架只能验证算法与数据流层面的正确性与相对趋势。
-
-## 新增：对比矩阵、收藏与运行证据
-
-- 对比矩阵：[COMPARISON.md](COMPARISON.md)（39 篇统一列：工作负载、数据流、精度、峰值并标论文声称 / 模型估算 / 未给出、代码类型、本地能否运行）。
-- 上游收藏：[external/](external/)（Timeloop、Accelergy、SCALE-Sim、Gemmini 等 11 个项目，仅链接不分发；运行 `bash external/sync-external.sh` 可拉取最新）。
-- 运行证据：[runs/](runs/)（AIHWKit、ColumnQuant 的命令、日志与结果）与 [unified/](unified/)（SCALE-Sim 统一可运行路径：05 Eyeriss、06 TPU 可比数据，均为框架估算，不是论文或硅片数字）。
-
-- 贡献指南：[CONTRIBUTING.md](CONTRIBUTING.md)（中英文版见 [CONTRIBUTING-en.md](CONTRIBUTING-en.md)）。
 
 ## 论文索引
 
@@ -69,21 +65,24 @@
 
 ```
 papers/
-  01-sze-survey/README.md        # 综述：数据搬运与数据流框架
-  02-diannao/README.md
-  03-dadiannao/README.md
-  04-shidiannao/README.md
-  05-eyeriss/README.md
-  06-tpu/README.md
-  07-eie/README.md
-  08-isaac/README.md
-  09-cambricon/README.md
-  10-scnn/README.md
-  11-eva/README.md … 20-memory-walls/README.md   # 2026 年补充：ISCA / HPCA / DAC / TODAES 2026
-  21-dcc/README.md … 30-pimeval-2026/README.md   # 2026 年 CIM 补充：可复现筛选，A 为标准机器可跑，B 需特殊硬件/工具链
-  31-aihwkit/README.md … 35-columnquant/README.md   # 影响力 CIM 补充：完整开源代码，骨架不是上游代码，复现以上游步骤为准
-  <每篇>/code/CODE.md              # 代码来源、性质、运行步骤
-  <每篇>/code/reproduce.py         # 原创复现骨架（标准库可运行）
+  01-201712-sze-survey/          # 综述：数据搬运与数据流框架
+  02-201403-diannao/
+  03-201412-dadiannao/
+  04-201506-shidiannao/
+  05-201701-eyeriss/
+  06-201706-tpu/
+  07-201606-eie/
+  08-201606-isaac/
+  09-201606-cambricon/
+  10-201706-scnn/
+  11-202606-eva/ … 20-202606-memory-walls/   # 2026 年补充：ISCA / HPCA / DAC / TODAES 2026
+  21-202606-dcc/ … 30-202600-pimeval-2026/   # 2026 年 CIM 补充：可复现筛选，A 为标准机器可跑，B 需特殊硬件/工具链
+  31-202106-aihwkit/ … 35-202503-columnquant/   # 影响力 CIM 补充：完整开源代码，骨架不是上游代码，复现以上游步骤为准
+  36-202503-unindp/ … 39-202606-ramulator21/   # 近期可复现 CIM / NDP 工作
+  <每篇>/README.md               # 中文分析
+  <每篇>/README-en.md            # 英文分析
+  <每篇>/code/CODE.md            # 代码来源、性质、运行步骤
+  <每篇>/code/reproduce.py       # 原创复现骨架（标准库可运行）
 ```
 
 每个论文文件夹都包含：原文信息、核心方法、核心效果、复现要点、代码来源。
