@@ -21,6 +21,10 @@
 - Measure: correctness (round-trip / accuracy / output trends) and trends under key configuration changes, not a single speedup number.
 - What will not match the original: process, device parameters, simulator versions, and baseline configurations all change absolute numbers; the skeleton only demonstrates the idea.
 
+## Run evidence
+
+- The minimal front-end generators were actually run (2026-11-05): the 8-bit multiplier step generated three RTL files, `Exact_8bit.v`, `Appro4_2_8bit.v` and `Log_our_8bit.v`; the 8-bit / 16-deep SRAM step exited 0 but changed nothing, because the shipped `sram.v` already is the 16x8 module. Evidence: [runs/openacm-20261105/](../../runs/openacm-20261105/). This proves only that the current v2 front end can generate 8-bit multiplier RTL, not any DATE 2026 paper numbers, and it is not a silicon measurement; the PE and backend flow were not attempted.
+
 ## Code sources
 
 See [`code/CODE.md`](code/CODE.md), and the reproduction skeleton in this directory, [`code/reproduce.py`](code/reproduce.py).

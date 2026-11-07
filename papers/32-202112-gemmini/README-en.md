@@ -1,6 +1,6 @@
 # Gemmini: An Agile Systolic Array Generator
 
-## Paper information
+## Original paper information
 
 - Original title: Gemmini: An Agile Systolic Array Generator Enabling Systematic Evaluations of Deep-Learning Architectures
 - Authors: Hasan Genc, Ameer Haj-Ali, Vighnesh Iyer, Alon Amid, Howard Mao, John Wright, Colin Schmidt, Jerry Zhao, Albert Ou, Max Banister, Yakun Sophia Shao, Borivoje Nikolic, Ion Stoica, Krste Asanovic (UC Berkeley)
@@ -28,7 +28,7 @@
 
 See [`code/CODE.md`](code/CODE.md), and the reproduction skeleton in this directory, [`code/reproduce.py`](code/reproduce.py).
 
-> Note: the `reproduce.py` in this directory is an original reproduction skeleton, not code by the paper's authors. It is only for understanding the core idea and cannot directly reproduce the paper's area, power or clock numbers.
+> Note: the `reproduce.py` in this directory is an original reproduction skeleton, not the original authors' code. It is only for understanding the core ideas and cannot directly reproduce the paper's area, power or clock numbers.
 
 ## Verification notes for this entry
 

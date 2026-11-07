@@ -1,6 +1,6 @@
 # Run evidence: AIHWKit (paper 31) — 2026-11-01
 
-Upstream: https://github.com/IBM/aihwkit (not Junfei's code, not redistributed here).
+Upstream: https://github.com/IBM/aihwkit (not this repository's code, not redistributed here).
 This folder records one real upstream run only. See paper 31 in `papers/31-202106-aihwkit/`.
 
 ## Command

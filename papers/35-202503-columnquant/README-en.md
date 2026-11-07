@@ -1,6 +1,6 @@
 # ColumnQuant / RUnQuant: Column-Granularity Quantization for Compute-in-Memory Accelerators
 
-## Paper information
+## Original paper information
 
 - Repository's paper: Column-wise Quantization of Weights and Partial Sums for Accurate and Efficient Compute-In-Memory Accelerators, DATE 2025, arXiv:2502.07842, by Jiyoon Kim et al.
 - Follow-up paper from the same repository (per the SKKU IRIS Lab page): RUnQuant: High-Resolution Weight Quantization via Unanchored Weight Decomposition in Column-wise Granularity for CIM Accelerators, Journal of Systems Architecture, 2026 (published 2026-01-17)
@@ -27,11 +27,11 @@
 
 See [`code/CODE.md`](code/CODE.md), and the reproduction skeleton in this directory, [`code/reproduce.py`](code/reproduce.py).
 
-> Note: the `reproduce.py` in this directory is an original reproduction skeleton, not code by the paper's authors. It is only for understanding the core idea and cannot directly reproduce the paper's accuracy numbers.
+> Note: the `reproduce.py` in this directory is an original reproduction skeleton, not the original authors' code. It is only for understanding the core ideas and cannot directly reproduce the paper's accuracy numbers.
 
 ## Verification notes for this entry
 
 - The upstream repository was verified to exist via `git ls-remote`; the framework files `SplitConv4Pim_group.py`, `LSQ.py` and `any_quant.py` passed `python3 -m py_compile` syntax checks.
 - The full clone list also includes `main.py`, `resnet_quan.py` and `utils.py` (listed by filename only; their contents were not checked item by item here, so check them before an end-to-end reproduction) and a ResNet-20 CIFAR-100 W3A3P3 checkpoint in `legacy/` (`ResNet20_Cifar100_W3A3P3_ckpt.pth`).
-- The upstream code was not run end-to-end here, because this VM does not have PyTorch installed and the CPU PyTorch download timed out repeatedly — an environment limitation, not a repository defect.
+- The upstream module was actually run (2026-11-02): a minimal `SplitConv4Pim_group` forward pass finished in ~1.3 s, input (1, 64, 32, 32) → output (1, 64, 32, 32). Evidence: [runs/columnquant-20261102/](../../runs/columnquant-20261102/). This proves only that the module builds and runs a forward pass, not any DATE 2025 accuracy table.
 - The weakest completeness point: no licence file or requirements file was found in the repository root; check the authors' / paper's licence terms before redistributing or building a product on it.

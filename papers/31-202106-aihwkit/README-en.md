@@ -1,6 +1,6 @@
 # AIHWKit: A Flexible and Fast PyTorch Toolkit for Analog Crossbar Arrays
 
-## Paper information
+## Original paper information
 
 - Original title: A flexible and fast PyTorch toolkit for simulating training and inference on analog crossbar arrays
 - Authors: Malte J. Rasch, Diego Moreda, Tayfun Gokmen, Manuel Le Gallo, Fabio Carta, Cindy Goldberg, Kaoutar El Maghraoui, Abu Sebastian, Vijay Narayanan (IBM Research)
@@ -28,9 +28,9 @@
 
 See [`code/CODE.md`](code/CODE.md), and the reproduction skeleton in this directory, [`code/reproduce.py`](code/reproduce.py).
 
-> Note: the `reproduce.py` in this directory is an original reproduction skeleton, not code by the paper's authors. It is only for understanding the core idea and cannot directly reproduce the paper's accuracy or performance numbers.
+> Note: the `reproduce.py` in this directory is an original reproduction skeleton, not the original authors' code. It is only for understanding the core ideas and cannot directly reproduce the paper's accuracy or performance numbers.
 
 ## Verification notes for this entry
 
 - The upstream repository was verified to exist via `git ls-remote`; it contains 30 examples, tutorial notebooks, 30 test files and an MIT licence, with documentation at https://aihwkit.readthedocs.io.
-- The upstream example was not run end-to-end in this VM, because this VM does not have PyTorch installed and the CPU PyTorch download timed out repeatedly — a VM/network limitation, not a repository defect. On a normal machine with PyTorch installed, the minimal example in CODE.md runs, with GPU optional.
+- The upstream example was actually run (2026-11-01): `examples/01_simple_layer.py` finished on CPU in ~10 s; a single `AnalogLinear(4, 2)` layer trained for 100 epochs, loss falling from 0.379 (epoch 1) to 0.0093 (epoch 100). Evidence: [runs/aihwkit-20261101/](../../runs/aihwkit-20261101/). This proves only that the toolchain installs and runs, not any specific AICAS 2021 accuracy table; installed aihwkit 1.2.0 is the current PyPI release, not a frozen 2021 version.

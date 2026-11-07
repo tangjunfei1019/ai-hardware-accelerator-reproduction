@@ -1,6 +1,6 @@
 # PrIM: The First Benchmark Suite for a Real Processing-in-Memory System
 
-## Paper information
+## Original paper information
 
 - Original title: Benchmarking a New Paradigm: Experimental Analysis and Characterization of a Real Processing-in-Memory System
 - Authors: Juan Gómez-Luna, Izzat El Hajj, Ivan Fernandez, Christina Giannoula, Geraldo F. Oliveira, Onur Mutlu
@@ -28,7 +28,7 @@
 
 See [`code/CODE.md`](code/CODE.md), and the reproduction skeleton in this directory, [`code/reproduce.py`](code/reproduce.py).
 
-> Note: the `reproduce.py` in this directory is an original reproduction skeleton, not code by the paper's authors. It is only for understanding the core idea and cannot directly reproduce the paper's DPU performance numbers.
+> Note: the `reproduce.py` in this directory is an original reproduction skeleton, not the original authors' code. It is only for understanding the core ideas and cannot directly reproduce the paper's DPU performance numbers.
 
 ## Verification notes for this entry
 

@@ -1,6 +1,6 @@
 # Run evidence: OpenACM (paper 25) — 2026-11-05
 
-Upstream: https://github.com/ShenShan123/OpenACM (HEAD 92813c9, Apache-2.0; not Junfei's code, not redistributed here).
+Upstream: https://github.com/ShenShan123/OpenACM (HEAD 92813c9, Apache-2.0; not this repository's code, not redistributed here).
 This folder records one real upstream run only. See paper 25 in `papers/25-202604-openacm/`.
 
 ## Command

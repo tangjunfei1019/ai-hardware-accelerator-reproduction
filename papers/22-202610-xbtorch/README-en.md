@@ -21,6 +21,10 @@
 - Measure: correctness (round-trip / accuracy / output trends) and trends under key configuration changes, not a single speedup number.
 - What will not match the original: process, device parameters, simulator versions, and baseline configurations all change absolute numbers; the skeleton only demonstrates the idea.
 
+## Run evidence
+
+- The upstream minimal example was actually run (2026-11-04): the README's two-layer perceptron `SimpleMLP(10, 5, 2)`, patched with `xbtorch_model`, completed one forward pass in ~12 s, input (4, 10) → output (4, 2). Evidence: [runs/xbtorch-20261104/](../../runs/xbtorch-20261104/). This proves only that the upstream module builds, patches a model and runs one forward pass, not any APL Machine Learning 2026 accuracy table.
+
 ## Code sources
 
 See [`code/CODE.md`](code/CODE.md), and the reproduction skeleton in this directory, [`code/reproduce.py`](code/reproduce.py).

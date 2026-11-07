@@ -1,6 +1,6 @@
 # Run evidence: XBTorch (paper 22) — 2026-11-04
 
-Upstream: https://github.com/ADAM-Lab-GW/xbtorch (BSD-3-Clause; not Junfei's code, not redistributed here).
+Upstream: https://github.com/ADAM-Lab-GW/xbtorch (BSD-3-Clause; not this repository's code, not redistributed here).
 This folder records one real upstream run only. See paper 22 in `papers/22-202610-xbtorch/`.
 
 ## Command

@@ -1,6 +1,6 @@
 # Run evidence: ColumnQuant (paper 35) — 2026-11-02
 
-Upstream: https://github.com/jiyoonkm/ColumnQuant (not Junfei's code, not redistributed here).
+Upstream: https://github.com/jiyoonkm/ColumnQuant (not this repository's code, not redistributed here).
 This folder records one minimal upstream run only. See paper 35 in `papers/35-202503-columnquant/`.
 
 ## Command

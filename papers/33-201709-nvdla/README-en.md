@@ -1,6 +1,6 @@
 # NVDLA: NVIDIA Deep Learning Accelerator (Open Architecture)
 
-## Paper information
+## Original paper information
 
 - Original title: NVDLA Primer (NVIDIA official architecture document); system: NVIDIA Deep Learning Accelerator, open-sourced in 2017
 - Authors/source: NVIDIA; originally designed for the Xavier SoC, later open-sourced as a parameterised architecture
@@ -30,7 +30,7 @@
 
 See [`code/CODE.md`](code/CODE.md), and the reproduction skeleton in this directory, [`code/reproduce.py`](code/reproduce.py).
 
-> Note: the `reproduce.py` in this directory is an original reproduction skeleton, not code by the paper's authors. It is only for understanding the core idea and cannot directly reproduce the paper's area, power or clock numbers.
+> Note: the `reproduce.py` in this directory is an original reproduction skeleton, not the original authors' code. It is only for understanding the core ideas and cannot directly reproduce the paper's area, power or clock numbers.
 
 ## Verification notes for this entry
 

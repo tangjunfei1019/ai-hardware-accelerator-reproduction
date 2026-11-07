@@ -34,4 +34,4 @@
 ## 本次核实说明
 
 - 上游仓库经 `git ls-remote` 核实存在；仓库内有 30 个示例、教程笔记本、30 个测试文件与 MIT 许可证，文档见 https://aihwkit.readthedocs.io。
-- 本次在当前虚拟机中未端到端运行上游示例，原因是该虚拟机没有安装 PyTorch，且 CPU 版 PyTorch 下载多次超时——这是虚拟机/网络限制，不是仓库缺陷。在已安装 PyTorch 的正常机器上，CODE.md 中的最小示例即可运行，GPU 可选。
+- 上游示例已实际运行（2026-11-01）：`examples/01_simple_layer.py` 在 CPU 上约 10 秒跑完，单层 `AnalogLinear(4, 2)` 训练 100 个 epoch，loss 从 0.379（第 1 epoch）降至 0.0093（第 100 epoch）。证据见 [runs/aihwkit-20261101/](../../runs/aihwkit-20261101/)。这只证明工具链能安装并跑通，不复现 AICAS 2021 的任何具体精度表；安装的 aihwkit 1.2.0 是当前 PyPI 版本，不是 2021 年冻结版本。

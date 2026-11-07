@@ -1,6 +1,6 @@
 # Ramulator 2.1: A Composable Memory System Simulator for Modern DRAM Systems
 
-## Original paper
+## Original paper information
 
 - **Authors:** Haocong Luo, F. Nisa Bostancı, Ataberk Olgun, et al. (SAFARI Research Group, ETH Zürich and collaborators)
 - **Venue:** 2026 (Tutorial on Ramulator and DRAM Bender, colocated with ICS); arXiv:2606.13844
@@ -16,7 +16,7 @@
 - Validation at two levels: fine-grained timing-constraint/scheduling checks and system-level latency–throughput curves; plus a trace visualizer for DRAM command traces.
 - Modern standards covered include DDR3/4/5, GDDR6/7, LPDDR5/6, HBM1–4, and DDR4_PUM (processing-using-DRAM), which is key for CIM research.
 
-## Core effect
+## Core results
 
 - Its value is measured by coverage, usability, and validation, not by TOPS/W: this is a simulator, not an accelerator, so no speedup is quoted here.
 - The SAFARI group's Ramulator line is the standard DRAM simulator in the memory-systems literature; the 2026 overhaul adding HBM4, LPDDR6, GDDR7, and DDR4_PUM support is evaluation infrastructure that later CIM work will build on.
@@ -28,7 +28,7 @@
 - Observed result: configure completed (cmake, GCC 13.3, Python 3.12.3, 14 DRAM standards generated, 52 Python component wrappers generated), the build completed, and the example ran: Controller cycles 81302, avg read latency 45.2 cycles, read requests 6, write requests 0, row hits 3, row misses 3, row conflicts 0.
 - Honest note: these are the example trace's own statistics, not a paper result; the full test suite (`tests/`) was not run — that is the longer validation route.
 
-## Code source
+## Code sources
 
 - Upstream code is at the repository link above; `code/CODE.md` in this folder gives the completeness checklist and minimal reproduction commands.
 - **`code/reproduce.py` in this folder is an original reproduction skeleton using only the Python standard library, for understanding the core idea. It is not upstream code, and it is not the original hardware/simulator, and it cannot directly reproduce the original paper's numbers.**

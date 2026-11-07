@@ -34,5 +34,5 @@
 
 - 上游仓库经 `git ls-remote` 核实存在；框架文件 `SplitConv4Pim_group.py`、`LSQ.py`、`any_quant.py` 通过 `python3 -m py_compile` 语法检查。
 - 完整克隆列表中还包括 `main.py`、`resnet_quan.py`、`utils.py`（仅按文件名列出，内容本次未逐项检查，端到端复现时请先检查）与 `legacy/` 目录中的 ResNet-20 CIFAR-100 W3A3P3 检查点（`ResNet20_Cifar100_W3A3P3_ckpt.pth`）。
-- 本次未端到端运行上游，原因是该虚拟机没有安装 PyTorch，且 CPU 版 PyTorch 下载多次超时——这是环境限制，不是仓库缺陷。
+- 上游模块已实际运行（2026-11-02）：`SplitConv4Pim_group` 最小前向传播约 1.3 秒跑完，输入 (1, 64, 32, 32) 返回 (1, 64, 32, 32)。证据见 [runs/columnquant-20261102/](../../runs/columnquant-20261102/)。这只证明该模块能构建并跑通一次前向传播，不复现 DATE 2025 的精度表。
 - 最弱的完整性点：仓库根目录未找到许可证文件与 requirements 文件；再分发或做产品前请先与作者/论文许可条款核对。

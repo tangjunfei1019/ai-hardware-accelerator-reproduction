@@ -1,6 +1,6 @@
 # CIM-Explorer (CIM-E): Optimizing Binary and Ternary Neural Network Inference on RRAM Crossbars
 
-## Original paper
+## Original paper information
 
 - **Authors:** Rebecca Pelke, José Cubero-Cascante, Nils Bosbach, et al. (RWTH Aachen University)
 - **Venue:** SAMOS 2025; arXiv:2505.14303
@@ -15,7 +15,7 @@
 - A design-space exploration (DSE) tool automates finding optimal crossbar parameters and mappings, so accuracy can be estimated early for a given crossbar before committing to a chip design.
 - Key distinction: most RRAM-CIM tools cover only compilation, simulation, or DSE, and usually assume 8-bit quantization; this tool ties all three together for binary/ternary networks.
 
-## Core effect
+## Core results
 
 - The contribution is the toolkit and its DSE flow, not one accelerator's speedup; per-model, per-mapping accuracy results are authoritative in the original paper, and no single headline number is quoted here.
 - For low-precision analog CIM researchers, this is the most complete open starting point found in this search: compilation, simulation, and DSE close the loop in one repository.
@@ -27,7 +27,7 @@
 - Expected check: the Docker image builds (the repo has CI checks for the simulator build and the Docker image), and the benchmark scripts run binary/ternary inference through the crossbar simulator.
 - Honest note: not run end to end here. `src/main.py --help` fails immediately here with `ModuleNotFoundError: No module named 'tvm'`, because the documented route is Docker, not a bare `python src/main.py`, and Docker is not installed in this VM. The simulator build was not attempted outside Docker, to stay on the documented route. On a machine with Docker, the README's build-then-benchmark flow is the reproducible path.
 
-## Code source
+## Code sources
 
 - Upstream code is at the repository link above; `code/CODE.md` in this folder gives the completeness checklist and minimal reproduction commands.
 - **`code/reproduce.py` in this folder is an original reproduction skeleton using only the Python standard library, for understanding the core idea. It is not upstream code, and it is not the original hardware/simulator, and it cannot directly reproduce the original paper's numbers.**
