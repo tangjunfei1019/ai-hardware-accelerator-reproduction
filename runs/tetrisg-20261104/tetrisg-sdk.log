@@ -1,0 +1,32 @@
+Enter network configuration key (e.g., cnn8-3, inception-4e, resnet50-blk1, densenet40-3): Enter the group number:==================================================
+INFORMATION
+------------------------------
+    Array   Size = 512 x 512
+    Image   Size = 18 x 18
+    Kernel  Size = 3 x 3
+    Channel Size = 32 x 32
+------------------------------
+==================================================
+ RESULTS of COMPUTING CYCLES
+------------------------------
+    Im2col = 256
+     S D K = 64
+     S D K = 16
+    VW-SDK = 48
+      - Optimal shape of PW = 8 x 4 x 16 x 42
+==================================================
+------------------------------
+==================================================
+    RESULTS of COMPUTING CYCLES
+------------------------------
+    No. of PW is 16
+------------------------------
+    Performing Tetris-SDK in 1 Group
+------------------------------
+No square-inclined window can be found. Number of windows: 8 for 10 x 6
+Number of windows with marginal-optimized: 8
+Total number of windows with square-optimized, marginal-optimized is 16.0
+------------------------------
+Total CC
+32.0
+==================================================

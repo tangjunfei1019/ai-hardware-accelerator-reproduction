@@ -29,3 +29,7 @@ Expected check: small examples should output window configurations and utilizati
 
 - `reproduce.py` is an original Python standard-library skeleton demonstrating the core idea, not upstream code, and not RTL / chip measurements.
 - The skeleton alone does not satisfy this paper's reproducibility requirement; reproducibility is provided by the upstream steps above.
+
+## Run evidence
+
+- Evidence folder: [runs/tetrisg-20261104/](../../runs/tetrisg-20261104/) — command, log and result for the minimal TetrisG_SDK.py run (cnn8-3, group 2: VW-SDK 48, 16 windows, Total CC 32.0, instant, exit 0).
