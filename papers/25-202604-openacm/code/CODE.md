@@ -29,3 +29,7 @@ Expected check: front-end examples should output configurations and estimates; t
 
 - `reproduce.py` is an original Python standard-library skeleton demonstrating the core idea, not upstream code, and not RTL / chip measurements.
 - The skeleton alone does not satisfy this paper's reproducibility requirement; reproducibility is provided by the upstream steps above.
+
+## Run evidence
+
+- Evidence folder: [runs/openacm-20261105/](../../runs/openacm-20261105/) — command, log and result for the minimal front-end smoke test (8-bit multiplier RTL generated: Exact/Appro4_2/Log_our; 8x16 SRAM step exited 0 with no change).

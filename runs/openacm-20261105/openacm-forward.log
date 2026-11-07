@@ -1,0 +1,9 @@
+=== multiplier 8-bit ===
+Generating 8-bit multiplier files in: /home/hatch/workspace/openacm-upstream/DCIM/multiplier
+Generated exact multiplier: /home/hatch/workspace/openacm-upstream/DCIM/multiplier/Exact_8bit.v
+8-bit multiplier requires 9 approximate compressors.
+Generated approximate multiplier: /home/hatch/workspace/openacm-upstream/DCIM/multiplier/Appro4_2_8bit.v
+Generated logarithmic multiplier: /home/hatch/workspace/openacm-upstream/DCIM/multiplier/Log_our_8bit.v
+MULT_EXIT:0
+=== SRAM 8x16 ===
+SRAM_EXIT:0
