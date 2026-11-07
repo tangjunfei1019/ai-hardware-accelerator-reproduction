@@ -21,6 +21,10 @@
 - Measure: correctness (round-trip / accuracy / output trends) and trends under key configuration changes, not a single speedup number.
 - What will not match the original: process, device parameters, simulator versions, and baseline configurations all change absolute numbers; the skeleton only demonstrates the idea.
 
+## Run evidence
+
+- The upstream minimal example was actually run (2026-11-04): `TetrisG_SDK.py` finished instantly, exit 0, input cnn8-3, group 2, output VW-SDK 48, optimal PW shape 8x4x16x42, 16 windows, grouped Total CC 32.0. Evidence: [runs/tetrisg-20261104/](../../runs/tetrisg-20261104/). This proves only that the TetrisG script runs one configuration here and outputs window and cycle numbers, not any JETCAS 2026 paper speedups, and it is not a silicon measurement; the NeuroSim C++ part was not built or run.
+
 ## Code sources
 
 See [`code/CODE.md`](code/CODE.md), and the reproduction skeleton in this directory, [`code/reproduce.py`](code/reproduce.py).
