@@ -7,7 +7,7 @@ This repository covers 44 AI hardware accelerator papers (2014–2026), spanning
 - **Papers**: `papers/<number-YYYYMM-slug>/`, each with the original paper's information, core method, key results, and reproduction notes. Analysis is available in Chinese (`README.md`) and English (`README-en.md`); code and reproduction notes are in English (`code/CODE.md`, `code/reproduce.py`). The Chinese index is in [README.md](README.md).
 - **Comparison matrix**: [COMPARISON-en.md](COMPARISON-en.md) (44 papers, same columns: workload, dataflow, precision, peak labelled paper claim / model estimate / not given, code type, runnable here).
 - **Collected upstream projects**: [external/](external/) (11 projects including Timeloop, Accelergy, SCALE-Sim, Gemmini; linked only, not redistributed; run `bash external/sync-external.sh` to pull the latest).
-- **Run evidence**: [runs/](runs/) (AIHWKit, ColumnQuant, XBTorch, and OpenACM commands, logs and results) and [unified/](unified/) (SCALE-Sim unified path: comparable data for papers 05 Eyeriss and 06 TPU, framework estimates only, not paper or silicon numbers).
+- **Run evidence**: [runs/](runs/) (AIHWKit, ColumnQuant, XBTorch, OpenACM, TetrisG-SDK, and ASiM commands, logs and results) and [unified/](unified/) (SCALE-Sim unified path: comparable data for papers 05 Eyeriss and 06 TPU, framework estimates only, not paper or silicon numbers).
 - **Contributing guide**: [CONTRIBUTING-en.md](CONTRIBUTING-en.md).
 
 ## Code provenance and reproduction scope
