@@ -1,11 +1,11 @@
 # AI Hardware Accelerator Paper Reproduction
 
-This repository covers 39 AI hardware accelerator papers (2014–2026), spanning classic architectures (DianNao, Eyeriss, TPU, EIE, ISAAC, SCNN), 2026 ISCA / HPCA / DAC / TODAES papers, and compute-in-memory (CIM / PIM) work. Each paper comes with an analysis of its core method and key results, verified code provenance, and a runnable reproduction skeleton — so readers can study a paper and run code side by side to understand tiling, dataflow, sparsity, systolic arrays, and compute-in-memory.
+This repository covers 44 AI hardware accelerator papers (2014–2026), spanning classic architectures (DianNao, Eyeriss, TPU, EIE, ISAAC, SCNN), 2026 ISCA / HPCA / DAC / TODAES papers, and compute-in-memory (CIM / PIM) work. Each paper comes with an analysis of its core method and key results, verified code provenance, and a runnable reproduction skeleton — so readers can study a paper and run code side by side to understand tiling, dataflow, sparsity, systolic arrays, and compute-in-memory.
 
 ## Contents
 
 - **Papers**: `papers/<number-YYYYMM-slug>/`, each with the original paper's information, core method, key results, and reproduction notes. Analysis is available in Chinese (`README.md`) and English (`README-en.md`); code and reproduction notes are in English (`code/CODE.md`, `code/reproduce.py`). The Chinese index is in [README.md](README.md).
-- **Comparison matrix**: [COMPARISON-en.md](COMPARISON-en.md) (39 papers, same columns: workload, dataflow, precision, peak labelled paper claim / model estimate / not given, code type, runnable here).
+- **Comparison matrix**: [COMPARISON-en.md](COMPARISON-en.md) (44 papers, same columns: workload, dataflow, precision, peak labelled paper claim / model estimate / not given, code type, runnable here).
 - **Collected upstream projects**: [external/](external/) (11 projects including Timeloop, Accelergy, SCALE-Sim, Gemmini; linked only, not redistributed; run `bash external/sync-external.sh` to pull the latest).
 - **Run evidence**: [runs/](runs/) (AIHWKit, ColumnQuant, XBTorch, and OpenACM commands, logs and results) and [unified/](unified/) (SCALE-Sim unified path: comparable data for papers 05 Eyeriss and 06 TPU, framework estimates only, not paper or silicon numbers).
 - **Contributing guide**: [CONTRIBUTING-en.md](CONTRIBUTING-en.md).
@@ -60,6 +60,11 @@ This repository covers 39 AI hardware accelerator papers (2014–2026), spanning
 | 37 | [NasZip: Software and Hardware Co-Design to Accelerate Approximate Nearest Neighbor Search with DIMM-Based Near-Data Processing](papers/37-202606-naszip/README-en.md) · [CN](papers/37-202606-naszip/README.md) | ISCA 2026 | Fully open source: MuLan PSL 2.0; pre-built-index route needs a 16+ core, 256+ GB DRAM server |
 | 38 | [CIM-Explorer (CIM-E): Optimizing Binary and Ternary Neural Network Inference on RRAM Crossbars](papers/38-202506-cim-explorer/README-en.md) · [CN](papers/38-202506-cim-explorer/README.md) | SAMOS 2025 | Fully open source: Apache, standard Linux CPU + Docker |
 | 39 | [Ramulator 2.1: A Composable Memory System Simulator for Modern DRAM Systems (evaluation infrastructure, not a CIM design)](papers/39-202606-ramulator21/README-en.md) · [CN](papers/39-202606-ramulator21/README.md) | 2026 | Fully open source: MIT, standard Linux CPU + cmake/GCC + Python 3.10+ |
+| 40 | [PIMSIM-NN: An ISA-based Simulation Framework for Processing-in-Memory Accelerators](papers/40-202403-pimsim-nn/README-en.md) · [CN](papers/40-202403-pimsim-nn/README.md) | Xinyu Wang, et al., DATE 2024 | Reproducible B: official open source, C++/SystemC + compiler; no LICENSE file found in repo root |
+| 41 | [CiMLoop: A Flexible, Accurate, and Fast Compute-In-Memory Modeling Tool](papers/41-202405-cimloop/README-en.md) · [CN](papers/41-202405-cimloop/README.md) | Tanner Andrulis, et al., ISPASS 2024 (Best Paper Award) | Reproducible B: official open source, MIT, Docker with Timeloop + Accelergy v4; repo unmaintained, archival reproduction only |
+| 42 | [PyPIM: Integrating Digital Processing-in-Memory from Microarchitectural Design to Python Tensors](papers/42-202411-pypim/README-en.md) · [CN](papers/42-202411-pypim/README.md) | Orian Leitersdorf, et al., MICRO 2024 | Reproducible B: official open source, light Python library; full simulation needs CUDA 12 + ≥8 GB VRAM GPU; no LICENSE file found in repo root |
+| 43 | [MICSim: A Modular Simulator for Mixed-signal Compute-in-Memory based AI Accelerator](papers/43-202501-micsim/README-en.md) · [CN](papers/43-202501-micsim/README.md) | Cong Wang, et al., ASP-DAC 2025 | Reproducible B: official open source, conda + pybind11 build of NeuroSim v1.3 backend (Python 3.8); no LICENSE file found in repo root |
+| 44 | [ASiM: Modeling and Analyzing Inference Accuracy of SRAM-Based Analog CiM Circuits](papers/44-202510-asim/README-en.md) · [CN](papers/44-202510-asim/README.md) | Wenlun Zhang, et al., IEEE TVLSI 2025 | Reproducible A: official open source, Apache-2.0, Python + torch; ResNet-18/CIFAR-10 runs on CPU on a small subset |
 
 ## Directory structure
 
@@ -79,6 +84,7 @@ papers/
   21-202606-dcc/ … 30-202600-pimeval-2026/   # 2026 CIM supplement: reproducibility-screened, A = runnable on a standard machine, B = needs special hardware/toolchain
   31-202106-aihwkit/ … 35-202503-columnquant/   # Influential CIM supplement: fully open-source code; skeletons are not upstream code, upstream steps govern reproduction
   36-202503-unindp/ … 39-202606-ramulator21/   # Recent reproducible CIM / NDP work
+  40-202403-pimsim-nn/ … 44-202510-asim/   # CIM / PIM simulator-framework supplement: ISA-level simulation, Timeloop-based modelling, Python tensor-level PIM, mixed-signal CIM, SRAM analog CIM accuracy
   <each paper>/README.md         # Chinese analysis
   <each paper>/README-en.md      # English analysis
   <each paper>/code/CODE.md      # Code sources, nature, and run steps

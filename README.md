@@ -1,11 +1,11 @@
 # AI 硬件加速器论文复现
 
-本仓库收录 39 篇 AI 硬件加速器论文（2014–2026），覆盖经典架构（DianNao、Eyeriss、TPU、EIE、ISAAC、SCNN 等）、2026 年 ISCA / HPCA / DAC / TODAES 新作，以及存算一体（CIM / PIM）方向。每篇论文提供核心方法与核心效果的分析、已核实的代码来源，以及可直接运行的复现骨架，目标是让读者一边读论文、一边动手跑代码，理解分块、数据流、稀疏、脉动阵列与存算一体的关键思想。
+本仓库收录 44 篇 AI 硬件加速器论文（2014–2026），覆盖经典架构（DianNao、Eyeriss、TPU、EIE、ISAAC、SCNN 等）、2026 年 ISCA / HPCA / DAC / TODAES 新作，以及存算一体（CIM / PIM）方向。每篇论文提供核心方法与核心效果的分析、已核实的代码来源，以及可直接运行的复现骨架，目标是让读者一边读论文、一边动手跑代码，理解分块、数据流、稀疏、脉动阵列与存算一体的关键思想。
 
 ## 仓库内容
 
 - **论文**：`papers/<编号-年月-简称>/`，每篇包含原文信息、核心方法、核心效果与复现要点；分析同时提供中文（`README.md`）与英文（`README-en.md`）版本，代码与复现说明为英文（`code/CODE.md`、`code/reproduce.py`）。英文总索引见 [README-en.md](README-en.md)。
-- **对比矩阵**：[COMPARISON.md](COMPARISON.md)（39 篇统一列：工作负载、数据流、精度、峰值并标论文声称 / 模型估算 / 未给出、代码类型、本地能否运行）。
+- **对比矩阵**：[COMPARISON.md](COMPARISON.md)（44 篇统一列：工作负载、数据流、精度、峰值并标论文声称 / 模型估算 / 未给出、代码类型、本地能否运行）。
 - **上游收藏**：[external/](external/)（Timeloop、Accelergy、SCALE-Sim、Gemmini 等 11 个项目，仅链接不分发；运行 `bash external/sync-external.sh` 可拉取最新）。
 - **运行证据**：[runs/](runs/)（AIHWKit、ColumnQuant、XBTorch、OpenACM 的命令、日志与结果）与 [unified/](unified/)（SCALE-Sim 统一可运行路径：05 Eyeriss、06 TPU 可比数据，均为框架估算，不是论文或硅片数字）。
 - **贡献指南**：[CONTRIBUTING.md](CONTRIBUTING.md)。
@@ -60,6 +60,11 @@
 | 37 | [NasZip：面向 DIMM 近数据处理的近似最近邻搜索软硬件协同设计](papers/37-202606-naszip/README.md) · [EN](papers/37-202606-naszip/README-en.md) | ISCA 2026 | 完整开源：MuLan PSL 2.0；预建索引路线需 16 核以上、256 GB 以上 DRAM 服务器 |
 | 38 | [CIM-Explorer（CIM-E）：面向 RRAM 交叉阵列的二值/三值神经网络推理优化](papers/38-202506-cim-explorer/README.md) · [EN](papers/38-202506-cim-explorer/README-en.md) | SAMOS 2025 | 完整开源：Apache，标准 Linux CPU + Docker |
 | 39 | [Ramulator 2.1：面向现代 DRAM 系统的可组合存储系统仿真器（评估基础设施，非 CIM 设计）](papers/39-202606-ramulator21/README.md) · [EN](papers/39-202606-ramulator21/README-en.md) | 2026 | 完整开源：MIT，标准 Linux CPU + cmake/GCC + Python 3.10+ |
+| 40 | [PIMSIM-NN：面向存内处理加速器的基于指令集架构的仿真框架](papers/40-202403-pimsim-nn/README.md) · [EN](papers/40-202403-pimsim-nn/README-en.md) | Xinyu Wang 等，DATE 2024 | 可复现 B：官方开源，C++/SystemC + 编译器，根目录未找到许可证文件 |
+| 41 | [CiMLoop：灵活、准确、快速的存算一体建模工具](papers/41-202405-cimloop/README.md) · [EN](papers/41-202405-cimloop/README-en.md) | Tanner Andrulis 等，ISPASS 2024（最佳论文奖） | 可复现 B：官方开源，MIT，Docker 内 Timeloop + Accelergy v4；仓库已停止维护，仅作归档复现 |
+| 42 | [PyPIM：从微架构设计到 Python 张量的数字存内处理集成](papers/42-202411-pypim/README.md) · [EN](papers/42-202411-pypim/README-en.md) | Orian Leitersdorf 等，MICRO 2024 | 可复现 B：官方开源，Python 库轻量；完整仿真需 CUDA 12 + 8 GB 以上显存 GPU，根目录未找到许可证文件 |
+| 43 | [MICSim：面向混合信号存算一体 AI 加速器的模块化仿真器](papers/43-202501-micsim/README.md) · [EN](papers/43-202501-micsim/README-en.md) | Cong Wang 等，ASP-DAC 2025 | 可复现 B：官方开源，conda + pybind11 编译 NeuroSim v1.3 后端（Python 3.8），根目录未找到许可证文件 |
+| 44 | [ASiM：面向基于 SRAM 的模拟存算一体电路的推理精度建模与分析](papers/44-202510-asim/README.md) · [EN](papers/44-202510-asim/README-en.md) | Wenlun Zhang 等，IEEE TVLSI 2025 | 可复现 A：官方开源，Apache-2.0，Python + torch；ResNet-18/CIFAR-10 可在 CPU 上跑小子集 |
 
 ## 目录结构
 
@@ -79,6 +84,7 @@ papers/
   21-202606-dcc/ … 30-202600-pimeval-2026/   # 2026 年 CIM 补充：可复现筛选，A 为标准机器可跑，B 需特殊硬件/工具链
   31-202106-aihwkit/ … 35-202503-columnquant/   # 影响力 CIM 补充：完整开源代码，骨架不是上游代码，复现以上游步骤为准
   36-202503-unindp/ … 39-202606-ramulator21/   # 近期可复现 CIM / NDP 工作
+  40-202403-pimsim-nn/ … 44-202510-asim/   # CIM / PIM 仿真框架补充：ISA 级仿真、Timeloop 系建模、Python 张量级 PIM、混合信号 CIM、SRAM 模拟 CIM 精度
   <每篇>/README.md               # 中文分析
   <每篇>/README-en.md            # 英文分析
   <每篇>/code/CODE.md            # 代码来源、性质、运行步骤

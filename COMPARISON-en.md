@@ -10,15 +10,16 @@ bandwidth, or energy figures are not peaks; where quoted, they are context only)
 
 ## Uncertainty notes
 
-- Peak performance: only 2 of 39 papers (06 TPU, 07 EIE) give a comparable peak
-  number in their folders; the other 37 are "not given". Do not compare relative
+- Peak performance: only 2 of 44 papers (06 TPU, 07 EIE) give a comparable peak
+  number in their folders; the other 42 are "not given". Do not compare relative
   speedups as if they were peaks.
 - Precision: not stated in the folders for papers 01, 04, 05, 09, 10, 12, 15, 16, 17,
-  18, 21, 23, 26, 28, 29, 30, 36, and 39 (simulator, N/A); papers 07, 08, 19, 20, 22,
-  25, 27, 31, 32, 34, 37 mention quantization/format without a single fixed width
+  18, 21, 23, 26, 28, 29, 30, 36, 40, 41, and 39 (simulator, N/A); papers 07, 08, 19, 20, 22,
+  25, 27, 31, 32, 34, 37, 42, 43, 44 mention quantization/format without a single fixed width
   (noted in the table).
 - Workload uncertain: 23 CIM-Tuner (no specific workload stated), 30 PIMeval
-  (broad, no single workload).
+  (broad, no single workload), 40 PIMSIM-NN (ResNet-18 example, narrow), 41 CiMLoop
+  (full-stack modelling, no single workload).
 - Run status: papers 31 and 35 are updated to "upstream run" per the latest evidence
   in `runs/` (which supersedes older "not run" wording inside those folders);
   paper 23's run is a 2026-10-31 historical record (tool estimates), not in the
@@ -67,3 +68,8 @@ bandwidth, or energy figures are not peaks; where quoted, they are context only)
 | 37 | [NasZip](papers/37-202606-naszip/README-en.md) | Approximate nearest-neighbour search (SIFT, GIST, GloVe, Wiki) for retrieval/RAG | DIMM-based NDP: host via memory channels, per-rank near-memory hardware; feature-level early exiting | Dynamic floating-point format (no fixed width) | Not given (paper claim: up to 8.4× vs CPU SCANN) | Official + skeleton | Not run end-to-end (--help only; needs 16+ cores / 256+ GB) |
 | 38 | [CIM-Explorer / CIM-E](papers/38-202506-cim-explorer/README-en.md) | Binary/ternary NN inference on RRAM crossbars | TVM-based compilation + multiple simulator backends + design-space exploration | Binary / ternary (1-bit / ternary weights) | Not given (tool/DSE flow, no single headline number) | Simulator / tool (official) | Not run (missing TVM / Docker) |
 | 39 | [Ramulator 2.1](papers/39-202606-ramulator21/README-en.md) | DRAM trace workloads (not an accelerator; example trace only) | Cycle-level DRAM device + controller models, Python-configurable; DDR/GDDR/LPDDR/HBM | N/A (simulator, no compute precision) | Not given (example-trace stats only: 81302 controller cycles, avg read latency 45.2 cycles, model estimates) | Simulator (official) | Upstream run (example_config.py; full test suite not run) |
+| 40 | [PIMSIM-NN](papers/40-202403-pimsim-nn/README-en.md) | Neural-network inference (ResNet-18 example) | Multi-core NoC chip: scalar / vector / matrix (RRAM crossbar) / transfer units, ISA decouples software and hardware | Not stated | Not given (upstream example output: ResNet-18, 64 cores, 40 samples/s, 25 ms average latency, simulator estimates) | Simulator (official) + skeleton | Skeleton |
+| 41 | [CiMLoop](papers/41-202405-cimloop/README-en.md) | Full-stack CiM modelling of DNN workloads | Timeloop + Accelergy v4: flexible specification across circuits and architecture, statistical energy model | Not stated (depends on operand values / data representations, no single fixed width) | Not given (statistical model orders of magnitude faster than other high-accuracy models, relative claim, not a peak) | Simulator (official) + skeleton | Skeleton |
+| 42 | [PyPIM](papers/42-202411-pypim/README-en.md) | Tensor ops and data-intensive benchmarks (Python tensors → PIM) | Digital memristive PIM: in-array parallel bitwise ops, partitions and two-direction ops; Python library → ISA → micro-ops | Integer and float (ISA table, no fixed width) | Not given (evaluated against theoretical PIM bounds, not a single number) | Simulator (official) + skeleton | Skeleton (full simulation needs a GPU, not run) |
+| 43 | [MICSim](papers/43-202501-micsim/README-en.md) | CNN and Transformer evaluation on mixed-signal CIM | Modular framework (from NeuroSim): multiple quantization algorithms, circuit/architecture designs, memory devices; statistic-based average mode | 8 bits (config example: weights and inputs) | Not given (paper claim: average mode ~9–32× faster than NeuroSim, tool comparison, not a peak) | Simulator (official) + skeleton | Skeleton |
+| 44 | [ASiM](papers/44-202510-asim/README-en.md) | SRAM analog CIM inference accuracy: CNNs, ViT, ImageNet scale | Charge-domain SRAM ACiM bit-wise simulation: ADC quantization, bit-parallel encoding, analog noise; hybrid analog-digital and majority voting | 4/6/8 bits (quantization config examples) | Not given (accuracy-oriented tool; key finding is that 1 LSB of noise can significantly impair accuracy, not a peak) | Simulator (official) + skeleton | Skeleton |
