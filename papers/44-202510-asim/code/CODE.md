@@ -32,3 +32,7 @@ Expected check: the simulation should report inference accuracy under the config
 
 - `reproduce.py` is an original Python standard-library skeleton demonstrating the core idea, not upstream code, and not RTL / chip measurements.
 - The skeleton alone does not satisfy this paper's reproducibility requirement; reproducibility is provided by the upstream steps above.
+
+## Run evidence
+
+- Evidence folder: [runs/asim-20261116/](../../runs/asim-20261116/)

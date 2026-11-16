@@ -26,6 +26,10 @@
 - Measure: correctness (how inference accuracy changes with noise and encoding choices) and trends under key configuration changes, not a single speedup number.
 - What will not match the original: process, device parameters, simulator versions, and baseline configurations all change absolute numbers; the skeleton only demonstrates the idea.
 
+## Run evidence
+
+- Upstream run on 2026-11-16: ResNet-18 / CIFAR-10 small subset (5 images per class, 50 total), W8A8 bit-serial, ADC 8-bit, nrow 255, no noise, about 7.5 min on CPU, Test Acc 92.00% (46/50). See [runs/asim-20261116/](../../runs/asim-20261116/). This proves only that the upstream runs and produces accuracy output here; it does not reproduce any TVLSI 2025 accuracy table and is not a silicon measurement.
+
 ## Code sources
 
 See [`code/CODE.md`](code/CODE.md), and the reproduction skeleton in this directory, [`code/reproduce.py`](code/reproduce.py).
