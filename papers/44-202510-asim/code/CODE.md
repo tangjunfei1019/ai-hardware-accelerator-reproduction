@@ -36,3 +36,4 @@ Expected check: the simulation should report inference accuracy under the config
 ## Run evidence
 
 - Evidence folder: [runs/asim-20261116/](../../runs/asim-20261116/)
+- Evidence folder: [runs/asim-noise005-20261120/](../../runs/asim-noise005-20261120/) (noise 0.05 run, 2026-11-20)

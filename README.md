@@ -7,7 +7,7 @@
 - **论文**：`papers/<编号-年月-简称>/`，每篇包含原文信息、核心方法、核心效果与复现要点；分析同时提供中文（`README.md`）与英文（`README-en.md`）版本，代码与复现说明为英文（`code/CODE.md`、`code/reproduce.py`）。英文总索引见 [README-en.md](README-en.md)。
 - **对比矩阵**：[COMPARISON.md](COMPARISON.md)（44 篇统一列：工作负载、数据流、精度、峰值并标论文声称 / 模型估算 / 未给出、代码类型、本地能否运行）。
 - **上游收藏**：[external/](external/)（Timeloop、Accelergy、SCALE-Sim、Gemmini 等 11 个项目，仅链接不分发；运行 `bash external/sync-external.sh` 可拉取最新）。
-- **运行证据**：[runs/](runs/)（AIHWKit、ColumnQuant、XBTorch、OpenACM、TetrisG-SDK、ASiM 的命令、日志与结果）与 [unified/](unified/)（SCALE-Sim 统一可运行路径：05 Eyeriss、06 TPU 可比数据，均为框架估算，不是论文或硅片数字）。
+- **运行证据**：[runs/](runs/)（AIHWKit、ColumnQuant、XBTorch、OpenACM、TetrisG-SDK、ASiM、ASiM 噪声 0.05 的命令、日志与结果）与 [unified/](unified/)（SCALE-Sim 统一可运行路径：05 Eyeriss、06 TPU 可比数据，均为框架估算，不是论文或硅片数字）。
 - **贡献指南**：[CONTRIBUTING.md](CONTRIBUTING.md)。
 
 ## 代码来源与复现范围

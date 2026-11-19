@@ -29,6 +29,7 @@
 ## Run evidence
 
 - Upstream run on 2026-11-16: ResNet-18 / CIFAR-10 small subset (5 images per class, 50 total), W8A8 bit-serial, ADC 8-bit, nrow 255, no noise, about 7.5 min on CPU, Test Acc 92.00% (46/50). See [runs/asim-20261116/](../../runs/asim-20261116/). This proves only that the upstream runs and produces accuracy output here; it does not reproduce any TVLSI 2025 accuracy table and is not a silicon measurement.
+- Upstream run on 2026-11-20 (noise 0.05): same 50-image subset and weight; conv and linear rand_noise_sigma and non_linear_sigma changed from 0.0 to 0.05 (the upstream README example value), everything else (W8A8, ADC 8-bit, nrow 255) unchanged; about 6.7 min on CPU, Test Acc 92.00% (46/50), identical to the no-noise baseline, with the same 4 images misclassified. See [runs/asim-noise005-20261120/](../../runs/asim-noise005-20261120/). This is a single run's result; it does not reproduce any TVLSI 2025 accuracy table and is not a silicon measurement.
 
 ## Code sources
 
